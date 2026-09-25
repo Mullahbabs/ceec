@@ -1,0 +1,4308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0D0D0D">
+
+<title>Ejor Agbor Ndifon (Ejay) | Executive, Creative &amp; Events Professional</title>
+<meta name="description" content="Official professional portfolio of Ejor Agbor Ndifon, known professionally as Ejay — operating across public service advisory, business, events, entertainment and creative leadership in Cross River State, Nigeria.">
+<meta name="author" content="Ejor Agbor Ndifon">
+<link rel="canonical" href="https://example.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ejor Agbor Ndifon (Ejay)">
+<meta property="og:title" content="Ejor Agbor Ndifon (Ejay) | Executive, Creative &amp; Events Professional">
+<meta property="og:description" content="Professional portfolio of Ejor Agbor Ndifon (Ejay) — public service advisory, business, events, entertainment and creative leadership.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="assets/images/ejay-profile.jpg">
+<meta property="og:locale" content="en_NG">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ejor Agbor Ndifon (Ejay) | Executive, Creative &amp; Events Professional">
+<meta name="twitter:description" content="Professional portfolio of Ejor Agbor Ndifon (Ejay) — public service advisory, business, events, entertainment and creative leadership.">
+<meta name="twitter:image" content="assets/images/ejay-profile.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D0D0D'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' fill='%23C8A96B' text-anchor='middle'>EJ</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   EJAY — DESIGN SYSTEM
+   ========================================================================== */
+
+:root{
+  --ejay-black:#0D0D0D;
+  --ejay-charcoal:#171717;
+  --ejay-graphite:#242424;
+  --ejay-ivory:#F6F2EA;
+  --ejay-gold:#C8A96B;
+  --ejay-gold-light:#E0C98D;
+  --ejay-emerald:#17483F;
+  --ejay-muted:#9A968D;
+  --ejay-white:#FFFFFF;
+
+  --font-display:'Playfair Display',Georgia,'Times New Roman',serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+
+  --container:1320px;
+  --gutter:clamp(1.25rem,4vw,3rem);
+  --section-y:clamp(4.5rem,9vw,8.5rem);
+
+  --nav-h:76px;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+
+  --hairline:rgba(200,169,107,.28);
+  --hairline-soft:rgba(246,242,234,.12);
+  --hairline-dark:rgba(13,13,13,.14);
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--nav-h) + 16px);
+}
+
+body{
+  margin:0;
+  background:var(--ejay-black);
+  color:var(--ejay-ivory);
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:clamp(.95rem,.35vw + .86rem,1.0625rem);
+  line-height:1.7;
+  letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+body.is-locked{overflow:hidden}
+
+img,svg{display:block;max-width:100%}
+img{height:auto}
+
+button,input,select,textarea{font:inherit;color:inherit;background:none;border:none}
+button{cursor:pointer}
+ul,ol{list-style:none;margin:0;padding:0}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,dl,dd,dt,figure,blockquote{margin:0}
+em{font-style:italic}
+code{font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:.85em;
+  background:rgba(200,169,107,.14);color:var(--ejay-gold-light);padding:.15em .45em;border-radius:2px}
+
+::selection{background:var(--ejay-gold);color:var(--ejay-black)}
+
+:focus-visible{
+  outline:2px solid var(--ejay-gold);
+  outline-offset:3px;
+}
+
+/* Skip link */
+.ejay-skip-link{
+  position:absolute;left:1rem;top:-100px;z-index:2000;
+  background:var(--ejay-gold);color:var(--ejay-black);
+  padding:.7rem 1.2rem;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+  transition:top .3s var(--ease);
+}
+.ejay-skip-link:focus{top:1rem}
+
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
+
+.ejay-container{
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.ejay-section{
+  position:relative;
+  padding-block:var(--section-y);
+  background:var(--ejay-black);
+}
+
+.ejay-section.is-light{
+  background:var(--ejay-ivory);
+  color:var(--ejay-black);
+}
+
+/* Section heads */
+.ejay-section__head{
+  max-width:64ch;
+  margin-bottom:clamp(2.5rem,5vw,4.5rem);
+}
+
+.ejay-section__head--split{
+  max-width:none;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.5rem;
+  align-items:end;
+}
+@media (min-width:900px){
+  .ejay-section__head--split{grid-template-columns:1.15fr .85fr;gap:3rem}
+}
+
+.ejay-section__head--compact{margin-bottom:1.75rem}
+
+.ejay-section__label{
+  display:flex;align-items:center;gap:.85rem;
+  font-size:.7rem;
+  font-weight:500;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:1.15rem;
+}
+.ejay-section__label-line{
+  width:clamp(28px,4vw,52px);height:1px;background:var(--ejay-gold);opacity:.75;flex:none;
+}
+
+.ejay-section__title{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(2rem,5.2vw,3.6rem);
+  line-height:1.1;
+  letter-spacing:-.015em;
+}
+.ejay-section__title em{
+  font-style:italic;
+  color:var(--ejay-gold);
+  font-weight:400;
+}
+.ejay-section__title--sm{font-size:clamp(1.6rem,3.4vw,2.4rem)}
+
+.ejay-section__lead{
+  margin-top:1.25rem;
+  color:var(--ejay-muted);
+  max-width:52ch;
+  font-size:.95rem;
+  font-weight:300;
+}
+.is-light .ejay-section__lead{color:#5c5850}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.ejay-btn{
+  --btn-bg:transparent;
+  --btn-fg:var(--ejay-ivory);
+  --btn-bd:transparent;
+
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  padding:.95rem 1.9rem;
+  background:var(--btn-bg);
+  color:var(--btn-fg);
+  border:1px solid var(--btn-bd);
+  border-radius:2px;
+  font-size:.74rem;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  overflow:hidden;
+  transition:color .45s var(--ease),background-color .45s var(--ease),
+             border-color .45s var(--ease),transform .45s var(--ease);
+}
+.ejay-btn::after{
+  content:"";
+  position:absolute;inset:0;
+  background:var(--ejay-gold-light);
+  transform:scaleX(0);
+  transform-origin:right center;
+  transition:transform .5s var(--ease-out);
+  z-index:-1;
+}
+.ejay-btn:hover{transform:translateY(-2px)}
+.ejay-btn:active{transform:translateY(0)}
+
+.ejay-btn--gold{--btn-bg:var(--ejay-gold);--btn-fg:var(--ejay-black);--btn-bd:var(--ejay-gold)}
+.ejay-btn--gold:hover{--btn-bg:var(--ejay-gold-light);--btn-bd:var(--ejay-gold-light)}
+
+.ejay-btn--outline{--btn-bd:rgba(246,242,234,.32);--btn-fg:var(--ejay-ivory)}
+.ejay-btn--outline:hover{--btn-bd:var(--ejay-gold);--btn-fg:var(--ejay-gold)}
+
+.ejay-btn--ghost{--btn-bd:transparent;--btn-fg:var(--ejay-muted);padding-inline:1.1rem}
+.ejay-btn--ghost:hover{--btn-fg:var(--ejay-ivory)}
+
+.ejay-btn--dark{--btn-bg:var(--ejay-black);--btn-fg:var(--ejay-ivory);--btn-bd:var(--ejay-black)}
+.ejay-btn--dark:hover{--btn-bg:var(--ejay-graphite);--btn-bd:var(--ejay-graphite)}
+
+/* ==========================================================================
+   SCROLL PROGRESS
+   ========================================================================== */
+
+.ejay-scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:2px;z-index:1400;
+  background:transparent;pointer-events:none;
+}
+.ejay-scroll-progress span{
+  display:block;height:100%;width:0;
+  background:linear-gradient(90deg,var(--ejay-gold),var(--ejay-gold-light));
+  transition:width .1s linear;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+
+.ejay-navbar{
+  position:fixed;top:0;left:0;right:0;z-index:1200;
+  background:transparent;
+  border-bottom:1px solid transparent;
+  transition:background-color .5s var(--ease),border-color .5s var(--ease),
+             backdrop-filter .5s var(--ease),transform .5s var(--ease);
+}
+.ejay-navbar.is-scrolled{
+  background:rgba(13,13,13,.86);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom-color:var(--hairline);
+}
+.ejay-navbar.is-hidden{transform:translateY(-102%)}
+
+.ejay-navbar__inner{
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  gap:clamp(1rem,3vw,2.5rem);
+}
+
+.ejay-wordmark{
+  display:inline-flex;
+  align-items:baseline;
+  gap:.28rem;
+  font-family:var(--font-display);
+  font-size:1.45rem;
+  font-weight:600;
+  letter-spacing:.14em;
+  color:var(--ejay-ivory);
+  flex:none;
+  transition:color .4s var(--ease);
+}
+.ejay-wordmark:hover{color:var(--ejay-gold)}
+.ejay-wordmark__dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--ejay-gold);
+  transform:translateY(-1px);
+}
+
+.ejay-nav{margin-left:auto}
+.ejay-nav__list{display:flex;align-items:center;gap:clamp(.5rem,1.4vw,1.6rem)}
+.ejay-nav__link{
+  position:relative;
+  display:inline-block;
+  padding:.5rem .1rem;
+  font-size:.72rem;
+  font-weight:400;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(246,242,234,.72);
+  transition:color .35s var(--ease);
+}
+.ejay-nav__link::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:.28rem;height:1px;
+  background:var(--ejay-gold);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .45s var(--ease-out);
+}
+.ejay-nav__link:hover{color:var(--ejay-ivory)}
+.ejay-nav__link:hover::after{transform:scaleX(1)}
+.ejay-nav__link.is-active{color:var(--ejay-gold)}
+.ejay-nav__link.is-active::after{transform:scaleX(1)}
+
+.ejay-navbar__cta{flex:none;padding:.7rem 1.4rem;font-size:.68rem}
+
+/* Hamburger */
+.ejay-hamburger{
+  display:none;
+  flex:none;
+  width:44px;height:44px;
+  margin-left:auto;
+  position:relative;
+  border:1px solid rgba(246,242,234,.18);
+  border-radius:2px;
+  transition:border-color .4s var(--ease),background-color .4s var(--ease);
+}
+.ejay-hamburger:hover{border-color:var(--ejay-gold)}
+.ejay-hamburger__bar{
+  position:absolute;left:50%;
+  width:18px;height:1.5px;
+  background:var(--ejay-ivory);
+  transform:translateX(-50%);
+  transition:transform .45s var(--ease),opacity .3s var(--ease),background-color .4s var(--ease);
+}
+.ejay-hamburger__bar:nth-child(1){top:16px}
+.ejay-hamburger__bar:nth-child(2){top:21.5px}
+.ejay-hamburger__bar:nth-child(3){top:27px}
+
+.ejay-hamburger.is-open .ejay-hamburger__bar{background:var(--ejay-gold)}
+.ejay-hamburger.is-open .ejay-hamburger__bar:nth-child(1){transform:translateX(-50%) translateY(5.5px) rotate(45deg)}
+.ejay-hamburger.is-open .ejay-hamburger__bar:nth-child(2){opacity:0;transform:translateX(-50%) scaleX(.3)}
+.ejay-hamburger.is-open .ejay-hamburger__bar:nth-child(3){transform:translateX(-50%) translateY(-5.5px) rotate(-45deg)}
+
+@media (max-width:1080px){
+  .ejay-nav{display:none}
+  .ejay-navbar__cta{display:none}
+  .ejay-hamburger{display:block}
+}
+
+/* ==========================================================================
+   MOBILE MENU
+   ========================================================================== */
+
+.ejay-mobile-menu{
+  position:fixed;inset:0;z-index:1150;
+  background:var(--ejay-charcoal);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:calc(var(--nav-h) + 2rem) var(--gutter) 2.5rem;
+  clip-path:inset(0 0 100% 0);
+  visibility:hidden;
+  transition:clip-path .7s var(--ease-out),visibility 0s linear .7s;
+}
+.ejay-mobile-menu.is-open{
+  clip-path:inset(0 0 0 0);
+  visibility:visible;
+  transition:clip-path .7s var(--ease-out),visibility 0s linear 0s;
+}
+.ejay-mobile-menu::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(200,169,107,.10),transparent 55%),
+    radial-gradient(circle at 10% 90%,rgba(23,72,63,.28),transparent 55%);
+  pointer-events:none;
+}
+
+.ejay-mobile-menu__nav{position:relative;flex:1;display:flex;align-items:center}
+.ejay-mobile-menu__nav ul{width:100%}
+.ejay-mobile-menu__nav li{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.ejay-mobile-menu.is-open .ejay-mobile-menu__nav li{
+  opacity:1;transform:translateY(0);
+  transition-delay:calc(.12s + var(--i) * .055s);
+}
+.ejay-mobile-menu__link{
+  display:block;
+  padding:.55rem 0;
+  font-family:var(--font-display);
+  font-size:clamp(1.75rem,7vw,2.6rem);
+  font-weight:400;
+  line-height:1.15;
+  color:var(--ejay-ivory);
+  border-bottom:1px solid rgba(246,242,234,.07);
+  transition:color .35s var(--ease),padding-left .45s var(--ease);
+}
+.ejay-mobile-menu__link:hover{color:var(--ejay-gold);padding-left:.6rem}
+
+.ejay-mobile-menu__foot{
+  position:relative;
+  padding-top:2rem;
+  border-top:1px solid var(--hairline);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  align-items:flex-start;
+}
+.ejay-mobile-menu__note{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ejay-muted);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.ejay-hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  padding-top:calc(var(--nav-h) + clamp(2rem,7vh,5rem));
+  padding-bottom:clamp(4.5rem,9vh,6.5rem);
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 90% 65% at 78% 12%,rgba(200,169,107,.10),transparent 62%),
+    radial-gradient(ellipse 70% 60% at 8% 88%,rgba(23,72,63,.32),transparent 60%),
+    var(--ejay-black);
+}
+
+.ejay-hero__decor{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+.ejay-hero__watermark{
+  position:absolute;
+  top:46%;right:-2%;
+  transform:translateY(-50%);
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(14rem,36vw,30rem);
+  line-height:.75;
+  letter-spacing:-.06em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(200,169,107,.10);
+  text-stroke:1px rgba(200,169,107,.10);
+  user-select:none;
+  animation:ejayWatermarkIn 2.4s var(--ease-out) both;
+}
+
+.ejay-hero__ring{
+  position:absolute;
+  top:14%;right:6%;
+  width:clamp(300px,40vw,620px);
+  aspect-ratio:1;
+  border:1px solid rgba(200,169,107,.22);
+  border-radius:50%;
+  animation:ejayRingIn 2.2s .25s var(--ease-out) both;
+}
+.ejay-hero__ring--sm{
+  top:auto;bottom:6%;right:auto;left:-6%;
+  width:clamp(160px,20vw,300px);
+  border-color:rgba(246,242,234,.10);
+  animation-delay:.45s;
+}
+
+.ejay-hero__block{
+  position:absolute;
+  bottom:0;left:0;
+  width:clamp(140px,20vw,290px);
+  height:clamp(180px,26vw,360px);
+  background:linear-gradient(160deg,rgba(23,72,63,.55),rgba(23,72,63,.08));
+  border-right:1px solid rgba(200,169,107,.16);
+  animation:ejayBlockIn 1.8s .35s var(--ease-out) both;
+}
+
+.ejay-hero__grain{
+  position:absolute;inset:0;
+  opacity:.4;
+  mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:3px 3px;
+}
+
+@keyframes ejayWatermarkIn{from{opacity:0;transform:translateY(-50%) scale(1.08)}to{opacity:1;transform:translateY(-50%) scale(1)}}
+@keyframes ejayRingIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+@keyframes ejayBlockIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+.ejay-hero__inner{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(3rem,6vw,4rem);
+  align-items:center;
+}
+@media (min-width:1000px){
+  .ejay-hero__inner{grid-template-columns:1.08fr .92fr;gap:clamp(2rem,5vw,5rem)}
+}
+
+.ejay-hero__content{max-width:44ch}
+
+.ejay-hero__title{display:block}
+
+.ejay-hero__eyebrow{
+  display:block;
+  font-family:var(--font-body);
+  font-size:clamp(.66rem,1.5vw,.78rem);
+  font-weight:400;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:clamp(.9rem,2vw,1.4rem);
+  animation:ejayFadeUp 1s .25s var(--ease-out) both;
+}
+
+.ejay-hero__monogram{
+  display:block;
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(4.4rem,17vw,11rem);
+  line-height:.86;
+  letter-spacing:-.02em;
+  color:var(--ejay-ivory);
+  animation:ejayMonogramIn 1.5s .4s var(--ease-out) both;
+}
+.ejay-hero__monogram::after{
+  content:"";
+  display:block;
+  width:clamp(60px,12vw,130px);
+  height:1px;
+  background:linear-gradient(90deg,var(--ejay-gold),transparent);
+  margin-top:clamp(1rem,2.5vw,1.8rem);
+  animation:ejayLineIn 1.4s .9s var(--ease-out) both;
+}
+
+@keyframes ejayFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ejayMonogramIn{
+  from{opacity:0;transform:translateY(38px);letter-spacing:.08em}
+  to{opacity:1;transform:translateY(0);letter-spacing:-.02em}
+}
+@keyframes ejayLineIn{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+
+.ejay-hero__descriptor{
+  margin-top:clamp(1.4rem,3vw,2rem);
+  font-size:clamp(.74rem,1.6vw,.86rem);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(246,242,234,.66);
+  animation:ejayFadeUp 1s .85s var(--ease-out) both;
+}
+.ejay-hero__descriptor span{color:var(--ejay-gold);margin-inline:.35rem}
+
+.ejay-hero__statement{
+  margin-top:1.35rem;
+  font-family:var(--font-display);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  font-style:italic;
+  font-weight:400;
+  line-height:1.5;
+  color:var(--ejay-ivory);
+  max-width:34ch;
+  animation:ejayFadeUp 1s 1s var(--ease-out) both;
+}
+
+.ejay-hero__location{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  margin-top:1.6rem;
+  font-size:.7rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ejay-muted);
+  animation:ejayFadeUp 1s 1.15s var(--ease-out) both;
+}
+.ejay-hero__location-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--ejay-gold);
+  box-shadow:0 0 0 0 rgba(200,169,107,.6);
+  animation:ejayPulse 2.6s infinite;
+}
+@keyframes ejayPulse{
+  0%{box-shadow:0 0 0 0 rgba(200,169,107,.55)}
+  70%{box-shadow:0 0 0 9px rgba(200,169,107,0)}
+  100%{box-shadow:0 0 0 0 rgba(200,169,107,0)}
+}
+
+.ejay-hero__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-top:clamp(2rem,4vw,2.8rem);
+  animation:ejayFadeUp 1s 1.3s var(--ease-out) both;
+}
+
+/* Hero portrait */
+.ejay-hero__portrait{
+  position:relative;
+  justify-self:center;
+  width:min(100%,430px);
+  animation:ejayPortraitIn 1.6s .55s var(--ease-out) both;
+}
+@keyframes ejayPortraitIn{from{opacity:0;transform:translateY(34px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+.ejay-hero__portrait-ring{
+  position:absolute;
+  inset:-6% -8% 4% -8%;
+  border:1px solid rgba(200,169,107,.24);
+  border-radius:50% 50% 46% 46% / 52% 52% 48% 48%;
+  pointer-events:none;
+}
+.ejay-hero__portrait-block{
+  position:absolute;
+  right:-9%;bottom:-6%;
+  width:56%;height:44%;
+  background:linear-gradient(150deg,rgba(23,72,63,.85),rgba(23,72,63,.35));
+  z-index:0;
+}
+
+.ejay-hero__frame{
+  position:relative;
+  z-index:1;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:var(--ejay-charcoal);
+  border:1px solid rgba(200,169,107,.2);
+}
+
+.ejay-hero__caption{
+  margin-top:1.1rem;
+  font-size:.68rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ejay-muted);
+  text-align:right;
+}
+.ejay-hero__caption span{color:var(--ejay-gold)}
+
+/* Media fallback system */
+.ejay-media-fallback{
+  position:absolute;inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+  background:
+    linear-gradient(155deg,var(--ejay-graphite) 0%,var(--ejay-charcoal) 55%,#101010 100%);
+  z-index:0;
+}
+.ejay-media-fallback::before{
+  content:"";
+  position:absolute;inset:14px;
+  border:1px solid rgba(200,169,107,.16);
+  pointer-events:none;
+}
+.ejay-media-fallback__monogram{
+  font-family:var(--font-display);
+  font-size:clamp(2.6rem,7vw,4.2rem);
+  color:transparent;
+  -webkit-text-stroke:1px rgba(200,169,107,.45);
+  letter-spacing:.06em;
+}
+.ejay-media-fallback__text{
+  font-size:.58rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(154,150,141,.7);
+  text-align:center;
+  padding-inline:1.5rem;
+  max-width:100%;
+  word-break:break-word;
+}
+
+.ejay-media-img{
+  position:relative;
+  z-index:2;
+  width:100%;height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .9s var(--ease);
+}
+.ejay-media-img.is-loaded{opacity:1}
+
+/* Scroll cue */
+.ejay-hero__scroll{
+  position:absolute;
+  left:50%;bottom:clamp(1.25rem,3vh,2rem);
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.6rem;
+  z-index:3;
+  animation:ejayFadeUp 1s 1.7s var(--ease-out) both;
+}
+.ejay-hero__scroll-line{
+  width:1px;height:44px;
+  background:linear-gradient(180deg,transparent,var(--ejay-gold));
+  position:relative;
+  overflow:hidden;
+}
+.ejay-hero__scroll-line::after{
+  content:"";
+  position:absolute;top:-100%;left:0;
+  width:100%;height:100%;
+  background:var(--ejay-ivory);
+  animation:ejayScrollCue 2.4s infinite var(--ease);
+}
+@keyframes ejayScrollCue{0%{top:-100%}60%{top:100%}100%{top:100%}}
+.ejay-hero__scroll-text{
+  font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ejay-muted);
+}
+
+/* ==========================================================================
+   SNAPSHOT
+   ========================================================================== */
+
+.ejay-snapshot__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  border-top:1px solid var(--hairline);
+}
+@media (min-width:720px){
+  .ejay-snapshot__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1100px){
+  .ejay-snapshot__grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.ejay-snapshot__item{
+  padding:clamp(1.5rem,3vw,2.25rem) clamp(1.25rem,2.5vw,2rem) clamp(1.5rem,3vw,2.25rem) 0;
+  border-bottom:1px solid var(--hairline);
+  position:relative;
+}
+.ejay-snapshot__item::before{
+  content:"";
+  position:absolute;left:-100vw;right:0;top:-1px;height:1px;
+  background:transparent;
+}
+@media (min-width:720px){
+  .ejay-snapshot__item:nth-child(odd){padding-right:clamp(1.5rem,3vw,2.5rem);border-right:1px solid var(--hairline)}
+  .ejay-snapshot__item:nth-child(even){padding-left:clamp(1.5rem,3vw,2.5rem)}
+}
+@media (min-width:1100px){
+  .ejay-snapshot__item:nth-child(odd){border-right:none;padding-right:clamp(1.5rem,3vw,2.5rem)}
+  .ejay-snapshot__item:nth-child(even){padding-left:0}
+  .ejay-snapshot__item:nth-child(3n+1),
+  .ejay-snapshot__item:nth-child(3n+2){border-right:1px solid var(--hairline);padding-right:clamp(1.5rem,3vw,2.5rem)}
+  .ejay-snapshot__item:nth-child(3n+2),
+  .ejay-snapshot__item:nth-child(3n+3){padding-left:clamp(1.5rem,3vw,2.5rem)}
+  .ejay-snapshot__item:nth-child(3n+1){padding-left:0}
+}
+
+.ejay-snapshot__item dt{
+  font-size:.64rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:.7rem;
+}
+.ejay-snapshot__item dd{
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem,2.2vw,1.4rem);
+  line-height:1.4;
+  color:var(--ejay-ivory);
+}
+
+/* ==========================================================================
+   INTRO / ABOUT
+   ========================================================================== */
+
+.ejay-intro__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(2.5rem,6vw,5rem);
+  align-items:center;
+}
+@media (min-width:960px){
+  .ejay-intro__grid{grid-template-columns:.85fr 1.15fr}
+}
+
+.ejay-intro__media{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:var(--ejay-graphite);
+  max-width:480px;
+}
+.ejay-intro__media-frame{
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(13,13,13,.16);
+  z-index:3;
+  pointer-events:none;
+}
+
+.ejay-intro__statement{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.7rem,4.2vw,2.9rem);
+  line-height:1.16;
+  letter-spacing:-.015em;
+  margin-bottom:1.75rem;
+}
+
+.ejay-intro__lead{
+  font-size:clamp(1rem,2vw,1.15rem);
+  line-height:1.7;
+  margin-bottom:1.15rem;
+  color:#2a2723;
+}
+.ejay-intro__lead strong{font-weight:600}
+
+.ejay-intro__body p{color:#4a4640}
+.ejay-intro__body > p{margin-bottom:1.15rem;max-width:60ch}
+
+.ejay-intro__list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  margin:1.75rem 0;
+}
+.ejay-intro__list li{
+  padding:.5rem 1rem;
+  border:1px solid var(--hairline-dark);
+  border-radius:2px;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#3a3733;
+  transition:border-color .4s var(--ease),color .4s var(--ease),background-color .4s var(--ease);
+}
+.ejay-intro__list li:hover{
+  border-color:var(--ejay-gold);
+  color:var(--ejay-black);
+  background:rgba(200,169,107,.12);
+}
+
+.ejay-intro__note{
+  font-size:.85rem;
+  color:#6b6760;
+  margin-bottom:2rem !important;
+}
+
+/* ==========================================================================
+   TIMELINE / EXPERIENCE
+   ========================================================================== */
+
+.ejay-timeline{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(1rem,2vw,1.5rem);
+  padding-left:clamp(1.75rem,4vw,2.75rem);
+}
+.ejay-timeline::before{
+  content:"";
+  position:absolute;
+  left:clamp(.4rem,1.6vw,.95rem);
+  top:.6rem;bottom:.6rem;
+  width:1px;
+  background:linear-gradient(180deg,var(--ejay-gold),rgba(200,169,107,.08));
+}
+
+.ejay-timeline__item{position:relative}
+
+.ejay-timeline__marker{
+  position:absolute;
+  left:calc(-1 * clamp(1.75rem,4vw,2.75rem) + clamp(.4rem,1.6vw,.95rem) - 4px);
+  top:2.1rem;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:var(--ejay-black);
+  border:1px solid var(--ejay-gold);
+  transition:background-color .45s var(--ease),box-shadow .45s var(--ease),transform .45s var(--ease);
+  z-index:2;
+}
+.ejay-timeline__item:hover .ejay-timeline__marker,
+.ejay-timeline__item.is-open .ejay-timeline__marker{
+  background:var(--ejay-gold);
+  box-shadow:0 0 0 5px rgba(200,169,107,.14);
+  transform:scale(1.15);
+}
+
+.ejay-role-card{
+  position:relative;
+  background:var(--ejay-charcoal);
+  border:1px solid rgba(246,242,234,.07);
+  border-radius:2px;
+  overflow:hidden;
+  transition:border-color .5s var(--ease),background-color .5s var(--ease),transform .5s var(--ease);
+}
+.ejay-role-card:hover{
+  border-color:var(--hairline);
+  background:var(--ejay-graphite);
+  transform:translateX(4px);
+}
+.ejay-role-card.is-open{border-color:var(--hairline);background:var(--ejay-graphite)}
+
+.ejay-role-card::before{
+  content:"";
+  position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--ejay-gold);
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform .6s var(--ease-out);
+}
+.ejay-role-card:hover::before,
+.ejay-role-card.is-open::before{transform:scaleY(1)}
+
+.ejay-role-card__head{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:.5rem 1.25rem;
+  align-items:start;
+  padding:clamp(1.25rem,2.6vw,1.9rem) clamp(1.25rem,2.6vw,2rem);
+  text-align:left;
+}
+@media (min-width:760px){
+  .ejay-role-card__head{grid-template-columns:auto 1fr auto;align-items:center;gap:2rem}
+}
+
+.ejay-role-card__period{
+  font-size:.66rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  white-space:nowrap;
+}
+@media (max-width:759px){
+  .ejay-role-card__period{grid-column:1/-1;order:-1}
+}
+
+.ejay-role-card__body{display:block;min-width:0}
+
+.ejay-role-card__title{
+  display:block;
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem,2.3vw,1.4rem);
+  line-height:1.35;
+  color:var(--ejay-ivory);
+  transition:color .4s var(--ease);
+}
+.ejay-role-card:hover .ejay-role-card__title{color:var(--ejay-gold-light)}
+
+.ejay-role-card__org{
+  display:block;
+  margin-top:.4rem;
+  font-size:.85rem;
+  color:var(--ejay-muted);
+  line-height:1.55;
+}
+
+.ejay-role-card__toggle{
+  position:relative;
+  flex:none;
+  width:38px;height:38px;
+  border:1px solid rgba(246,242,234,.16);
+  border-radius:50%;
+  transition:border-color .45s var(--ease),background-color .45s var(--ease),transform .45s var(--ease);
+}
+.ejay-role-card__toggle::before,
+.ejay-role-card__toggle::after{
+  content:"";
+  position:absolute;left:50%;top:50%;
+  background:var(--ejay-ivory);
+  transform:translate(-50%,-50%);
+  transition:transform .45s var(--ease),background-color .45s var(--ease),opacity .3s var(--ease);
+}
+.ejay-role-card__toggle::before{width:11px;height:1.5px}
+.ejay-role-card__toggle::after{width:1.5px;height:11px}
+
+.ejay-role-card__head:hover .ejay-role-card__toggle{border-color:var(--ejay-gold)}
+.ejay-role-card__head:hover .ejay-role-card__toggle::before,
+.ejay-role-card__head:hover .ejay-role-card__toggle::after{background:var(--ejay-gold)}
+
+.ejay-role-card.is-open .ejay-role-card__toggle{border-color:var(--ejay-gold);background:rgba(200,169,107,.1)}
+.ejay-role-card.is-open .ejay-role-card__toggle::before{background:var(--ejay-gold)}
+.ejay-role-card.is-open .ejay-role-card__toggle::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+
+.ejay-role-card__panel{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .55s var(--ease-out);
+}
+.ejay-role-card.is-open .ejay-role-card__panel{grid-template-rows:1fr}
+.ejay-role-card__panel > div{
+  overflow:hidden;
+  padding-inline:clamp(1.25rem,2.6vw,2rem);
+}
+.ejay-role-card__panel p{
+  font-size:.9rem;
+  color:rgba(246,242,234,.72);
+  max-width:68ch;
+  margin-bottom:.85rem;
+}
+.ejay-role-card.is-open .ejay-role-card__panel > div{padding-bottom:clamp(1.25rem,2.6vw,1.9rem)}
+.ejay-role-card__meta{color:var(--ejay-muted) !important;font-size:.82rem !important}
+.ejay-role-card__meta em{color:var(--ejay-gold)}
+
+.ejay-timeline__note{
+  margin-top:2.25rem;
+  font-size:.85rem;
+  color:var(--ejay-muted);
+}
+.ejay-timeline__note em{color:var(--ejay-gold)}
+
+/* ==========================================================================
+   PROFESSIONAL SPACES
+   ========================================================================== */
+
+.ejay-spaces__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1px;
+  background:rgba(246,242,234,.08);
+  border:1px solid rgba(246,242,234,.08);
+}
+@media (min-width:640px){.ejay-spaces__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.ejay-spaces__grid{grid-template-columns:repeat(4,1fr)}}
+
+.ejay-space-card{
+  position:relative;
+  background:var(--ejay-black);
+  padding:clamp(1.75rem,3vw,2.5rem) clamp(1.25rem,2.4vw,1.9rem);
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  transition:background-color .5s var(--ease);
+}
+.ejay-space-card:hover{background:var(--ejay-charcoal)}
+
+.ejay-space-card__index{
+  font-family:var(--font-display);
+  font-size:1.05rem;
+  color:var(--ejay-gold);
+  letter-spacing:.08em;
+}
+.ejay-space-card__index::after{
+  content:"";
+  display:block;
+  width:26px;height:1px;
+  background:var(--ejay-gold);
+  opacity:.5;
+  margin-top:.7rem;
+  transition:width .5s var(--ease);
+}
+.ejay-space-card:hover .ejay-space-card__index::after{width:48px}
+
+.ejay-space-card__title{
+  font-family:var(--font-display);
+  font-size:clamp(1.1rem,2.2vw,1.32rem);
+  font-weight:400;
+  line-height:1.3;
+  color:var(--ejay-ivory);
+}
+
+.ejay-space-card__role{
+  font-size:.84rem;
+  line-height:1.6;
+  color:var(--ejay-muted);
+  flex:1;
+}
+
+.ejay-space-card__toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.5rem 0;
+  font-size:.66rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  align-self:flex-start;
+  transition:color .4s var(--ease);
+}
+.ejay-space-card__toggle:hover{color:var(--ejay-gold-light)}
+
+.ejay-space-card__toggle-icon{
+  position:relative;
+  width:11px;height:11px;
+  flex:none;
+}
+.ejay-space-card__toggle-icon::before,
+.ejay-space-card__toggle-icon::after{
+  content:"";
+  position:absolute;left:50%;top:50%;
+  background:currentColor;
+  transform:translate(-50%,-50%);
+  transition:transform .45s var(--ease),opacity .3s var(--ease);
+}
+.ejay-space-card__toggle-icon::before{width:11px;height:1.5px}
+.ejay-space-card__toggle-icon::after{width:1.5px;height:11px}
+.ejay-space-card.is-open .ejay-space-card__toggle-icon::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+
+.ejay-space-card__panel{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .55s var(--ease-out);
+}
+.ejay-space-card.is-open .ejay-space-card__panel{grid-template-rows:1fr}
+.ejay-space-card__panel > div{overflow:hidden}
+.ejay-space-card.is-open .ejay-space-card__panel > div{padding-top:.5rem}
+.ejay-space-card__panel p{
+  font-size:.84rem;
+  color:rgba(246,242,234,.68);
+  margin-bottom:.7rem;
+}
+.ejay-space-card__meta{color:var(--ejay-gold) !important;font-size:.78rem !important}
+.ejay-space-card__meta em{color:var(--ejay-muted)}
+
+/* ==========================================================================
+   PUBLIC SERVICE
+   ========================================================================== */
+
+.ejay-service__document{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1.75rem,4vw,3rem);
+  background:var(--ejay-white);
+  border:1px solid var(--hairline-dark);
+  padding:clamp(1.75rem,4vw,3.25rem);
+  max-width:1000px;
+}
+@media (min-width:820px){
+  .ejay-service__document{grid-template-columns:auto 1fr;align-items:start}
+}
+.ejay-service__document::after{
+  content:"";
+  position:absolute;
+  right:clamp(1.75rem,4vw,3.25rem);
+  top:clamp(1.75rem,4vw,3.25rem);
+  width:clamp(48px,8vw,84px);
+  height:clamp(48px,8vw,84px);
+  border-top:1px solid var(--ejay-gold);
+  border-right:1px solid var(--ejay-gold);
+  pointer-events:none;
+}
+
+.ejay-service__badge{
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+  padding-bottom:1.25rem;
+  border-bottom:1px solid var(--hairline-dark);
+}
+@media (min-width:820px){
+  .ejay-service__badge{
+    padding:0 clamp(1.75rem,3vw,2.5rem) 0 0;
+    border-bottom:none;
+    border-right:1px solid var(--hairline-dark);
+    min-width:180px;
+  }
+}
+.ejay-service__badge-years{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3.4vw,2.1rem);
+  color:var(--ejay-black);
+  letter-spacing:.01em;
+}
+.ejay-service__badge-label{
+  font-size:.62rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+
+.ejay-service__body{max-width:60ch}
+.ejay-service__role{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3.4vw,2.2rem);
+  font-weight:400;
+  line-height:1.2;
+  color:var(--ejay-black);
+}
+.ejay-service__org{
+  margin-top:.5rem;
+  font-size:clamp(.95rem,1.8vw,1.08rem);
+  color:#403c37;
+}
+.ejay-service__loc{
+  margin-top:.3rem;
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+.ejay-service__rule{
+  border:none;
+  height:1px;
+  background:var(--hairline-dark);
+  margin:1.5rem 0;
+}
+.ejay-service__body p{color:#4a4640;margin-bottom:1rem}
+.ejay-service__meta{font-size:.86rem;color:#6b6760 !important}
+.ejay-service__meta em{color:var(--ejay-gold)}
+
+/* ==========================================================================
+   BUSINESS
+   ========================================================================== */
+
+.ejay-business__card{
+  position:relative;
+  border:1px solid var(--hairline);
+  background:linear-gradient(155deg,var(--ejay-charcoal),var(--ejay-black) 72%);
+  padding:clamp(1.75rem,4vw,3rem);
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1.75rem,3.5vw,3rem);
+  max-width:1080px;
+  overflow:hidden;
+}
+@media (min-width:900px){
+  .ejay-business__card{grid-template-columns:1fr 1.1fr;align-items:start}
+}
+
+.ejay-business__corner{
+  position:absolute;
+  left:-1px;bottom:-1px;
+  width:clamp(70px,12vw,140px);
+  height:clamp(70px,12vw,140px);
+  background:linear-gradient(45deg,rgba(200,169,107,.14),transparent 62%);
+  pointer-events:none;
+}
+
+.ejay-business__position{
+  font-size:.66rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:1rem;
+}
+.ejay-business__company{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3.6vw,2.3rem);
+  font-weight:400;
+  line-height:1.2;
+  color:var(--ejay-ivory);
+}
+.ejay-business__tagline{
+  margin-top:.9rem;
+  font-size:.88rem;
+  color:var(--ejay-muted);
+  font-style:italic;
+}
+
+.ejay-business__card-body p{color:rgba(246,242,234,.74);margin-bottom:1.25rem;font-size:.92rem}
+
+.ejay-business__areas{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:rgba(246,242,234,.1);
+  border:1px solid rgba(246,242,234,.1);
+  margin-bottom:1.5rem;
+}
+.ejay-business__areas li{
+  background:rgba(13,13,13,.55);
+  padding:1rem 1.1rem;
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(246,242,234,.78);
+  transition:background-color .4s var(--ease),color .4s var(--ease);
+}
+.ejay-business__areas li:hover{background:rgba(200,169,107,.1);color:var(--ejay-gold)}
+
+.ejay-business__placeholder{
+  font-size:.85rem;
+  color:var(--ejay-muted);
+}
+.ejay-business__placeholder em{color:var(--ejay-gold)}
+
+/* ==========================================================================
+   CREATIVE
+   ========================================================================== */
+
+.ejay-creative{
+  background:
+    radial-gradient(ellipse 70% 55% at 88% 8%,rgba(200,169,107,.10),transparent 60%),
+    radial-gradient(ellipse 60% 55% at 4% 92%,rgba(23,72,63,.34),transparent 62%),
+    var(--ejay-black);
+}
+.ejay-creative .ejay-section__lead strong{color:var(--ejay-gold);font-weight:500}
+
+.ejay-creative__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1px;
+  background:rgba(246,242,234,.09);
+  border:1px solid rgba(246,242,234,.09);
+}
+@media (min-width:700px){.ejay-creative__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.ejay-creative__grid{grid-template-columns:repeat(4,1fr)}}
+
+.ejay-creative__tile{
+  position:relative;
+  background:rgba(13,13,13,.72);
+  padding:clamp(1.6rem,3vw,2.4rem) clamp(1.25rem,2.4vw,1.9rem);
+  min-height:clamp(200px,26vw,270px);
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  overflow:hidden;
+  transition:background-color .55s var(--ease);
+}
+@media (min-width:1100px){
+  .ejay-creative__tile--wide{grid-column:span 2}
+}
+.ejay-creative__tile::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(200,169,107,.14),transparent 58%);
+  opacity:0;
+  transition:opacity .55s var(--ease);
+  pointer-events:none;
+}
+.ejay-creative__tile:hover{background:rgba(23,23,23,.92)}
+.ejay-creative__tile:hover::after{opacity:1}
+
+.ejay-creative__tile-index{
+  font-family:var(--font-display);
+  font-size:.95rem;
+  color:var(--ejay-gold);
+  letter-spacing:.1em;
+}
+.ejay-creative__tile-title{
+  font-family:var(--font-display);
+  font-size:clamp(1.25rem,2.6vw,1.7rem);
+  font-weight:400;
+  color:var(--ejay-ivory);
+  margin-top:auto;
+}
+.ejay-creative__tile-text{
+  font-size:.86rem;
+  color:rgba(246,242,234,.66);
+  line-height:1.6;
+  max-width:42ch;
+}
+.ejay-creative__tile-placeholder{
+  font-size:.74rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  opacity:.8;
+}
+
+.ejay-creative__cta{margin-top:clamp(2rem,4vw,3rem)}
+
+/* ==========================================================================
+   LEADERSHIP
+   ========================================================================== */
+
+.ejay-leadership{
+  background:linear-gradient(180deg,var(--ejay-black),#101010);
+  border-top:1px solid rgba(246,242,234,.06);
+}
+.ejay-leadership__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(2.5rem,5vw,4.5rem);
+  align-items:center;
+}
+@media (min-width:960px){
+  .ejay-leadership__grid{grid-template-columns:1.25fr .75fr}
+}
+
+.ejay-leadership__role{
+  font-family:var(--font-display);
+  font-size:clamp(1.4rem,3.2vw,2rem);
+  font-weight:400;
+  color:var(--ejay-gold);
+  margin-bottom:.6rem;
+  margin-top:.5rem;
+}
+.ejay-leadership__org{
+  font-size:clamp(.95rem,2vw,1.1rem);
+  color:var(--ejay-ivory);
+  line-height:1.55;
+  margin-bottom:1.5rem;
+}
+.ejay-leadership__org span{color:var(--ejay-muted);font-size:.9em}
+
+.ejay-leadership__body p{color:rgba(246,242,234,.74);max-width:56ch;margin-bottom:1rem}
+.ejay-leadership__placeholder{font-size:.86rem;color:var(--ejay-muted) !important}
+.ejay-leadership__placeholder em{color:var(--ejay-gold)}
+
+.ejay-leadership__aside{
+  border:1px solid var(--hairline);
+  padding:clamp(1.5rem,3vw,2.25rem);
+  background:rgba(23,23,23,.6);
+}
+.ejay-leadership__monogram{
+  font-family:var(--font-display);
+  font-size:clamp(2.4rem,6vw,3.6rem);
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(200,169,107,.45);
+  letter-spacing:.08em;
+  margin-bottom:1.5rem;
+}
+.ejay-leadership__facts{display:flex;flex-direction:column;gap:0}
+.ejay-leadership__facts li{
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+  padding:1rem 0;
+  border-top:1px solid rgba(246,242,234,.08);
+}
+.ejay-leadership__facts li:first-child{border-top:none;padding-top:0}
+.ejay-leadership__facts span{
+  font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ejay-muted);
+}
+.ejay-leadership__facts strong{
+  font-weight:400;
+  font-size:.92rem;
+  color:var(--ejay-ivory);
+  line-height:1.5;
+}
+
+/* ==========================================================================
+   PORTFOLIO
+   ========================================================================== */
+
+.ejay-portfolio__filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-bottom:clamp(2rem,4vw,3rem);
+  padding-bottom:1.5rem;
+  border-bottom:1px solid rgba(246,242,234,.08);
+}
+
+.ejay-filter{
+  padding:.6rem 1.15rem;
+  border:1px solid rgba(246,242,234,.14);
+  border-radius:2px;
+  font-size:.68rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(246,242,234,.7);
+  transition:color .4s var(--ease),border-color .4s var(--ease),background-color .4s var(--ease);
+}
+.ejay-filter:hover{border-color:var(--ejay-gold);color:var(--ejay-gold)}
+.ejay-filter.is-active{
+  background:var(--ejay-gold);
+  border-color:var(--ejay-gold);
+  color:var(--ejay-black);
+}
+
+.ejay-portfolio__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1rem,2vw,1.5rem);
+}
+@media (min-width:640px){.ejay-portfolio__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.ejay-portfolio__grid{grid-template-columns:repeat(3,1fr)}}
+
+.ejay-project-card{
+  position:relative;
+  border:1px solid rgba(246,242,234,.08);
+  background:var(--ejay-charcoal);
+  overflow:hidden;
+  transition:border-color .5s var(--ease),transform .5s var(--ease);
+  animation:ejayCardIn .5s var(--ease-out) both;
+}
+@keyframes ejayCardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.ejay-project-card:hover{border-color:var(--hairline);transform:translateY(-4px)}
+
+.ejay-project-card__media{
+  position:relative;
+  aspect-ratio:16/11;
+  overflow:hidden;
+  background:var(--ejay-graphite);
+}
+.ejay-project-card__media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s var(--ease-out),opacity .6s var(--ease);
+}
+.ejay-project-card:hover .ejay-project-card__media img{transform:scale(1.05)}
+
+.ejay-project-card__cat{
+  position:absolute;
+  left:1rem;top:1rem;
+  z-index:2;
+  padding:.35rem .75rem;
+  background:rgba(13,13,13,.78);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(200,169,107,.3);
+  font-size:.58rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+
+.ejay-project-card__body{padding:1.35rem 1.35rem 1.5rem}
+.ejay-project-card__title{
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem,2.2vw,1.28rem);
+  font-weight:400;
+  color:var(--ejay-ivory);
+  margin-bottom:.5rem;
+  transition:color .4s var(--ease);
+}
+.ejay-project-card:hover .ejay-project-card__title{color:var(--ejay-gold-light)}
+.ejay-project-card__desc{font-size:.84rem;color:var(--ejay-muted);line-height:1.6}
+
+.ejay-portfolio__empty{
+  margin-top:2rem;
+  font-size:.9rem;
+  color:var(--ejay-muted);
+  text-align:center;
+}
+.ejay-portfolio__empty em{color:var(--ejay-gold)}
+
+/* ==========================================================================
+   MEDIA
+   ========================================================================== */
+
+.ejay-media__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1px;
+  background:var(--hairline-dark);
+  border:1px solid var(--hairline-dark);
+  margin-bottom:clamp(3rem,6vw,5rem);
+}
+@media (min-width:640px){.ejay-media__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.ejay-media__grid{grid-template-columns:repeat(4,1fr)}}
+
+.ejay-media-card{
+  position:relative;
+  background:var(--ejay-white);
+  padding:clamp(1.5rem,3vw,2.1rem) clamp(1.2rem,2.3vw,1.7rem);
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  min-height:220px;
+  transition:background-color .45s var(--ease);
+}
+.ejay-media-card:hover{background:#efe9de}
+
+.ejay-media-card__tag{
+  font-size:.6rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+.ejay-media-card__title{
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem,2.2vw,1.28rem);
+  font-weight:400;
+  color:var(--ejay-black);
+  line-height:1.3;
+}
+.ejay-media-card__text{
+  font-size:.85rem;
+  color:#6b6760;
+  flex:1;
+}
+.ejay-media-card__link{
+  font-size:.64rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#a09a90;
+  padding-top:.9rem;
+  border-top:1px solid var(--hairline-dark);
+}
+
+/* Video */
+.ejay-video__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1rem,2vw,1.5rem);
+}
+@media (min-width:640px){.ejay-video__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.ejay-video__grid{grid-template-columns:repeat(3,1fr)}}
+
+.ejay-video-card{
+  position:relative;
+  aspect-ratio:16/9;
+  border:1px solid var(--hairline-dark);
+  background:linear-gradient(150deg,#1c1c1c,#0e0e0e);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:border-color .5s var(--ease),transform .5s var(--ease);
+}
+.ejay-video-card:hover{border-color:var(--ejay-gold);transform:translateY(-4px)}
+
+.ejay-video-card__play{
+  position:relative;
+  width:64px;height:64px;
+  border:1px solid rgba(200,169,107,.55);
+  border-radius:50%;
+  display:grid;place-items:center;
+  transition:background-color .45s var(--ease),transform .45s var(--ease);
+}
+.ejay-video-card:hover .ejay-video-card__play{background:rgba(200,169,107,.14);transform:scale(1.06)}
+.ejay-video-card__play::after{
+  content:"";
+  width:0;height:0;
+  border-left:14px solid var(--ejay-gold);
+  border-top:9px solid transparent;
+  border-bottom:9px solid transparent;
+  margin-left:4px;
+}
+
+.ejay-video-card__info{
+  position:absolute;
+  left:1.1rem;right:1.1rem;bottom:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+}
+.ejay-video-card__title{
+  font-family:var(--font-display);
+  font-size:1rem;
+  color:var(--ejay-ivory);
+}
+.ejay-video-card__note{
+  font-size:.62rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+
+.ejay-video__note{
+  margin-top:1.75rem;
+  font-size:.82rem;
+  color:#6b6760;
+}
+
+/* ==========================================================================
+   GALLERY
+   ========================================================================== */
+
+.ejay-gallery__grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(.6rem,1.4vw,1rem);
+}
+@media (min-width:768px){.ejay-gallery__grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1100px){.ejay-gallery__grid{grid-template-columns:repeat(4,1fr)}}
+
+.ejay-gallery-item{
+  position:relative;
+  aspect-ratio:1;
+  overflow:hidden;
+  border:1px solid rgba(246,242,234,.08);
+  background:var(--ejay-charcoal);
+  padding:0;
+  display:block;
+  width:100%;
+  transition:border-color .5s var(--ease);
+}
+.ejay-gallery-item:hover{border-color:var(--hairline)}
+
+.ejay-gallery-item img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .8s var(--ease-out),opacity .6s var(--ease);
+}
+.ejay-gallery-item:hover img{transform:scale(1.06)}
+
+.ejay-gallery-item__overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(13,13,13,.88));
+  opacity:0;
+  transition:opacity .5s var(--ease);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:1.1rem;
+  text-align:left;
+}
+.ejay-gallery-item:hover .ejay-gallery-item__overlay,
+.ejay-gallery-item:focus-visible .ejay-gallery-item__overlay{opacity:1}
+
+.ejay-gallery-item__cat{
+  font-size:.56rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:.3rem;
+}
+.ejay-gallery-item__title{
+  font-family:var(--font-display);
+  font-size:.95rem;
+  color:var(--ejay-ivory);
+  line-height:1.3;
+}
+
+.ejay-gallery__note{
+  margin-top:1.75rem;
+  font-size:.82rem;
+  color:var(--ejay-muted);
+}
+
+/* ==========================================================================
+   FOCUS
+   ========================================================================== */
+
+.ejay-focus__grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:rgba(246,242,234,.08);
+  border:1px solid rgba(246,242,234,.08);
+}
+@media (min-width:768px){.ejay-focus__grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1100px){.ejay-focus__grid{grid-template-columns:repeat(6,1fr)}}
+
+.ejay-focus__item{
+  background:var(--ejay-black);
+  padding:clamp(1.5rem,3vw,2.25rem) clamp(1rem,2vw,1.5rem);
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+  font-family:var(--font-display);
+  font-size:clamp(1rem,2vw,1.18rem);
+  color:var(--ejay-ivory);
+  transition:background-color .5s var(--ease),color .5s var(--ease);
+}
+.ejay-focus__item span{
+  font-family:var(--font-body);
+  font-size:.6rem;
+  letter-spacing:.26em;
+  color:var(--ejay-gold);
+}
+.ejay-focus__item:hover{background:var(--ejay-charcoal);color:var(--ejay-gold-light)}
+
+/* ==========================================================================
+   STATEMENT
+   ========================================================================== */
+
+.ejay-statement{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%,rgba(200,169,107,.09),transparent 65%),
+    var(--ejay-charcoal);
+  border-block:1px solid rgba(246,242,234,.06);
+}
+.ejay-statement::before,
+.ejay-statement::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:clamp(60px,14vw,180px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--ejay-gold));
+  opacity:.5;
+}
+.ejay-statement::before{left:0}
+.ejay-statement::after{right:0;transform:scaleX(-1)}
+
+.ejay-statement__eyebrow{
+  font-size:.68rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:1.5rem;
+}
+.ejay-statement__title{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.7rem,5vw,3.4rem);
+  line-height:1.18;
+  letter-spacing:-.015em;
+  color:var(--ejay-ivory);
+  max-width:22ch;
+  margin-inline:auto;
+}
+.ejay-statement__title em{font-style:italic;color:var(--ejay-gold)}
+.ejay-statement__note{
+  margin-top:1.75rem;
+  font-size:.92rem;
+  color:var(--ejay-muted);
+  max-width:46ch;
+  margin-inline:auto;
+}
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+
+.ejay-contact{
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 10%,rgba(23,72,63,.28),transparent 62%),
+    var(--ejay-black);
+}
+.ejay-contact__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(2.5rem,5vw,4.5rem);
+}
+@media (min-width:1000px){
+  .ejay-contact__grid{grid-template-columns:.9fr 1.1fr;align-items:start}
+}
+
+.ejay-contact__lead{
+  color:var(--ejay-muted);
+  max-width:44ch;
+  margin-top:1.25rem;
+  margin-bottom:2rem;
+  font-size:.95rem;
+}
+
+.ejay-contact__details{
+  display:flex;
+  flex-direction:column;
+  border-top:1px solid rgba(246,242,234,.08);
+}
+.ejay-contact__details li{
+  padding:1.15rem 0;
+  border-bottom:1px solid rgba(246,242,234,.08);
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+}
+.ejay-contact__detail-label{
+  font-size:.6rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+.ejay-contact__detail-value{
+  font-family:var(--font-display);
+  font-size:clamp(1rem,2vw,1.2rem);
+  color:var(--ejay-ivory);
+  transition:color .4s var(--ease);
+  word-break:break-word;
+}
+a.ejay-contact__detail-value:hover{color:var(--ejay-gold)}
+.ejay-contact__hint{
+  font-size:.7rem;
+  color:var(--ejay-muted);
+  font-style:italic;
+}
+
+.ejay-contact__social{margin-top:2rem}
+.ejay-contact__social-label{
+  font-size:.6rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:.9rem;
+}
+
+.ejay-social{display:flex;flex-wrap:wrap;gap:.5rem}
+.ejay-social__link{
+  display:inline-block;
+  padding:.5rem 1rem;
+  border:1px solid rgba(246,242,234,.14);
+  border-radius:2px;
+  font-size:.66rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(246,242,234,.72);
+  transition:color .4s var(--ease),border-color .4s var(--ease),background-color .4s var(--ease);
+}
+.ejay-social__link:hover{
+  color:var(--ejay-gold);
+  border-color:var(--ejay-gold);
+  background:rgba(200,169,107,.08);
+}
+
+/* Form */
+.ejay-form{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.25rem;
+  background:rgba(23,23,23,.55);
+  border:1px solid rgba(246,242,234,.08);
+  padding:clamp(1.5rem,3vw,2.5rem);
+}
+@media (min-width:620px){
+  .ejay-form{grid-template-columns:repeat(2,1fr)}
+  .ejay-field--full,
+  .ejay-form__actions{grid-column:1/-1}
+}
+
+.ejay-field{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+
+.ejay-field label{
+  font-size:.62rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ejay-muted);
+}
+.ejay-field label span{color:var(--ejay-gold)}
+
+.ejay-field input,
+.ejay-field select,
+.ejay-field textarea{
+  width:100%;
+  padding:.85rem 1rem;
+  background:rgba(13,13,13,.6);
+  border:1px solid rgba(246,242,234,.12);
+  border-radius:2px;
+  color:var(--ejay-ivory);
+  font-size:.92rem;
+  font-family:var(--font-body);
+  transition:border-color .4s var(--ease),background-color .4s var(--ease);
+}
+.ejay-field textarea{resize:vertical;min-height:130px}
+
+.ejay-field select{
+  appearance:none;
+  -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23C8A96B' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 1rem center;
+  background-size:11px;
+  padding-right:2.6rem;
+  cursor:pointer;
+}
+.ejay-field select option{background:var(--ejay-charcoal);color:var(--ejay-ivory)}
+
+.ejay-field input::placeholder,
+.ejay-field textarea::placeholder{color:rgba(154,150,141,.6)}
+
+.ejay-field input:focus,
+.ejay-field select:focus,
+.ejay-field textarea:focus{
+  outline:none;
+  border-color:var(--ejay-gold);
+  background:rgba(13,13,13,.85);
+}
+
+.ejay-field.has-error input,
+.ejay-field.has-error select,
+.ejay-field.has-error textarea{border-color:#c1614f}
+
+.ejay-field__error{
+  font-size:.72rem;
+  color:#d98a78;
+  min-height:0;
+  line-height:1.4;
+}
+
+.ejay-form__actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1rem 1.5rem;
+  padding-top:.5rem;
+}
+.ejay-form__note{
+  font-size:.72rem;
+  color:var(--ejay-muted);
+  flex:1;
+  min-width:200px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.ejay-footer{
+  background:var(--ejay-black);
+  border-top:1px solid rgba(246,242,234,.08);
+  padding-top:clamp(3rem,6vw,5rem);
+  padding-bottom:2rem;
+}
+
+.ejay-footer__top{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(2rem,4vw,3rem);
+  padding-bottom:clamp(2.5rem,5vw,4rem);
+  border-bottom:1px solid rgba(246,242,234,.08);
+}
+@media (min-width:860px){
+  .ejay-footer__top{grid-template-columns:1.2fr 1fr auto;align-items:start}
+}
+
+.ejay-footer__wordmark{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,5vw,2.8rem);
+  font-weight:600;
+  letter-spacing:.14em;
+  color:var(--ejay-ivory);
+  line-height:1;
+}
+.ejay-footer__name{
+  margin-top:.9rem;
+  font-size:.95rem;
+  color:var(--ejay-ivory);
+}
+.ejay-footer__tag{
+  margin-top:.35rem;
+  font-size:.66rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+}
+
+.ejay-footer__nav ul{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:.6rem 1.5rem;
+}
+.ejay-footer__nav a{
+  font-size:.82rem;
+  color:rgba(246,242,234,.66);
+  transition:color .4s var(--ease),padding-left .4s var(--ease);
+  display:inline-block;
+}
+.ejay-footer__nav a:hover{color:var(--ejay-gold);padding-left:.35rem}
+
+.ejay-footer__social-label{
+  font-size:.6rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ejay-gold);
+  margin-bottom:.9rem;
+}
+
+.ejay-footer__bottom{
+  padding-top:1.75rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem 2rem;
+  justify-content:space-between;
+  align-items:center;
+}
+.ejay-footer__bottom p{
+  font-size:.76rem;
+  color:var(--ejay-muted);
+  letter-spacing:.04em;
+}
+.ejay-footer__meta{
+  font-size:.62rem !important;
+  letter-spacing:.24em !important;
+  text-transform:uppercase;
+  color:rgba(154,150,141,.7) !important;
+}
+
+/* ==========================================================================
+   BACK TO TOP
+   ========================================================================== */
+
+.ejay-back-to-top{
+  position:fixed;
+  right:clamp(1rem,3vw,2rem);
+  bottom:clamp(1rem,3vw,2rem);
+  z-index:1100;
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  background:rgba(13,13,13,.85);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--hairline);
+  border-radius:50%;
+  color:var(--ejay-gold);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(14px);
+  transition:opacity .5s var(--ease),visibility .5s var(--ease),
+             transform .5s var(--ease),background-color .4s var(--ease);
+}
+.ejay-back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.ejay-back-to-top:hover{background:var(--ejay-gold);color:var(--ejay-black);border-color:var(--ejay-gold)}
+
+/* ==========================================================================
+   TOASTS
+   ========================================================================== */
+
+.ejay-toast-stack{
+  position:fixed;
+  left:50%;
+  bottom:clamp(1rem,3vw,2rem);
+  transform:translateX(-50%);
+  z-index:1500;
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  width:min(92vw,420px);
+  pointer-events:none;
+}
+
+.ejay-toast{
+  pointer-events:auto;
+  display:flex;
+  align-items:flex-start;
+  gap:.85rem;
+  padding:1rem 1.15rem;
+  background:rgba(23,23,23,.96);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--hairline);
+  border-left:2px solid var(--ejay-gold);
+  border-radius:2px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+  animation:ejayToastIn .45s var(--ease-out) both;
+}
+.ejay-toast.is-leaving{animation:ejayToastOut .35s var(--ease) forwards}
+.ejay-toast--success{border-left-color:var(--ejay-gold)}
+.ejay-toast--error{border-left-color:#c1614f}
+
+@keyframes ejayToastIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes ejayToastOut{to{opacity:0;transform:translateY(10px) scale(.98)}}
+
+.ejay-toast__icon{
+  flex:none;
+  width:8px;height:8px;
+  margin-top:.45rem;
+  border-radius:50%;
+  background:var(--ejay-gold);
+}
+.ejay-toast--error .ejay-toast__icon{background:#c1614f}
+
+.ejay-toast__text{
+  font-size:.84rem;
+  line-height:1.55;
+  color:rgba(246,242,234,.88);
+}
+
+/* ==========================================================================
+   LIGHTBOX
+   ========================================================================== */
+
+.ejay-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:1600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(1rem,4vw,3rem);
+  background:rgba(6,6,6,.96);
+  backdrop-filter:blur(6px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .45s var(--ease),visibility .45s var(--ease);
+}
+.ejay-lightbox.is-open{opacity:1;visibility:visible}
+
+.ejay-lightbox__figure{
+  position:relative;
+  max-width:min(92vw,1080px);
+  max-height:82vh;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  transform:scale(.96);
+  transition:transform .5s var(--ease-out);
+}
+.ejay-lightbox.is-open .ejay-lightbox__figure{transform:scale(1)}
+
+.ejay-lightbox__stage{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--hairline);
+  background:var(--ejay-charcoal);
+  max-height:76vh;
+}
+.ejay-lightbox__stage img{
+  width:100%;
+  max-height:76vh;
+  object-fit:contain;
+  display:block;
+}
+
+.ejay-lightbox__caption{
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ejay-muted);
+  text-align:center;
+}
+.ejay-lightbox__caption strong{color:var(--ejay-gold);font-weight:400}
+
+.ejay-lightbox__close,
+.ejay-lightbox__nav{
+  position:absolute;
+  z-index:3;
+  display:grid;
+  place-items:center;
+  width:50px;height:50px;
+  border:1px solid rgba(246,242,234,.18);
+  border-radius:50%;
+  color:var(--ejay-ivory);
+  background:rgba(13,13,13,.6);
+  backdrop-filter:blur(10px);
+  transition:background-color .4s var(--ease),border-color .4s var(--ease),
+             color .4s var(--ease),transform .4s var(--ease);
+}
+.ejay-lightbox__close:hover,
+.ejay-lightbox__nav:hover{
+  background:var(--ejay-gold);
+  border-color:var(--ejay-gold);
+  color:var(--ejay-black);
+  transform:scale(1.05);
+}
+
+.ejay-lightbox__close{top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2rem)}
+.ejay-lightbox__nav{top:50%;transform:translateY(-50%)}
+.ejay-lightbox__nav:hover{transform:translateY(-50%) scale(1.05)}
+.ejay-lightbox__nav--prev{left:clamp(.75rem,2.5vw,2rem)}
+.ejay-lightbox__nav--next{right:clamp(.75rem,2.5vw,2rem)}
+
+@media (max-width:600px){
+  .ejay-lightbox__close,
+  .ejay-lightbox__nav{width:42px;height:42px}
+  .ejay-lightbox__nav--prev{left:.5rem}
+  .ejay-lightbox__nav--next{right:.5rem}
+}
+
+/* ==========================================================================
+   VIDEO MODAL
+   ========================================================================== */
+
+.ejay-modal{
+  position:fixed;
+  inset:0;
+  z-index:1650;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(1rem,4vw,3rem);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .45s var(--ease),visibility .45s var(--ease);
+}
+.ejay-modal.is-open{opacity:1;visibility:visible}
+
+.ejay-modal__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(6,6,6,.94);
+  backdrop-filter:blur(6px);
+}
+
+.ejay-modal__panel{
+  position:relative;
+  z-index:2;
+  width:min(94vw,1000px);
+  background:var(--ejay-charcoal);
+  border:1px solid var(--hairline);
+  padding:clamp(1rem,2.5vw,1.75rem);
+  transform:scale(.96) translateY(10px);
+  transition:transform .5s var(--ease-out);
+}
+.ejay-modal.is-open .ejay-modal__panel{transform:scale(1) translateY(0)}
+
+.ejay-modal__close{
+  position:absolute;
+  top:-1px;right:-1px;
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  border:1px solid var(--hairline);
+  background:var(--ejay-black);
+  color:var(--ejay-ivory);
+  transition:background-color .4s var(--ease),color .4s var(--ease);
+}
+.ejay-modal__close:hover{background:var(--ejay-gold);color:var(--ejay-black)}
+
+.ejay-modal__stage{
+  position:relative;
+  aspect-ratio:16/9;
+  background:
+    linear-gradient(150deg,#1a1a1a,#0c0c0c);
+  border:1px solid rgba(246,242,234,.08);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.ejay-modal__stage iframe,
+.ejay-modal__stage video{
+  width:100%;height:100%;border:0;display:block;
+}
+
+.ejay-modal__placeholder{
+  text-align:center;
+  padding:2rem;
+}
+.ejay-modal__placeholder-monogram{
+  font-family:var(--font-display);
+  font-size:clamp(2.4rem,7vw,4rem);
+  color:transparent;
+  -webkit-text-stroke:1px rgba(200,169,107,.45);
+  display:block;
+  margin-bottom:1rem;
+}
+.ejay-modal__placeholder p{
+  font-size:.86rem;
+  color:var(--ejay-muted);
+  letter-spacing:.1em;
+}
+
+.ejay-modal__title{
+  margin-top:1.1rem;
+  font-family:var(--font-display);
+  font-size:clamp(1rem,2vw,1.2rem);
+  color:var(--ejay-ivory);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+
+[data-reveal]{
+  opacity:0;
+  transform:translateY(26px);
+  transition:opacity .9s var(--ease-out),transform .9s var(--ease-out);
+  will-change:opacity,transform;
+}
+[data-reveal].is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE TWEAKS
+   ========================================================================== */
+
+@media (max-width:520px){
+  :root{--nav-h:66px}
+  .ejay-hero{padding-top:calc(var(--nav-h) + 2rem)}
+  .ejay-hero__actions .ejay-btn{width:100%}
+  .ejay-hero__actions{flex-direction:column;align-items:stretch}
+  .ejay-hero__scroll{display:none}
+  .ejay-business__areas{grid-template-columns:1fr}
+  .ejay-footer__bottom{flex-direction:column;align-items:flex-start}
+}
+
+@media (min-width:1440px){
+  :root{--container:1380px}
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  [data-reveal]{opacity:1;transform:none}
+  .ejay-hero__watermark,
+  .ejay-hero__ring,
+  .ejay-hero__block,
+  .ejay-hero__eyebrow,
+  .ejay-hero__monogram,
+  .ejay-hero__descriptor,
+  .ejay-hero__statement,
+  .ejay-hero__location,
+  .ejay-hero__actions,
+  .ejay-hero__portrait,
+  .ejay-hero__scroll{opacity:1 !important;transform:none !important}
+  .ejay-hero__monogram::after{transform:scaleX(1) !important}
+}
+</style>
+</head>
+
+<body>
+
+<a class="ejay-skip-link" href="#main">Skip to main content</a>
+
+<div class="ejay-scroll-progress" id="ejayScrollProgress" aria-hidden="true"><span></span></div>
+
+<!-- ==================== NAVBAR ==================== -->
+<header class="ejay-navbar" id="ejayNavbar">
+  <div class="ejay-container ejay-navbar__inner">
+
+    <a class="ejay-wordmark" href="#home" aria-label="Ejay — home">
+      <span class="ejay-wordmark__text">EJAY</span>
+      <span class="ejay-wordmark__dot" aria-hidden="true"></span>
+    </a>
+
+    <nav class="ejay-nav" aria-label="Primary">
+      <ul class="ejay-nav__list">
+        <li><a class="ejay-nav__link" href="#home">Home</a></li>
+        <li><a class="ejay-nav__link" href="#about">About</a></li>
+        <li><a class="ejay-nav__link" href="#experience">Experience</a></li>
+        <li><a class="ejay-nav__link" href="#business">Business</a></li>
+        <li><a class="ejay-nav__link" href="#creative">Creative</a></li>
+        <li><a class="ejay-nav__link" href="#leadership">Leadership</a></li>
+        <li><a class="ejay-nav__link" href="#portfolio">Portfolio</a></li>
+        <li><a class="ejay-nav__link" href="#media">Media</a></li>
+        <li><a class="ejay-nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="ejay-btn ejay-btn--outline ejay-navbar__cta" href="#contact">Connect</a>
+
+    <button class="ejay-hamburger" id="ejayMenuToggle" type="button"
+            aria-label="Open menu" aria-expanded="false" aria-controls="ejayMobileMenu">
+      <span class="ejay-hamburger__bar"></span>
+      <span class="ejay-hamburger__bar"></span>
+      <span class="ejay-hamburger__bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ==================== MOBILE MENU ==================== -->
+<div class="ejay-mobile-menu" id="ejayMobileMenu" aria-hidden="true">
+  <nav class="ejay-mobile-menu__nav" aria-label="Mobile navigation">
+    <ul>
+      <li style="--i:1"><a class="ejay-mobile-menu__link" href="#home">Home</a></li>
+      <li style="--i:2"><a class="ejay-mobile-menu__link" href="#about">About</a></li>
+      <li style="--i:3"><a class="ejay-mobile-menu__link" href="#experience">Experience</a></li>
+      <li style="--i:4"><a class="ejay-mobile-menu__link" href="#business">Business</a></li>
+      <li style="--i:5"><a class="ejay-mobile-menu__link" href="#creative">Creative</a></li>
+      <li style="--i:6"><a class="ejay-mobile-menu__link" href="#leadership">Leadership</a></li>
+      <li style="--i:7"><a class="ejay-mobile-menu__link" href="#portfolio">Portfolio</a></li>
+      <li style="--i:8"><a class="ejay-mobile-menu__link" href="#media">Media</a></li>
+      <li style="--i:9"><a class="ejay-mobile-menu__link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="ejay-mobile-menu__foot">
+    <a class="ejay-btn ejay-btn--gold" href="#contact">Let's Connect</a>
+    <p class="ejay-mobile-menu__note">Ejor Agbor Ndifon · Cross River State</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="ejay-hero" id="home">
+
+    <div class="ejay-hero__decor" aria-hidden="true">
+      <span class="ejay-hero__watermark">EJ</span>
+      <span class="ejay-hero__ring"></span>
+      <span class="ejay-hero__ring ejay-hero__ring--sm"></span>
+      <span class="ejay-hero__block"></span>
+      <span class="ejay-hero__grain"></span>
+    </div>
+
+    <div class="ejay-container ejay-hero__inner">
+
+      <div class="ejay-hero__content">
+
+        <h1 class="ejay-hero__title">
+          <span class="ejay-hero__eyebrow">Ejor Agbor Ndifon</span>
+          <span class="ejay-hero__monogram">Ejay</span>
+        </h1>
+
+        <p class="ejay-hero__descriptor">
+          Executive <span aria-hidden="true">•</span> Creative Professional <span aria-hidden="true">•</span> Events &amp; Entertainment Leader
+        </p>
+
+        <p class="ejay-hero__statement">
+          Building across public service, creative enterprise, events and entertainment.
+        </p>
+
+        <p class="ejay-hero__location">
+          <span class="ejay-hero__location-dot" aria-hidden="true"></span>
+          Cross River State
+        </p>
+
+        <div class="ejay-hero__actions">
+          <a class="ejay-btn ejay-btn--gold" href="#about">Explore My Profile</a>
+          <a class="ejay-btn ejay-btn--outline" href="#experience">View Experience</a>
+          <a class="ejay-btn ejay-btn--ghost" href="#contact">Let's Connect</a>
+        </div>
+
+      </div>
+
+      <figure class="ejay-hero__portrait">
+        <span class="ejay-hero__portrait-ring" aria-hidden="true"></span>
+        <span class="ejay-hero__portrait-block" aria-hidden="true"></span>
+
+        <div class="ejay-hero__frame">
+          <span class="ejay-media-fallback" aria-hidden="true">
+            <span class="ejay-media-fallback__monogram">EJ</span>
+            <span class="ejay-media-fallback__text">assets/images/ejay-profile.jpg</span>
+          </span>
+          <img class="ejay-media-img" id="ejayPortrait"
+               src="assets/images/ejay-profile.jpg"
+               alt="Portrait of Ejor Agbor Ndifon, known professionally as Ejay"
+               width="720" height="900">
+        </div>
+
+        <figcaption class="ejay-hero__caption">
+          Ejor Agbor Ndifon <span>— Ejay</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <a class="ejay-hero__scroll" href="#snapshot" aria-label="Scroll to professional snapshot">
+      <span class="ejay-hero__scroll-line" aria-hidden="true"></span>
+      <span class="ejay-hero__scroll-text">Scroll</span>
+    </a>
+
+  </section>
+
+
+  <!-- ==================== SNAPSHOT ==================== -->
+  <section class="ejay-section ejay-snapshot" id="snapshot" aria-labelledby="snapshot-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Professional Snapshot</p>
+        <h2 class="ejay-section__title" id="snapshot-title">At a <em>Glance</em></h2>
+      </header>
+
+      <dl class="ejay-snapshot__grid">
+        <div class="ejay-snapshot__item" data-reveal>
+          <dt>Name</dt>
+          <dd>Ejor Agbor Ndifon</dd>
+        </div>
+        <div class="ejay-snapshot__item" data-reveal data-reveal-delay="80">
+          <dt>Known As</dt>
+          <dd>Ejay</dd>
+        </div>
+        <div class="ejay-snapshot__item" data-reveal data-reveal-delay="160">
+          <dt>Based In</dt>
+          <dd>Cross River State</dd>
+        </div>
+        <div class="ejay-snapshot__item" data-reveal data-reveal-delay="240">
+          <dt>Professional Spaces</dt>
+          <dd>Public Service • Business • Events • Entertainment • Creative Leadership</dd>
+        </div>
+        <div class="ejay-snapshot__item" data-reveal data-reveal-delay="320">
+          <dt>Current Roles</dt>
+          <dd>Multiple professional appointments and leadership responsibilities</dd>
+        </div>
+      </dl>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== ABOUT / INTRO ==================== -->
+  <section class="ejay-section is-light ejay-intro" id="about" aria-labelledby="about-title">
+    <div class="ejay-container ejay-intro__grid">
+
+      <figure class="ejay-intro__media" data-reveal>
+        <span class="ejay-media-fallback" aria-hidden="true">
+          <span class="ejay-media-fallback__monogram">EJ</span>
+          <span class="ejay-media-fallback__text">Editorial portrait placeholder</span>
+        </span>
+        <img class="ejay-media-img" src="assets/images/ejay-profile.jpg"
+             alt="Editorial portrait of Ejor Agbor Ndifon (Ejay)" loading="lazy" width="720" height="900">
+        <span class="ejay-intro__media-frame" aria-hidden="true"></span>
+      </figure>
+
+      <div class="ejay-intro__body">
+        <p class="ejay-section__label" data-reveal><span class="ejay-section__label-line" aria-hidden="true"></span>The Man Behind the Roles</p>
+
+        <h2 class="ejay-intro__statement" id="about-title" data-reveal>
+          Public Service.<br>
+          Creative Industry.<br>
+          Events. Entertainment.
+        </h2>
+
+        <p class="ejay-intro__lead" data-reveal>
+          Ejor Agbor Ndifon, professionally known as <strong>Ejay</strong>, operates across the intersection
+          of public-sector advisory, events management, creative leadership and entertainment.
+        </p>
+
+        <p data-reveal>
+          His current professional portfolio reflects involvement across advisory work, business leadership,
+          community and creative coordination, and entertainment promotion and production.
+        </p>
+
+        <ul class="ejay-intro__list" data-reveal>
+          <li>Public-sector advisory</li>
+          <li>Business &amp; enterprise</li>
+          <li>Events management</li>
+          <li>Creative leadership</li>
+          <li>Entertainment</li>
+          <li>Promotion &amp; production</li>
+        </ul>
+
+        <p class="ejay-intro__note" data-reveal>
+          <em>[Full professional biography coming soon.]</em>
+        </p>
+
+        <a class="ejay-btn ejay-btn--dark" href="#experience" data-reveal>Explore My Experience</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="ejay-section ejay-experience" id="experience" aria-labelledby="experience-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Career</p>
+        <h2 class="ejay-section__title" id="experience-title">Professional <em>Experience</em></h2>
+        <p class="ejay-section__lead">
+          A record of current professional roles and appointments. Select any role to expand it.
+        </p>
+      </header>
+
+      <ol class="ejay-timeline" id="ejayTimeline">
+
+        <li class="ejay-timeline__item" data-reveal>
+          <span class="ejay-timeline__marker" aria-hidden="true"></span>
+          <article class="ejay-role-card">
+            <button class="ejay-role-card__head" type="button" aria-expanded="false" aria-controls="role-panel-1">
+              <span class="ejay-role-card__period">2024 — 2027</span>
+              <span class="ejay-role-card__body">
+                <span class="ejay-role-card__title">Technical Adviser to the Special Adviser to the Governor on Oil and Gas</span>
+                <span class="ejay-role-card__org">Cross River State</span>
+              </span>
+              <span class="ejay-role-card__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="ejay-role-card__panel" id="role-panel-1" aria-hidden="true">
+              <div>
+                <p>
+                  Advisory role within the Office of the Special Adviser to the Governor on Oil and Gas,
+                  Cross River State. Term stated as 2024–2027.
+                </p>
+                <p class="ejay-role-card__meta">Scope and responsibilities: <em>[Details coming soon]</em></p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="ejay-timeline__item" data-reveal>
+          <span class="ejay-timeline__marker" aria-hidden="true"></span>
+          <article class="ejay-role-card">
+            <button class="ejay-role-card__head" type="button" aria-expanded="false" aria-controls="role-panel-2">
+              <span class="ejay-role-card__period">Current / Date not provided</span>
+              <span class="ejay-role-card__body">
+                <span class="ejay-role-card__title">CEO / MD</span>
+                <span class="ejay-role-card__org">06:09 Events and Management Ltd</span>
+              </span>
+              <span class="ejay-role-card__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="ejay-role-card__panel" id="role-panel-2" aria-hidden="true">
+              <div>
+                <p>
+                  Chief Executive Officer / Managing Director of 06:09 Events and Management Ltd,
+                  a company operating in the events and management space.
+                </p>
+                <p class="ejay-role-card__meta">Company profile and portfolio: <em>coming soon</em></p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="ejay-timeline__item" data-reveal>
+          <span class="ejay-timeline__marker" aria-hidden="true"></span>
+          <article class="ejay-role-card">
+            <button class="ejay-role-card__head" type="button" aria-expanded="false" aria-controls="role-panel-3">
+              <span class="ejay-role-card__period">Current / Date not provided</span>
+              <span class="ejay-role-card__body">
+                <span class="ejay-role-card__title">Director General</span>
+                <span class="ejay-role-card__org">Creative Entertainment &amp; Events Community (CEEC) — Cross River Central Senatorial District</span>
+              </span>
+              <span class="ejay-role-card__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="ejay-role-card__panel" id="role-panel-3" aria-hidden="true">
+              <div>
+                <p>
+                  Director General of the Creative Entertainment &amp; Events Community (CEEC)
+                  for the Cross River Central Senatorial District.
+                </p>
+                <p class="ejay-role-card__meta">CEEC profile link: <em>coming soon</em></p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="ejay-timeline__item" data-reveal>
+          <span class="ejay-timeline__marker" aria-hidden="true"></span>
+          <article class="ejay-role-card">
+            <button class="ejay-role-card__head" type="button" aria-expanded="false" aria-controls="role-panel-4">
+              <span class="ejay-role-card__period">Current / Date not provided</span>
+              <span class="ejay-role-card__body">
+                <span class="ejay-role-card__title">Head of Promotion &amp; Production</span>
+                <span class="ejay-role-card__org">Romaan Group</span>
+              </span>
+              <span class="ejay-role-card__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="ejay-role-card__panel" id="role-panel-4" aria-hidden="true">
+              <div>
+                <p>
+                  Leads promotion and production functions at Romaan Group within the entertainment industry.
+                </p>
+                <p class="ejay-role-card__meta">Selected work: <em>will be featured here</em></p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+      </ol>
+
+      <p class="ejay-timeline__note" data-reveal>
+        Dates are shown only where provided. <em>Additional roles and history coming soon.</em>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== PROFESSIONAL SPACES ==================== -->
+  <section class="ejay-section ejay-spaces" id="spaces" aria-labelledby="spaces-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Areas of Work</p>
+        <h2 class="ejay-section__title" id="spaces-title">My Professional <em>Spaces</em></h2>
+      </header>
+
+      <div class="ejay-spaces__grid">
+
+        <article class="ejay-space-card" data-reveal>
+          <span class="ejay-space-card__index" aria-hidden="true">01</span>
+          <h3 class="ejay-space-card__title">Public Service &amp; Advisory</h3>
+          <p class="ejay-space-card__role">
+            Technical Adviser to the Special Adviser to the Governor on Oil and Gas, Cross River State
+          </p>
+          <button class="ejay-space-card__toggle" type="button" aria-expanded="false" aria-controls="space-panel-1">
+            <span class="ejay-space-card__toggle-text">View details</span>
+            <span class="ejay-space-card__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="ejay-space-card__panel" id="space-panel-1" aria-hidden="true">
+            <div>
+              <p>Advisory engagement within the Office of the Special Adviser to the Governor on Oil and Gas, Cross River State. Stated term: 2024–2027.</p>
+              <p class="ejay-space-card__meta">[Additional detail coming soon]</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="ejay-space-card" data-reveal data-reveal-delay="100">
+          <span class="ejay-space-card__index" aria-hidden="true">02</span>
+          <h3 class="ejay-space-card__title">Business &amp; Events</h3>
+          <p class="ejay-space-card__role">
+            CEO / MD — 06:09 Events and Management Ltd
+          </p>
+          <button class="ejay-space-card__toggle" type="button" aria-expanded="false" aria-controls="space-panel-2">
+            <span class="ejay-space-card__toggle-text">View details</span>
+            <span class="ejay-space-card__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="ejay-space-card__panel" id="space-panel-2" aria-hidden="true">
+            <div>
+              <p>Business leadership within an events and management company.</p>
+              <p class="ejay-space-card__meta">Company profile and portfolio coming soon.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="ejay-space-card" data-reveal data-reveal-delay="200">
+          <span class="ejay-space-card__index" aria-hidden="true">03</span>
+          <h3 class="ejay-space-card__title">Creative &amp; Community Leadership</h3>
+          <p class="ejay-space-card__role">
+            Director General — Creative Entertainment &amp; Events Community (CEEC), Cross River Central Senatorial District
+          </p>
+          <button class="ejay-space-card__toggle" type="button" aria-expanded="false" aria-controls="space-panel-3">
+            <span class="ejay-space-card__toggle-text">View details</span>
+            <span class="ejay-space-card__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="ejay-space-card__panel" id="space-panel-3" aria-hidden="true">
+            <div>
+              <p>Leadership within a creative entertainment and events community covering the Cross River Central Senatorial District.</p>
+              <p class="ejay-space-card__meta">CEEC profile link — coming soon.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="ejay-space-card" data-reveal data-reveal-delay="300">
+          <span class="ejay-space-card__index" aria-hidden="true">04</span>
+          <h3 class="ejay-space-card__title">Promotion &amp; Production</h3>
+          <p class="ejay-space-card__role">
+            Head of Promotion &amp; Production — Romaan Group
+          </p>
+          <button class="ejay-space-card__toggle" type="button" aria-expanded="false" aria-controls="space-panel-4">
+            <span class="ejay-space-card__toggle-text">View details</span>
+            <span class="ejay-space-card__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="ejay-space-card__panel" id="space-panel-4" aria-hidden="true">
+            <div>
+              <p>Promotion and production responsibilities within the entertainment industry.</p>
+              <p class="ejay-space-card__meta">Selected work will be featured here.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== PUBLIC SERVICE ==================== -->
+  <section class="ejay-section is-light ejay-service" id="service" aria-labelledby="service-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Appointment</p>
+        <h2 class="ejay-section__title" id="service-title">Public Service &amp; <em>Advisory</em></h2>
+      </header>
+
+      <div class="ejay-service__document" data-reveal>
+        <div class="ejay-service__badge">
+          <span class="ejay-service__badge-years">2024 — 2027</span>
+          <span class="ejay-service__badge-label">Term</span>
+        </div>
+
+        <div class="ejay-service__body">
+          <h3 class="ejay-service__role">Technical Adviser</h3>
+          <p class="ejay-service__org">To the Special Adviser to the Governor on Oil and Gas</p>
+          <p class="ejay-service__loc">Cross River State</p>
+
+          <hr class="ejay-service__rule" aria-hidden="true">
+
+          <p>
+            A professional advisory appointment within the Office of the Special Adviser to the Governor
+            on Oil and Gas, Cross River State.
+          </p>
+          <p class="ejay-service__meta">
+            Further information about this role, responsibilities and engagements will be published here.
+            <em>[Details coming soon]</em>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== BUSINESS ==================== -->
+  <section class="ejay-section ejay-business" id="business" aria-labelledby="business-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Enterprise</p>
+        <h2 class="ejay-section__title" id="business-title">Business &amp; <em>Enterprise</em></h2>
+      </header>
+
+      <article class="ejay-business__card" data-reveal>
+        <div class="ejay-business__card-top">
+          <p class="ejay-business__position">CEO / MD</p>
+          <h3 class="ejay-business__company">06:09 Events and Management Ltd</h3>
+          <p class="ejay-business__tagline">Events. Management. Production. Creative services.</p>
+        </div>
+
+        <div class="ejay-business__card-body">
+          <p>
+            Leadership of an events and management company. The areas below reflect the company's
+            stated field of operation and are subject to confirmation.
+          </p>
+
+          <ul class="ejay-business__areas">
+            <li>Events</li>
+            <li>Management</li>
+            <li>Production</li>
+            <li>Creative Services</li>
+          </ul>
+
+          <p class="ejay-business__placeholder">
+            <em>Company profile and portfolio coming soon.</em>
+          </p>
+        </div>
+
+        <span class="ejay-business__corner" aria-hidden="true"></span>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== CREATIVE ==================== -->
+  <section class="ejay-section ejay-creative" id="creative" aria-labelledby="creative-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head ejay-section__head--split" data-reveal>
+        <div>
+          <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Industry</p>
+          <h2 class="ejay-section__title" id="creative-title">Creative &amp; <em>Entertainment</em></h2>
+        </div>
+        <p class="ejay-section__lead">
+          Head of Promotion &amp; Production at <strong>Romaan Group</strong> — working within the
+          promotion and production side of the entertainment industry.
+        </p>
+      </header>
+
+      <div class="ejay-creative__grid">
+
+        <article class="ejay-creative__tile ejay-creative__tile--wide" data-reveal>
+          <span class="ejay-creative__tile-index" aria-hidden="true">01</span>
+          <h3 class="ejay-creative__tile-title">Promotion</h3>
+          <p class="ejay-creative__tile-text">Promotional direction and campaign work within entertainment.</p>
+          <p class="ejay-creative__tile-placeholder">Selected work will be featured here.</p>
+        </article>
+
+        <article class="ejay-creative__tile" data-reveal data-reveal-delay="80">
+          <span class="ejay-creative__tile-index" aria-hidden="true">02</span>
+          <h3 class="ejay-creative__tile-title">Production</h3>
+          <p class="ejay-creative__tile-text">Production responsibilities across entertainment projects.</p>
+          <p class="ejay-creative__tile-placeholder">Selected work will be featured here.</p>
+        </article>
+
+        <article class="ejay-creative__tile" data-reveal data-reveal-delay="160">
+          <span class="ejay-creative__tile-index" aria-hidden="true">03</span>
+          <h3 class="ejay-creative__tile-title">Events</h3>
+          <p class="ejay-creative__tile-text">Event delivery and management across formats.</p>
+          <p class="ejay-creative__tile-placeholder">Event gallery coming soon.</p>
+        </article>
+
+        <article class="ejay-creative__tile ejay-creative__tile--wide" data-reveal data-reveal-delay="240">
+          <span class="ejay-creative__tile-index" aria-hidden="true">04</span>
+          <h3 class="ejay-creative__tile-title">Entertainment</h3>
+          <p class="ejay-creative__tile-text">Engagement across the entertainment and creative industries.</p>
+          <p class="ejay-creative__tile-placeholder">Selected work will be featured here.</p>
+        </article>
+
+      </div>
+
+      <div class="ejay-creative__cta" data-reveal>
+        <a class="ejay-btn ejay-btn--gold" href="#portfolio">View My Work</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== LEADERSHIP ==================== -->
+  <section class="ejay-section ejay-leadership" id="leadership" aria-labelledby="leadership-title">
+    <div class="ejay-container ejay-leadership__grid">
+
+      <div class="ejay-leadership__body">
+        <p class="ejay-section__label" data-reveal><span class="ejay-section__label-line" aria-hidden="true"></span>Community</p>
+        <h2 class="ejay-section__title" id="leadership-title" data-reveal>Community <em>Leadership</em></h2>
+
+        <h3 class="ejay-leadership__role" data-reveal>Director General</h3>
+        <p class="ejay-leadership__org" data-reveal>
+          Creative Entertainment &amp; Events Community (CEEC)<br>
+          <span>Cross River Central Senatorial District</span>
+        </p>
+
+        <p data-reveal>
+          A leadership role within a creative entertainment and events community serving the
+          Cross River Central Senatorial District.
+        </p>
+
+        <p class="ejay-leadership__placeholder" data-reveal>
+          <em>CEEC profile link — coming soon.</em>
+        </p>
+      </div>
+
+      <div class="ejay-leadership__aside" data-reveal>
+        <div class="ejay-leadership__monogram" aria-hidden="true">CEEC</div>
+        <ul class="ejay-leadership__facts">
+          <li><span>Role</span><strong>Director General</strong></li>
+          <li><span>Body</span><strong>Creative Entertainment &amp; Events Community</strong></li>
+          <li><span>Coverage</span><strong>Cross River Central Senatorial District</strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== PORTFOLIO ==================== -->
+  <section class="ejay-section ejay-portfolio" id="portfolio" aria-labelledby="portfolio-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Work</p>
+        <h2 class="ejay-section__title" id="portfolio-title">Portfolio &amp; <em>Projects</em></h2>
+        <p class="ejay-section__lead">
+          Selected projects and engagements will be published here as they are confirmed.
+        </p>
+      </header>
+
+      <div class="ejay-portfolio__filters" id="ejayProjectFilters" role="tablist" aria-label="Project categories" data-reveal>
+        <button class="ejay-filter is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="ejay-filter" type="button" role="tab" aria-selected="false" data-filter="events">Events</button>
+        <button class="ejay-filter" type="button" role="tab" aria-selected="false" data-filter="entertainment">Entertainment</button>
+        <button class="ejay-filter" type="button" role="tab" aria-selected="false" data-filter="promotion">Promotion</button>
+        <button class="ejay-filter" type="button" role="tab" aria-selected="false" data-filter="production">Production</button>
+        <button class="ejay-filter" type="button" role="tab" aria-selected="false" data-filter="business">Business</button>
+        <button class="ejay-filter" type="button" role="tab" aria-selected="false" data-filter="community">Community</button>
+      </div>
+
+      <div class="ejay-portfolio__grid" id="ejayProjectGrid" aria-live="polite"></div>
+
+      <p class="ejay-portfolio__empty" id="ejayProjectEmpty" hidden>
+        No projects in this category yet. <em>Details coming soon.</em>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== MEDIA & VIDEO ==================== -->
+  <section class="ejay-section is-light ejay-media" id="media" aria-labelledby="media-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Press</p>
+        <h2 class="ejay-section__title" id="media-title">Media &amp; <em>Press</em></h2>
+        <p class="ejay-section__lead">
+          Media appearances and publications will be featured here.
+        </p>
+      </header>
+
+      <div class="ejay-media__grid">
+
+        <article class="ejay-media-card" data-reveal>
+          <span class="ejay-media-card__tag">Interviews</span>
+          <h3 class="ejay-media-card__title">Interview Feature</h3>
+          <p class="ejay-media-card__text"><em>Details coming soon.</em></p>
+          <span class="ejay-media-card__link" aria-hidden="true">Placeholder</span>
+        </article>
+
+        <article class="ejay-media-card" data-reveal data-reveal-delay="80">
+          <span class="ejay-media-card__tag">Features</span>
+          <h3 class="ejay-media-card__title">Press Feature</h3>
+          <p class="ejay-media-card__text"><em>Details coming soon.</em></p>
+          <span class="ejay-media-card__link" aria-hidden="true">Placeholder</span>
+        </article>
+
+        <article class="ejay-media-card" data-reveal data-reveal-delay="160">
+          <span class="ejay-media-card__tag">Appearances</span>
+          <h3 class="ejay-media-card__title">Event Appearance</h3>
+          <p class="ejay-media-card__text"><em>Details coming soon.</em></p>
+          <span class="ejay-media-card__link" aria-hidden="true">Placeholder</span>
+        </article>
+
+        <article class="ejay-media-card" data-reveal data-reveal-delay="240">
+          <span class="ejay-media-card__tag">Photography</span>
+          <h3 class="ejay-media-card__title">Editorial Photography</h3>
+          <p class="ejay-media-card__text"><em>Details coming soon.</em></p>
+          <span class="ejay-media-card__link" aria-hidden="true">Placeholder</span>
+        </article>
+
+      </div>
+
+      <div class="ejay-video" aria-labelledby="video-title">
+        <header class="ejay-section__head ejay-section__head--compact" data-reveal>
+          <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Watch</p>
+          <h3 class="ejay-section__title ejay-section__title--sm" id="video-title">Video</h3>
+        </header>
+
+        <div class="ejay-video__grid" id="ejayVideoGrid"></div>
+
+        <p class="ejay-video__note" data-reveal>
+          Video links (YouTube, Vimeo or MP4) can be added in the <code>videos</code> array inside the script.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== GALLERY ==================== -->
+  <section class="ejay-section ejay-gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Visuals</p>
+        <h2 class="ejay-section__title" id="gallery-title">Photo <em>Gallery</em></h2>
+        <p class="ejay-section__lead">
+          Professional, events, creative, community and behind-the-scenes imagery.
+        </p>
+      </header>
+
+      <div class="ejay-gallery__grid" id="ejayGalleryGrid"></div>
+
+      <p class="ejay-gallery__note" data-reveal>
+        Add real photographs to <code>assets/images/gallery/</code> and update the <code>galleryItems</code> array.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== FOCUS ==================== -->
+  <section class="ejay-section ejay-focus" id="focus" aria-labelledby="focus-title">
+    <div class="ejay-container">
+
+      <header class="ejay-section__head" data-reveal>
+        <p class="ejay-section__label"><span class="ejay-section__label-line" aria-hidden="true"></span>Areas</p>
+        <h2 class="ejay-section__title" id="focus-title">Professional <em>Focus</em></h2>
+        <p class="ejay-section__lead">
+          Themes represented across this portfolio. These describe areas of work — not declared personal values.
+        </p>
+      </header>
+
+      <ul class="ejay-focus__grid">
+        <li class="ejay-focus__item" data-reveal><span aria-hidden="true">01</span>Leadership</li>
+        <li class="ejay-focus__item" data-reveal data-reveal-delay="70"><span aria-hidden="true">02</span>Creativity</li>
+        <li class="ejay-focus__item" data-reveal data-reveal-delay="140"><span aria-hidden="true">03</span>Professionalism</li>
+        <li class="ejay-focus__item" data-reveal data-reveal-delay="210"><span aria-hidden="true">04</span>Collaboration</li>
+        <li class="ejay-focus__item" data-reveal data-reveal-delay="280"><span aria-hidden="true">05</span>Community</li>
+        <li class="ejay-focus__item" data-reveal data-reveal-delay="350"><span aria-hidden="true">06</span>Execution</li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== STATEMENT ==================== -->
+  <section class="ejay-section ejay-statement" aria-labelledby="statement-title">
+    <div class="ejay-container">
+      <p class="ejay-statement__eyebrow" data-reveal>More than a title.</p>
+      <h2 class="ejay-statement__title" id="statement-title" data-reveal>
+        One professional journey.<br>
+        <em>Multiple spaces of impact.</em>
+      </h2>
+      <p class="ejay-statement__note" data-reveal>
+        A portfolio spanning public service, business, events, entertainment and creative leadership.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="ejay-section ejay-contact" id="contact" aria-labelledby="contact-title">
+    <div class="ejay-container ejay-contact__grid">
+
+      <div class="ejay-contact__intro">
+        <p class="ejay-section__label" data-reveal><span class="ejay-section__label-line" aria-hidden="true"></span>Get in touch</p>
+        <h2 class="ejay-section__title" id="contact-title" data-reveal>Let's <em>Connect.</em></h2>
+        <p class="ejay-contact__lead" data-reveal>
+          For professional enquiries, collaborations, events, media opportunities and other engagements.
+        </p>
+
+        <ul class="ejay-contact__details" data-reveal>
+          <li>
+            <span class="ejay-contact__detail-label">Email</span>
+            <a href="mailto:email@example.com" class="ejay-contact__detail-value">email@example.com</a>
+            <span class="ejay-contact__hint">[Placeholder — replace with real address]</span>
+          </li>
+          <li>
+            <span class="ejay-contact__detail-label">Phone</span>
+            <a href="tel:+2340000000000" class="ejay-contact__detail-value">+234 XXX XXX XXXX</a>
+            <span class="ejay-contact__hint">[Placeholder — replace with real number]</span>
+          </li>
+          <li>
+            <span class="ejay-contact__detail-label">Location</span>
+            <span class="ejay-contact__detail-value">Cross River State, Nigeria</span>
+          </li>
+        </ul>
+
+        <div class="ejay-contact__social" data-reveal>
+          <p class="ejay-contact__social-label">Social</p>
+          <ul class="ejay-social">
+            <li><a href="#" class="ejay-social__link" aria-label="Instagram (link placeholder)">Instagram</a></li>
+            <li><a href="#" class="ejay-social__link" aria-label="X / Twitter (link placeholder)">X</a></li>
+            <li><a href="#" class="ejay-social__link" aria-label="LinkedIn (link placeholder)">LinkedIn</a></li>
+            <li><a href="#" class="ejay-social__link" aria-label="Facebook (link placeholder)">Facebook</a></li>
+          </ul>
+          <p class="ejay-contact__hint">[Social media links — placeholders]</p>
+        </div>
+      </div>
+
+      <div class="ejay-contact__form-wrap" data-reveal>
+        <form class="ejay-form" id="ejayContactForm" novalidate>
+
+          <div class="ejay-field">
+            <label for="cf-name">Full Name <span aria-hidden="true">*</span></label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required
+                   aria-describedby="cf-name-error">
+            <span class="ejay-field__error" id="cf-name-error" aria-live="polite"></span>
+          </div>
+
+          <div class="ejay-field">
+            <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required
+                   aria-describedby="cf-email-error">
+            <span class="ejay-field__error" id="cf-email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="ejay-field">
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+                   aria-describedby="cf-phone-error">
+            <span class="ejay-field__error" id="cf-phone-error" aria-live="polite"></span>
+          </div>
+
+          <div class="ejay-field">
+            <label for="cf-organisation">Organization</label>
+            <input id="cf-organisation" name="organisation" type="text" autocomplete="organization">
+            <span class="ejay-field__error" aria-live="polite"></span>
+          </div>
+
+          <div class="ejay-field">
+            <label for="cf-type">Enquiry Type <span aria-hidden="true">*</span></label>
+            <select id="cf-type" name="enquiryType" required aria-describedby="cf-type-error">
+              <option value="">Select an enquiry type</option>
+              <option value="professional">Professional</option>
+              <option value="business">Business</option>
+              <option value="events">Events</option>
+              <option value="creative">Creative Collaboration</option>
+              <option value="media">Media</option>
+              <option value="speaking">Speaking / Engagement</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="ejay-field__error" id="cf-type-error" aria-live="polite"></span>
+          </div>
+
+          <div class="ejay-field ejay-field--full">
+            <label for="cf-message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="cf-message" name="message" rows="5" required
+                      aria-describedby="cf-message-error"></textarea>
+            <span class="ejay-field__error" id="cf-message-error" aria-live="polite"></span>
+          </div>
+
+          <div class="ejay-form__actions">
+            <button class="ejay-btn ejay-btn--gold" type="submit">Send Enquiry</button>
+            <p class="ejay-form__note">This form is a front-end demo. Connect it to your preferred mail service.</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="ejay-footer">
+  <div class="ejay-container">
+
+    <div class="ejay-footer__top">
+      <div class="ejay-footer__brand">
+        <p class="ejay-footer__wordmark">EJAY</p>
+        <p class="ejay-footer__name">Ejor Agbor Ndifon</p>
+        <p class="ejay-footer__tag">Professional Portfolio</p>
+      </div>
+
+      <nav class="ejay-footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#business">Business</a></li>
+          <li><a href="#creative">Creative</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="ejay-footer__social">
+        <p class="ejay-footer__social-label">Social</p>
+        <ul class="ejay-social ejay-social--footer">
+          <li><a href="#" class="ejay-social__link" aria-label="Instagram (link placeholder)">Instagram</a></li>
+          <li><a href="#" class="ejay-social__link" aria-label="X / Twitter (link placeholder)">X</a></li>
+          <li><a href="#" class="ejay-social__link" aria-label="LinkedIn (link placeholder)">LinkedIn</a></li>
+          <li><a href="#" class="ejay-social__link" aria-label="Facebook (link placeholder)">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ejay-footer__bottom">
+      <p>&copy; 2026 Ejor Agbor Ndifon. All Rights Reserved.</p>
+      <p class="ejay-footer__meta">Executive Presence. Creative Energy. Digital Simplicity.</p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ==================== BACK TO TOP ==================== -->
+<button class="ejay-back-to-top" id="ejayBackToTop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+    <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+
+<!-- ==================== TOASTS ==================== -->
+<div class="ejay-toast-stack" id="ejayToastStack" role="status" aria-live="polite" aria-atomic="false"></div>
+
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div class="ejay-lightbox" id="ejayLightbox" role="dialog" aria-modal="true"
+     aria-label="Image viewer" aria-hidden="true">
+  <button class="ejay-lightbox__close" type="button" data-lb="close" aria-label="Close image viewer">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <button class="ejay-lightbox__nav ejay-lightbox__nav--prev" type="button" data-lb="prev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+      <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <figure class="ejay-lightbox__figure">
+    <div class="ejay-lightbox__stage">
+      <img id="ejayLightboxImage" src="" alt="">
+    </div>
+    <figcaption class="ejay-lightbox__caption" id="ejayLightboxCaption"></figcaption>
+  </figure>
+
+  <button class="ejay-lightbox__nav ejay-lightbox__nav--next" type="button" data-lb="next" aria-label="Next image">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+      <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+
+<!-- ==================== VIDEO MODAL ==================== -->
+<div class="ejay-modal" id="ejayVideoModal" role="dialog" aria-modal="true"
+     aria-label="Video player" aria-hidden="true">
+  <div class="ejay-modal__backdrop" data-modal="close"></div>
+  <div class="ejay-modal__panel" role="document">
+    <button class="ejay-modal__close" type="button" data-modal="close" aria-label="Close video">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="ejay-modal__stage" id="ejayVideoStage"></div>
+    <p class="ejay-modal__title" id="ejayVideoTitle"></p>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  'use strict';
+
+  /* ==========================================================================
+     UTILITIES
+     ========================================================================== */
+
+  var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
+  var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function debounce(fn, wait) {
+    var t;
+    return function () {
+      var args = arguments, ctx = this;
+      clearTimeout(t);
+      t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+    };
+  }
+
+  /* ==========================================================================
+     PLACEHOLDER IMAGE GENERATOR
+     Creates elegant inline SVG placeholders so the layout never breaks
+     when real photographs are not yet available.
+     ========================================================================== */
+
+  function placeholderImage(label, tone) {
+    var bg1 = tone === 'emerald' ? '#17483F' : '#242424';
+    var bg2 = tone === 'emerald' ? '#0f2f29' : '#101010';
+    var text = String(label || 'Placeholder').toUpperCase();
+
+    var svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">' +
+        '<defs>' +
+          '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+            '<stop offset="0%" stop-color="' + bg1 + '"/>' +
+            '<stop offset="100%" stop-color="' + bg2 + '"/>' +
+          '</linearGradient>' +
+        '</defs>' +
+        '<rect width="1200" height="900" fill="url(#g)"/>' +
+        '<rect x="34" y="34" width="1132" height="832" fill="none" stroke="#C8A96B" stroke-opacity="0.22" stroke-width="2"/>' +
+        '<circle cx="600" cy="430" r="150" fill="none" stroke="#C8A96B" stroke-opacity="0.28" stroke-width="1.5"/>' +
+        '<text x="600" y="452" text-anchor="middle" font-family="Georgia, serif" font-size="118" ' +
+          'fill="none" stroke="#C8A96B" stroke-opacity="0.55" stroke-width="1.4">EJ</text>' +
+        '<text x="600" y="700" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" ' +
+          'font-size="26" letter-spacing="8" fill="#9A968D" fill-opacity="0.85">' + text + '</text>' +
+      '</svg>';
+
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+
+  /* ==========================================================================
+     TOAST NOTIFICATIONS
+     ========================================================================== */
+
+  var toastStack = $('#ejayToastStack');
+
+  function showToast(message, type) {
+    if (!toastStack) return;
+
+    var toast = document.createElement('div');
+    toast.className = 'ejay-toast' + (type === 'error' ? ' ejay-toast--error' : ' ejay-toast--success');
+
+    var icon = document.createElement('span');
+    icon.className = 'ejay-toast__icon';
+    icon.setAttribute('aria-hidden', 'true');
+
+    var text = document.createElement('p');
+    text.className = 'ejay-toast__text';
+    text.textContent = message;
+
+    toast.appendChild(icon);
+    toast.appendChild(text);
+    toastStack.appendChild(toast);
+
+    setTimeout(function () {
+      toast.classList.add('is-leaving');
+      setTimeout(function () {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 380);
+    }, 4200);
+  }
+
+  /* ==========================================================================
+     IMAGE FALLBACK HANDLING
+     ========================================================================== */
+
+  function initMediaFallbacks() {
+    $$('.ejay-media-img').forEach(function (img) {
+      function markLoaded() { img.classList.add('is-loaded'); }
+      function markFailed() { img.classList.remove('is-loaded'); }
+
+      if (img.complete) {
+        if (img.naturalWidth > 0) { markLoaded(); } else { markFailed(); }
+      }
+      img.addEventListener('load', markLoaded);
+      img.addEventListener('error', markFailed);
+    });
+  }
+
+  /* ==========================================================================
+     NAVIGATION — scroll state + active section + hide on scroll down
+     ========================================================================== */
+
+  function initNavigation() {
+    var navbar = $('#ejayNavbar');
+    if (!navbar) return;
+
+    var lastY = window.pageYOffset;
+    var ticking = false;
+
+    function update() {
+      var y = window.pageYOffset;
+
+      if (y > 24) {
+        navbar.classList.add('is-scrolled');
+      } else {
+        navbar.classList.remove('is-scrolled');
+      }
+
+      // Hide navbar when scrolling down past the hero, show when scrolling up
+      if (y > 520 && y > lastY + 6) {
+        navbar.classList.add('is-hidden');
+      } else if (y < lastY - 6 || y < 520) {
+        navbar.classList.remove('is-hidden');
+      }
+
+      lastY = y;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    update();
+  }
+
+  /* ==========================================================================
+     ACTIVE SECTION DETECTION
+     ========================================================================== */
+
+  function initActiveSection() {
+    var links = $$('.ejay-nav__link');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+
+    var map = {};
+    var sections = [];
+
+    links.forEach(function (link) {
+      var id = link.getAttribute('href');
+      if (!id || id.charAt(0) !== '#') return;
+      var section = document.querySelector(id);
+      if (!section) return;
+      map[section.id] = link;
+      sections.push(section);
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (l) { l.classList.remove('is-active'); });
+        var active = map[entry.target.id];
+        if (active) active.classList.add('is-active');
+      });
+    }, {
+      rootMargin: '-45% 0px -50% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+
+  /* ==========================================================================
+     MOBILE MENU
+     ========================================================================== */
+
+  function initMobileMenu() {
+    var toggle = $('#ejayMenuToggle');
+    var menu   = $('#ejayMobileMenu');
+    if (!toggle || !menu) return;
+
+    var isOpen = false;
+
+    function openMenu() {
+      isOpen = true;
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      toggle.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+      document.body.classList.add('is-locked');
+    }
+
+    function closeMenu() {
+      isOpen = false;
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      document.body.classList.remove('is-locked');
+    }
+
+    toggle.addEventListener('click', function () {
+      if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+
+    $$('.ejay-mobile-menu__link, .ejay-mobile-menu .ejay-btn').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (isOpen) closeMenu();
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', debounce(function () {
+      if (window.innerWidth > 1080 && isOpen) closeMenu();
+    }, 180));
+  }
+
+  /* ==========================================================================
+     SCROLL PROGRESS
+     ========================================================================== */
+
+  function initScrollProgress() {
+    var bar = $('#ejayScrollProgress span');
+    if (!bar) return;
+
+    var ticking = false;
+
+    function update() {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var progress = max > 0 ? (window.pageYOffset / max) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* ==========================================================================
+     SCROLL REVEAL
+     ========================================================================== */
+
+  function initScrollReveal() {
+    var items = $$('[data-reveal]');
+    if (!items.length) return;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    items.forEach(function (el) {
+      var delay = parseInt(el.getAttribute('data-reveal-delay'), 10);
+      if (!isNaN(delay) && delay > 0) {
+        el.style.transitionDelay = (delay / 1000) + 's';
+      }
+    });
+
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.12
+    });
+
+    items.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ==========================================================================
+     EXPERIENCE TIMELINE — expandable role cards
+     ========================================================================== */
+
+  function initExperienceTimeline() {
+    var cards = $$('.ejay-role-card');
+    if (!cards.length) return;
+
+    cards.forEach(function (card) {
+      var head  = $('.ejay-role-card__head', card);
+      var panel = $('.ejay-role-card__panel', card);
+      if (!head || !panel) return;
+
+      head.addEventListener('click', function () {
+        var expanded = head.getAttribute('aria-expanded') === 'true';
+        head.setAttribute('aria-expanded', String(!expanded));
+        panel.setAttribute('aria-hidden', String(expanded));
+        card.classList.toggle('is-open', !expanded);
+      });
+    });
+  }
+
+  /* ==========================================================================
+     PROFESSIONAL SPACES — expandable cards
+     ========================================================================== */
+
+  function initSpaces() {
+    var cards = $$('.ejay-space-card');
+    if (!cards.length) return;
+
+    cards.forEach(function (card) {
+      var btn   = $('.ejay-space-card__toggle', card);
+      var panel = $('.ejay-space-card__panel', card);
+      var label = $('.ejay-space-card__toggle-text', card);
+      if (!btn || !panel) return;
+
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        panel.setAttribute('aria-hidden', String(expanded));
+        card.classList.toggle('is-open', !expanded);
+        if (label) label.textContent = expanded ? 'View details' : 'Hide details';
+      });
+    });
+  }
+
+  /* ==========================================================================
+     PORTFOLIO — data-driven project grid with filtering
+     ========================================================================== */
+
+  var projects = [
+    {
+      title: 'Project Showcase',
+      category: 'events',
+      tone: 'dark',
+      description: 'Details coming soon.'
+    },
+    {
+      title: 'Project Showcase',
+      category: 'entertainment',
+      tone: 'emerald',
+      description: 'Details coming soon.'
+    },
+    {
+      title: 'Project Showcase',
+      category: 'promotion',
+      tone: 'dark',
+      description: 'Details coming soon.'
+    },
+    {
+      title: 'Project Showcase',
+      category: 'production',
+      tone: 'emerald',
+      description: 'Details coming soon.'
+    },
+    {
+      title: 'Project Showcase',
+      category: 'business',
+      tone: 'dark',
+      description: 'Details coming soon.'
+    },
+    {
+      title: 'Project Showcase',
+      category: 'community',
+      tone: 'emerald',
+      description: 'Details coming soon.'
+    }
+  ];
+
+  var CATEGORY_LABELS = {
+    events: 'Events',
+    entertainment: 'Entertainment',
+    promotion: 'Promotion',
+    production: 'Production',
+    business: 'Business',
+    community: 'Community'
+  };
+
+  function buildProjectCard(project, index) {
+    var card = document.createElement('article');
+    card.className = 'ejay-project-card';
+    card.setAttribute('data-category', project.category);
+    card.style.animationDelay = (index * 45) + 'ms';
+
+    var media = document.createElement('div');
+    media.className = 'ejay-project-card__media';
+
+    var img = document.createElement('img');
+    img.src = project.image || placeholderImage(project.title, project.tone);
+    img.alt = project.title + ' — ' + (CATEGORY_LABELS[project.category] || project.category);
+    img.loading = 'lazy';
+    img.width = 1200;
+    img.height = 825;
+
+    var cat = document.createElement('span');
+    cat.className = 'ejay-project-card__cat';
+    cat.textContent = CATEGORY_LABELS[project.category] || project.category;
+
+    media.appendChild(img);
+    media.appendChild(cat);
+
+    var body = document.createElement('div');
+    body.className = 'ejay-project-card__body';
+
+    var title = document.createElement('h3');
+    title.className = 'ejay-project-card__title';
+    title.textContent = project.title;
+
+    var desc = document.createElement('p');
+    desc.className = 'ejay-project-card__desc';
+    desc.textContent = project.description;
+
+    body.appendChild(title);
+    body.appendChild(desc);
+
+    card.appendChild(media);
+    card.appendChild(body);
+
+    return card;
+  }
+
+  function initProjects() {
+    var grid  = $('#ejayProjectGrid');
+    var empty = $('#ejayProjectEmpty');
+    var filters = $$('#ejayProjectFilters .ejay-filter');
+    if (!grid) return;
+
+    function render(filter) {
+      grid.innerHTML = '';
+
+      var visible = projects.filter(function (p) {
+        return filter === 'all' || p.category === filter;
+      });
+
+      visible.forEach(function (project, i) {
+        grid.appendChild(buildProjectCard(project, i));
+      });
+
+      if (empty) empty.hidden = visible.length > 0;
+    }
+
+    render('all');
+
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filters.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        render(btn.getAttribute('data-filter'));
+      });
+    });
+  }
+
+  /* ==========================================================================
+     GALLERY + LIGHTBOX
+     ========================================================================== */
+
+  var galleryItems = [
+    { title: 'Professional Portrait', category: 'Professional', tone: 'dark' },
+    { title: 'Event Moment',          category: 'Events',       tone: 'emerald' },
+    { title: 'Creative Session',      category: 'Creative',     tone: 'dark' },
+    { title: 'Community Engagement',  category: 'Community',    tone: 'emerald' },
+    { title: 'Behind the Scenes',     category: 'Behind the Scenes', tone: 'dark' },
+    { title: 'Professional Portrait', category: 'Professional', tone: 'emerald' },
+    { title: 'Event Moment',          category: 'Events',       tone: 'dark' },
+    { title: 'Creative Session',      category: 'Creative',     tone: 'emerald' }
+  ];
+
+  var lightboxState = {
+    index: 0,
+    items: [],
+    lastFocused: null
+  };
+
+  var lightboxEl = $('#ejayLightbox');
+  var lightboxImg = $('#ejayLightboxImage');
+  var lightboxCaption = $('#ejayLightboxCaption');
+
+  function openLightbox(index) {
+    if (!lightboxEl || !lightboxImg) return;
+
+    lightboxState.index = index;
+    lightboxState.lastFocused = document.activeElement;
+
+    updateLightbox();
+
+    lightboxEl.classList.add('is-open');
+    lightboxEl.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-locked');
+
+    var closeBtn = $('.ejay-lightbox__close', lightboxEl);
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    if (!lightboxEl) return;
+
+    lightboxEl.classList.remove('is-open');
+    lightboxEl.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-locked');
+
+    if (lightboxState.lastFocused && lightboxState.lastFocused.focus) {
+      lightboxState.lastFocused.focus();
+    }
+  }
+
+  function updateLightbox() {
+    var item = lightboxState.items[lightboxState.index];
+    if (!item || !lightboxImg) return;
+
+    lightboxImg.src = item.image || placeholderImage(item.title, item.tone);
+    lightboxImg.alt = item.title + ' — ' + item.category;
+
+    if (lightboxCaption) {
+      lightboxCaption.innerHTML = '';
+      var strong = document.createElement('strong');
+      strong.textContent = item.title;
+      lightboxCaption.appendChild(strong);
+      lightboxCaption.appendChild(document.createTextNode(' — ' + item.category));
+    }
+  }
+
+  function lightboxNext() {
+    if (!lightboxState.items.length) return;
+    lightboxState.index = (lightboxState.index + 1) % lightboxState.items.length;
+    updateLightbox();
+  }
+
+  function lightboxPrev() {
+    if (!lightboxState.items.length) return;
+    lightboxState.index = (lightboxState.index - 1 + lightboxState.items.length) % lightboxState.items.length;
+    updateLightbox();
+  }
+
+  function initGallery() {
+    var grid = $('#ejayGalleryGrid');
+    if (!grid) return;
+
+    lightboxState.items = galleryItems;
+
+    galleryItems.forEach(function (item, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'ejay-gallery-item';
+      btn.setAttribute('aria-label', 'Open image: ' + item.title + ' (' + item.category + ')');
+
+      var img = document.createElement('img');
+      img.src = item.image || placeholderImage(item.title, item.tone);
+      img.alt = item.title + ' — ' + item.category;
+      img.loading = 'lazy';
+      img.width = 800;
+      img.height = 800;
+
+      var overlay = document.createElement('span');
+      overlay.className = 'ejay-gallery-item__overlay';
+
+      var cat = document.createElement('span');
+      cat.className = 'ejay-gallery-item__cat';
+      cat.textContent = item.category;
+
+      var title = document.createElement('span');
+      title.className = 'ejay-gallery-item__title';
+      title.textContent = item.title;
+
+      overlay.appendChild(cat);
+      overlay.appendChild(title);
+
+      btn.appendChild(img);
+      btn.appendChild(overlay);
+
+      btn.addEventListener('click', function () { openLightbox(i); });
+
+      grid.appendChild(btn);
+    });
+
+    // Lightbox controls
+    if (lightboxEl) {
+      $$('[data-lb]', lightboxEl).forEach(function (control) {
+        control.addEventListener('click', function () {
+          var action = control.getAttribute('data-lb');
+          if (action === 'close') closeLightbox();
+          if (action === 'next')  lightboxNext();
+          if (action === 'prev')  lightboxPrev();
+        });
+      });
+
+      lightboxEl.addEventListener('click', function (e) {
+        if (e.target === lightboxEl) closeLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightboxEl || !lightboxEl.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape')     { e.preventDefault(); closeLightbox(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); lightboxNext(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); lightboxPrev(); }
+    });
+  }
+
+  /* ==========================================================================
+     VIDEO SECTION + MODAL
+     ========================================================================== */
+
+  var videos = [
+    { title: 'Video Feature',   url: '', type: 'youtube' },
+    { title: 'Event Highlight', url: '', type: 'vimeo'   },
+    { title: 'Behind the Scenes', url: '', type: 'mp4'   }
+  ];
+
+  var videoModal = $('#ejayVideoModal');
+  var videoStage = $('#ejayVideoStage');
+  var videoTitle = $('#ejayVideoTitle');
+
+  function openVideoModal(video) {
+    if (!videoModal || !videoStage) return;
+
+    videoStage.innerHTML = '';
+
+    if (video && video.url) {
+      var embed = '';
+
+      if (video.type === 'youtube') {
+        embed = '<iframe src="' + video.url + '" title="' + video.title +
+                '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+                'allowfullscreen loading="lazy"></iframe>';
+      } else if (video.type === 'vimeo') {
+        embed = '<iframe src="' + video.url + '" title="' + video.title +
+                '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+      } else {
+        embed = '<video controls preload="metadata" src="' + video.url + '"></video>';
+      }
+
+      videoStage.innerHTML = embed;
+    } else {
+      var placeholder = document.createElement('div');
+      placeholder.className = 'ejay-modal__placeholder';
+
+      var mono = document.createElement('span');
+      mono.className = 'ejay-modal__placeholder-monogram';
+      mono.textContent = 'EJ';
+
+      var msg = document.createElement('p');
+      msg.textContent = '[Video link coming soon]';
+
+      placeholder.appendChild(mono);
+      placeholder.appendChild(msg);
+      videoStage.appendChild(placeholder);
+    }
+
+    if (videoTitle) videoTitle.textContent = video ? video.title : '';
+
+    videoModal.classList.add('is-open');
+    videoModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-locked');
+
+    var closeBtn = $('.ejay-modal__close', videoModal);
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeVideoModal() {
+    if (!videoModal) return;
+
+    videoModal.classList.remove('is-open');
+    videoModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-locked');
+
+    if (videoStage) videoStage.innerHTML = '';
+  }
+
+  function initVideoModal() {
+    var grid = $('#ejayVideoGrid');
+    if (!grid) return;
+
+    videos.forEach(function (video) {
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'ejay-video-card';
+      card.setAttribute('aria-label', 'Play video: ' + video.title);
+
+      var play = document.createElement('span');
+      play.className = 'ejay-video-card__play';
+      play.setAttribute('aria-hidden', 'true');
+
+      var info = document.createElement('span');
+      info.className = 'ejay-video-card__info';
+
+      var title = document.createElement('span');
+      title.className = 'ejay-video-card__title';
+      title.textContent = video.title;
+
+      var note = document.createElement('span');
+      note.className = 'ejay-video-card__note';
+      note.textContent = video.url ? 'Play' : 'Link coming soon';
+
+      info.appendChild(title);
+      info.appendChild(note);
+
+      card.appendChild(play);
+      card.appendChild(info);
+
+      card.addEventListener('click', function () { openVideoModal(video); });
+
+      grid.appendChild(card);
+    });
+
+    if (videoModal) {
+      $$('[data-modal]', videoModal).forEach(function (control) {
+        control.addEventListener('click', function () {
+          if (control.getAttribute('data-modal') === 'close') closeVideoModal();
+        });
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (!videoModal || !videoModal.classList.contains('is-open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeVideoModal(); }
+    });
+  }
+
+  /* ==========================================================================
+     CONTACT FORM VALIDATION
+     ========================================================================== */
+
+  function initContactForm() {
+    var form = $('#ejayContactForm');
+    if (!form) return;
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function setError(field, message) {
+      var wrapper = field.closest('.ejay-field');
+      var errorEl = wrapper ? $('.ejay-field__error', wrapper) : null;
+      if (wrapper) wrapper.classList.add('has-error');
+      if (errorEl) errorEl.textContent = message;
+      field.setAttribute('aria-invalid', 'true');
+    }
+
+    function clearError(field) {
+      var wrapper = field.closest('.ejay-field');
+      var errorEl = wrapper ? $('.ejay-field__error', wrapper) : null;
+      if (wrapper) wrapper.classList.remove('has-error');
+      if (errorEl) errorEl.textContent = '';
+      field.removeAttribute('aria-invalid');
+    }
+
+    function validateField(field) {
+      var value = (field.value || '').trim();
+
+      if (field.hasAttribute('required') && !value) {
+        setError(field, 'This field is required.');
+        return false;
+      }
+
+      if (field.type === 'email' && value && !emailPattern.test(value)) {
+        setError(field, 'Please enter a valid email address.');
+        return false;
+      }
+
+      if (field.type === 'tel' && value && value.replace(/\D/g, '').length < 7) {
+        setError(field, 'Please enter a valid phone number.');
+        return false;
+      }
+
+      if (field.id === 'cf-name' && value && value.length < 2) {
+        setError(field, 'Please enter your full name.');
+        return false;
+      }
+
+      if (field.id === 'cf-message' && value && value.length < 10) {
+        setError(field, 'Please provide a little more detail.');
+        return false;
+      }
+
+      clearError(field);
+      return true;
+    }
+
+    var fields = $$('input, select, textarea', form);
+
+    fields.forEach(function (field) {
+      field.addEventListener('blur', function () { validateField(field); });
+      field.addEventListener('input', function () {
+        if (field.closest('.ejay-field') &&
+            field.closest('.ejay-field').classList.contains('has-error')) {
+          validateField(field);
+        }
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var valid = true;
+      var firstInvalid = null;
+
+      fields.forEach(function (field) {
+        var ok = validateField(field);
+        if (!ok) {
+          valid = false;
+          if (!firstInvalid) firstInvalid = field;
+        }
+      });
+
+      if (!valid) {
+        showToast('Please correct the highlighted fields and try again.', 'error');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      showToast('Thank you. Your enquiry has been prepared — connect this form to your mail service to send it.', 'success');
+      form.reset();
+
+      fields.forEach(function (field) { clearError(field); });
+    });
+  }
+
+  /* ==========================================================================
+     BACK TO TOP
+     ========================================================================== */
+
+  function initBackToTop() {
+    var btn = $('#ejayBackToTop');
+    if (!btn) return;
+
+    var ticking = false;
+
+    function update() {
+      if (window.pageYOffset > 620) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    });
+
+    update();
+  }
+
+  /* ==========================================================================
+     SMOOTH ANCHOR SCROLLING (with reduced-motion respect)
+     ========================================================================== */
+
+  function initSmoothAnchors() {
+    $$('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var href = link.getAttribute('href');
+        if (!href || href === '#') return;
+
+        var target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+
+        var navHeight = 76;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - navHeight + 2;
+
+        window.scrollTo({
+          top: top,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+
+        // Move focus for accessibility
+        if (!target.hasAttribute('tabindex')) {
+          target.setAttribute('tabindex', '-1');
+        }
+        setTimeout(function () { target.focus({ preventScroll: true }); }, 420);
+      });
+    });
+  }
+
+  /* ==========================================================================
+     HERO PORTRAIT LOAD-IN
+     ========================================================================== */
+
+  function initHeroPortrait() {
+    var portrait = $('#ejayPortrait');
+    if (!portrait) return;
+
+    // Already handled by initMediaFallbacks, but ensure a graceful fade-in
+    if (portrait.complete && portrait.naturalWidth > 0) {
+      portrait.classList.add('is-loaded');
+    }
+  }
+
+  /* ==========================================================================
+     BOOTSTRAP
+     ========================================================================== */
+
+  function boot() {
+    initMediaFallbacks();
+    initNavigation();
+    initActiveSection();
+    initMobileMenu();
+    initScrollProgress();
+    initScrollReveal();
+    initExperienceTimeline();
+    initSpaces();
+    initProjects();
+    initGallery();
+    initVideoModal();
+    initContactForm();
+    initBackToTop();
+    initSmoothAnchors();
+    initHeroPortrait();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
+</script>
+</body>
+</html>
