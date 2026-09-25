@@ -1,0 +1,3935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEEC — Cross River State | From Influence To Participation</title>
+<meta name="description" content="The Creative, Entertainment & Events Community — Cross River State (CEEC - CRS). A structured community promoting civic awareness, peaceful engagement and positive community development.">
+<meta name="theme-color" content="#063B86">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   CEEC — CROSS RIVER STATE
+   Single-file build: HTML5 + CSS3 + Vanilla JS (ES6+)
+   ---------------------------------------------------------------------
+   CSS ORDER
+   1.  Variables
+   2.  Reset & base
+   3.  Typography
+   4.  Layout helpers
+   5.  Buttons
+   6.  Chips / pills / filters
+   7.  Announcement strip
+   8.  Navbar + mobile drawer
+   9.  Scroll progress
+   10. Hero
+   11. Sections (generic)
+   12. Impact cards
+   13. About
+   14. Aim
+   15. Objectives
+   16. Values
+   17. Guidelines accordion
+   18. Leadership
+   19. Initiatives
+   20. Events
+   21. News
+   22. Partners
+   23. CTA band
+   24. Forms (membership + contact)
+   25. Footer
+   26. Back-to-top + mobile bar
+   27. Modal
+   28. Toasts
+   29. Animations
+   30. Responsive breakpoints
+   31. Accessibility / reduced motion
+   ===================================================================== */
+
+/* ============================ 1. VARIABLES ========================== */
+:root{
+  /* Brand */
+  --ceec-navy:      #063B86;
+  --ceec-blue:      #0B4DB8;
+  --ceec-blue-soft: #E8F0FC;
+  --ceec-red:       #E50914;
+  --ceec-orange:    #F9A800;
+  --ceec-green:     #078A4B;
+  --ceec-white:     #FFFFFF;
+
+  /* Neutrals */
+  --ceec-dark:      #071A33;
+  --ceec-light:     #F5F8FC;
+  --ceec-text:      #243247;
+  --ceec-muted:     #6B778C;
+  --ceec-border:    #E4EAF2;
+
+  /* Semantic */
+  --primary:        var(--ceec-navy);
+  --secondary:      var(--ceec-blue);
+  --accent:         var(--ceec-orange);
+  --background:     var(--ceec-white);
+  --surface:        var(--ceec-light);
+  --text:           var(--ceec-text);
+  --muted:          var(--ceec-muted);
+  --border:         var(--ceec-border);
+
+  /* Effects */
+  --radius-sm:  8px;
+  --radius:     14px;
+  --radius-lg:  22px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(7,26,51,.06), 0 2px 8px rgba(7,26,51,.05);
+  --shadow:    0 4px 12px rgba(7,26,51,.07), 0 12px 32px rgba(7,26,51,.07);
+  --shadow-lg: 0 18px 48px rgba(7,26,51,.14);
+
+  --ring: 0 0 0 3px rgba(11,77,184,.35);
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 24px;
+  --nav-h: 74px;
+
+  /* Motion */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --dur: .38s;
+
+  /* Fonts */
+  --font-head: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ========================= 2. RESET & BASE ========================== */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.7;
+  color:var(--text);
+  background:var(--background);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{ max-width:100%; display:block; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+a{ color:inherit; text-decoration:none; }
+ul,ol{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,h4{ margin:0; font-family:var(--font-head); line-height:1.15; letter-spacing:-.02em; color:var(--ceec-dark); }
+p{ margin:0; }
+hr{ border:0; border-top:1px solid var(--border); margin:32px 0; }
+
+/* ========================= 3. TYPOGRAPHY ============================ */
+h1{ font-size:clamp(2.2rem, 6vw, 4.2rem); font-weight:800; }
+h2{ font-size:clamp(1.7rem, 3.6vw, 2.6rem); font-weight:800; }
+h3{ font-size:clamp(1.05rem, 1.8vw, 1.25rem); font-weight:700; }
+
+.ceec-eyebrow{
+  display:inline-block;
+  font-family:var(--font-head);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ceec-blue);
+  margin-bottom:14px;
+}
+.ceec-eyebrow--light{ color:rgba(255,255,255,.78); }
+
+/* ====================== 4. LAYOUT HELPERS =========================== */
+.ceec-container{
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.ceec-skip-link{
+  position:absolute; left:-9999px; top:0; z-index:2000;
+  background:var(--ceec-navy); color:#fff; padding:12px 20px; border-radius:0 0 10px 0;
+}
+.ceec-skip-link:focus{ left:0; }
+
+/* ========================== 5. BUTTONS ============================== */
+.ceec-btn{
+  --btn-bg: var(--ceec-navy);
+  --btn-fg: #fff;
+  --btn-bd: transparent;
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:13px 24px;
+  border:1.5px solid var(--btn-bd);
+  border-radius:var(--radius-pill);
+  background:var(--btn-bg);
+  color:var(--btn-fg);
+  font-family:var(--font-head);
+  font-size:.95rem;
+  font-weight:700;
+  letter-spacing:.01em;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:transform .22s var(--ease), box-shadow .22s var(--ease),
+             background-color .22s var(--ease), color .22s var(--ease),
+             border-color .22s var(--ease);
+}
+.ceec-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow); }
+.ceec-btn:active{ transform:translateY(0); }
+.ceec-btn:focus-visible{ outline:none; box-shadow:var(--ring); }
+
+.ceec-btn--primary{ --btn-bg: var(--ceec-navy); }
+.ceec-btn--primary:hover{ --btn-bg: var(--ceec-blue); }
+
+.ceec-btn--outline{
+  --btn-bg: transparent; --btn-fg: var(--ceec-navy); --btn-bd: var(--ceec-border);
+  background:transparent; color:var(--ceec-navy); border-color:var(--ceec-border);
+}
+.ceec-btn--outline:hover{ border-color:var(--ceec-navy); background:var(--ceec-blue-soft); }
+
+.ceec-btn--ghost{
+  --btn-bg: rgba(255,255,255,.10); --btn-fg:#fff; --btn-bd: rgba(255,255,255,.30);
+  background:rgba(255,255,255,.10); color:#fff; border-color:rgba(255,255,255,.30);
+  backdrop-filter:blur(10px);
+}
+.ceec-btn--ghost:hover{ background:rgba(255,255,255,.20); }
+
+.ceec-btn--light{ --btn-bg:#fff; --btn-fg:var(--ceec-navy); }
+.ceec-btn--ghost-light{
+  --btn-bg:transparent; --btn-fg:#fff; --btn-bd:rgba(255,255,255,.45);
+  background:transparent; color:#fff; border-color:rgba(255,255,255,.45);
+}
+.ceec-btn--ghost-light:hover{ background:rgba(255,255,255,.14); }
+
+.ceec-btn--lg{ padding:16px 30px; font-size:1rem; }
+.ceec-btn--block{ width:100%; }
+
+/* =================== 6. CHIPS / PILLS / FILTERS ===================== */
+.ceec-pill{
+  display:inline-block;
+  padding:5px 12px;
+  border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  font-family:var(--font-head);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#fff;
+  backdrop-filter:blur(8px);
+}
+
+.ceec-filters{
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin-bottom:36px;
+}
+.ceec-filter{
+  padding:9px 18px;
+  border-radius:var(--radius-pill);
+  border:1.5px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-family:var(--font-head);
+  font-size:.85rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .22s var(--ease);
+}
+.ceec-filter:hover{ border-color:var(--ceec-blue); color:var(--ceec-blue); }
+.ceec-filter.is-active{
+  background:var(--ceec-navy); border-color:var(--ceec-navy); color:#fff;
+  box-shadow:0 6px 18px rgba(6,59,134,.24);
+}
+.ceec-filter:focus-visible{ outline:none; box-shadow:var(--ring); }
+
+.ceec-empty{
+  padding:40px 20px; text-align:center; color:var(--muted);
+  background:var(--surface); border-radius:var(--radius); border:1px dashed var(--border);
+}
+
+/* =================== 7. ANNOUNCEMENT STRIP ========================== */
+.ceec-announce{
+  background:var(--ceec-dark);
+  color:#fff;
+  font-size:.82rem;
+  position:relative;
+  z-index:60;
+}
+.ceec-announce__inner{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  padding:9px 0;
+  text-align:center;
+  flex-wrap:wrap;
+}
+.ceec-announce__dot{
+  width:7px; height:7px; border-radius:50%; background:var(--ceec-orange);
+  box-shadow:0 0 0 4px rgba(249,168,0,.22);
+  animation:pulseDot 2.4s var(--ease) infinite;
+  flex:none;
+}
+.ceec-announce__text{ opacity:.92; }
+.ceec-announce__link{
+  font-family:var(--font-head); font-weight:700; color:var(--ceec-orange);
+  border-bottom:1px solid transparent; transition:border-color .2s;
+}
+.ceec-announce__link:hover{ border-color:var(--ceec-orange); }
+
+/* ===================== 8. NAVBAR + DRAWER =========================== */
+.ceec-navbar{
+  position:sticky; top:0; z-index:1000;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  border-bottom:1px solid transparent;
+  transition:background-color .3s var(--ease), border-color .3s var(--ease),
+             box-shadow .3s var(--ease);
+}
+.ceec-navbar.is-scrolled{
+  background:rgba(255,255,255,.95);
+  border-bottom-color:var(--border);
+  box-shadow:0 6px 24px rgba(7,26,51,.07);
+}
+
+.ceec-navbar__inner{
+  height:var(--nav-h);
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+
+/* Brand */
+.ceec-brand{ display:flex; align-items:center; gap:12px; flex:none; }
+.ceec-brand__mark{ width:42px; height:42px; flex:none; }
+.ceec-brand__text{ display:flex; flex-direction:column; line-height:1.1; }
+.ceec-brand__name{
+  font-family:var(--font-head); font-weight:800; font-size:1.15rem;
+  letter-spacing:-.02em; color:var(--ceec-navy);
+}
+.ceec-brand__sub{
+  font-size:.66rem; font-weight:600; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* Desktop links */
+.ceec-nav{ display:flex; align-items:center; gap:2px; }
+.ceec-nav__link{
+  position:relative;
+  padding:9px 13px;
+  border-radius:var(--radius-pill);
+  font-family:var(--font-head);
+  font-size:.88rem;
+  font-weight:600;
+  color:var(--text);
+  transition:color .2s var(--ease), background-color .2s var(--ease);
+  white-space:nowrap;
+}
+.ceec-nav__link::after{
+  content:"";
+  position:absolute; left:50%; bottom:3px;
+  width:0; height:2px; border-radius:2px;
+  background:var(--ceec-orange);
+  transform:translateX(-50%);
+  transition:width .26s var(--ease);
+}
+.ceec-nav__link:hover{ color:var(--ceec-navy); background:var(--ceec-blue-soft); }
+.ceec-nav__link:hover::after,
+.ceec-nav__link.is-active::after{ width:22px; }
+.ceec-nav__link.is-active{ color:var(--ceec-navy); font-weight:700; }
+
+.ceec-navbar__cta{ flex:none; }
+
+/* Hamburger */
+.ceec-burger{
+  display:none;
+  width:46px; height:46px;
+  border:1.5px solid var(--border);
+  background:#fff;
+  border-radius:12px;
+  cursor:pointer;
+  position:relative;
+  flex:none;
+  transition:border-color .2s, background-color .2s;
+}
+.ceec-burger:hover{ border-color:var(--ceec-blue); background:var(--ceec-blue-soft); }
+.ceec-burger span{
+  position:absolute; left:50%; width:20px; height:2px; border-radius:2px;
+  background:var(--ceec-navy);
+  transform:translateX(-50%);
+  transition:transform .3s var(--ease), opacity .2s var(--ease), top .3s var(--ease);
+}
+.ceec-burger span:nth-child(1){ top:16px; }
+.ceec-burger span:nth-child(2){ top:22px; }
+.ceec-burger span:nth-child(3){ top:28px; }
+.ceec-burger.is-open span:nth-child(1){ top:22px; transform:translateX(-50%) rotate(45deg); }
+.ceec-burger.is-open span:nth-child(2){ opacity:0; }
+.ceec-burger.is-open span:nth-child(3){ top:22px; transform:translateX(-50%) rotate(-45deg); }
+
+/* Backdrop */
+.ceec-backdrop{
+  position:fixed; inset:0; z-index:998;
+  background:rgba(7,26,51,.45);
+  backdrop-filter:blur(3px);
+  opacity:0; visibility:hidden;
+  transition:opacity .3s var(--ease), visibility .3s var(--ease);
+}
+.ceec-backdrop.is-open{ opacity:1; visibility:visible; }
+
+/* Mobile drawer */
+.ceec-drawer{
+  position:fixed; top:0; right:0; z-index:999;
+  width:min(370px, 88vw); height:100dvh;
+  background:#fff;
+  box-shadow:-20px 0 60px rgba(7,26,51,.20);
+  transform:translateX(100%);
+  transition:transform .38s var(--ease);
+  display:flex; flex-direction:column;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+.ceec-drawer.is-open{ transform:translateX(0); }
+
+.ceec-drawer__head{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 20px;
+  border-bottom:1px solid var(--border);
+  flex:none;
+}
+.ceec-drawer__close{
+  width:42px; height:42px; border-radius:12px;
+  border:1.5px solid var(--border); background:#fff; cursor:pointer;
+  display:grid; place-items:center; color:var(--ceec-navy);
+  transition:border-color .2s, background-color .2s;
+}
+.ceec-drawer__close:hover{ border-color:var(--ceec-blue); background:var(--ceec-blue-soft); }
+
+.ceec-drawer__nav{ padding:14px 12px; flex:1; }
+.ceec-drawer__link{
+  display:block;
+  padding:14px 16px;
+  border-radius:12px;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:1rem;
+  color:var(--text);
+  transition:background-color .2s, color .2s, padding-left .2s;
+}
+.ceec-drawer__link:hover,
+.ceec-drawer__link.is-active{
+  background:var(--ceec-blue-soft); color:var(--ceec-navy); padding-left:22px;
+}
+.ceec-drawer__foot{ padding:18px 20px 30px; border-top:1px solid var(--border); flex:none; }
+.ceec-drawer__foot p{ font-size:.82rem; color:var(--muted); margin-top:14px; }
+
+/* ==================== 9. SCROLL PROGRESS ============================ */
+.ceec-scroll-progress{
+  position:fixed; top:0; left:0; right:0; height:3px; z-index:1100;
+  background:transparent; pointer-events:none;
+}
+.ceec-scroll-progress span{
+  display:block; height:100%; width:0%;
+  background:linear-gradient(90deg, var(--ceec-navy), var(--ceec-blue) 45%, var(--ceec-orange));
+  border-radius:0 3px 3px 0;
+  transition:width .1s linear;
+}
+
+/* =========================== 10. HERO =============================== */
+.ceec-hero{
+  position:relative;
+  padding:clamp(60px, 9vw, 110px) 0 clamp(70px, 10vw, 120px);
+  background:
+    radial-gradient(1100px 620px at 12% -10%, #0B4DB8 0%, transparent 60%),
+    radial-gradient(900px 520px at 100% 8%, #0A3E8C 0%, transparent 58%),
+    linear-gradient(160deg, #072F6B 0%, #063B86 42%, #052A61 100%);
+  color:#fff;
+  overflow:hidden;
+  isolation:isolate;
+}
+.ceec-hero__bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+
+.ceec-blob{
+  position:absolute; border-radius:50%; filter:blur(70px); opacity:.5;
+  animation:floatBlob 16s ease-in-out infinite;
+}
+.ceec-blob--1{ width:420px; height:420px; background:#0B4DB8; top:-140px; left:-110px; }
+.ceec-blob--2{ width:340px; height:340px; background:#F9A800; opacity:.20; top:12%; right:-90px; animation-delay:-4s; }
+.ceec-blob--3{ width:300px; height:300px; background:#078A4B; opacity:.18; bottom:-120px; left:22%; animation-delay:-8s; }
+.ceec-blob--4{ width:260px; height:260px; background:#E50914; opacity:.14; bottom:6%; right:16%; animation-delay:-12s; }
+
+.ceec-hero__grid{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 40%, #000 0%, transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 40%, #000 0%, transparent 78%);
+}
+
+.ceec-hero__inner{
+  position:relative; z-index:1;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:clamp(32px, 5vw, 72px);
+  align-items:center;
+}
+
+.ceec-hero__eyebrow{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  font-family:var(--font-head);
+  font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+  margin-bottom:22px;
+}
+
+.ceec-hero__title{
+  color:#fff;
+  font-size:clamp(2.4rem, 6.4vw, 4.6rem);
+  font-weight:800;
+  line-height:1.02;
+  letter-spacing:-.035em;
+  margin-bottom:24px;
+}
+.ceec-hero__accent{
+  display:block;
+  background:linear-gradient(100deg, #F9A800 0%, #FFC94D 50%, #F9A800 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+}
+
+.ceec-hero__lede{
+  font-size:clamp(1rem, 1.5vw, 1.12rem);
+  line-height:1.75;
+  color:rgba(255,255,255,.80);
+  max-width:56ch;
+  margin-bottom:34px;
+}
+
+.ceec-hero__actions{
+  display:flex; flex-wrap:wrap; gap:14px;
+  margin-bottom:34px;
+}
+
+.ceec-hero__tags{
+  display:flex; flex-wrap:wrap; gap:10px 22px;
+  font-size:.85rem; font-weight:600;
+  color:rgba(255,255,255,.62);
+}
+.ceec-hero__tags li{ position:relative; padding-left:18px; }
+.ceec-hero__tags li::before{
+  content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:7px; height:7px; border-radius:50%;
+  background:var(--ceec-orange);
+  box-shadow:0 0 0 4px rgba(249,168,0,.16);
+}
+
+/* Hero visual card */
+.ceec-hero__visual{ position:relative; display:flex; justify-content:center; }
+
+.ceec-hero__card{
+  position:relative;
+  width:100%; max-width:380px;
+  padding:36px 30px 30px;
+  border-radius:var(--radius-lg);
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.20);
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  box-shadow:0 30px 70px rgba(0,0,0,.30);
+  text-align:center;
+  animation:floatCard 7s ease-in-out infinite;
+}
+.ceec-hero__card-logo{
+  width:92px; height:92px; margin:0 auto 20px;
+  filter:drop-shadow(0 8px 20px rgba(0,0,0,.35));
+}
+.ceec-hero__card-title{
+  font-family:var(--font-head); font-weight:800;
+  font-size:1rem; line-height:1.35; color:#fff;
+  margin-bottom:6px;
+}
+.ceec-hero__card-sub{
+  font-size:.72rem; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ceec-orange);
+  margin-bottom:22px;
+}
+.ceec-hero__card-bars{ display:flex; gap:6px; justify-content:center; }
+.ceec-hero__card-bars span{
+  height:5px; border-radius:3px; display:block;
+}
+.ceec-hero__card-bars span:nth-child(1){ width:56px; background:var(--ceec-blue); }
+.ceec-hero__card-bars span:nth-child(2){ width:34px; background:var(--ceec-orange); }
+.ceec-hero__card-bars span:nth-child(3){ width:22px; background:var(--ceec-green); }
+
+/* Floating chips */
+.ceec-float-chip{
+  position:absolute;
+  padding:8px 15px;
+  border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.95);
+  color:var(--ceec-navy);
+  font-family:var(--font-head);
+  font-size:.72rem; font-weight:700;
+  letter-spacing:.02em;
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+  white-space:nowrap;
+  animation:floatChip 6s ease-in-out infinite;
+}
+.ceec-float-chip--1{ top:6%; left:-4%; animation-delay:-1s; }
+.ceec-float-chip--2{ bottom:16%; right:-6%; animation-delay:-3s; }
+.ceec-float-chip--3{ bottom:-2%; left:8%; animation-delay:-5s; }
+
+/* ======================= 11. SECTIONS =============================== */
+.ceec-section{
+  position:relative;
+  padding:clamp(64px, 8vw, 110px) 0;
+}
+.ceec-section--tight{ padding-top:clamp(48px, 6vw, 76px); }
+.ceec-section--surface{ background:var(--surface); }
+
+.ceec-section__head{ max-width:760px; margin-bottom:clamp(38px, 5vw, 60px); }
+.ceec-section__head--center{ margin-inline:auto; text-align:center; }
+
+.ceec-section__title{ margin-bottom:16px; }
+.ceec-section__lede{
+  font-size:1.02rem; color:var(--muted); line-height:1.75; max-width:68ch;
+}
+.ceec-section__head--center .ceec-section__lede{ margin-inline:auto; }
+
+.ceec-section__foot{ margin-top:44px; text-align:center; }
+
+/* ====================== 12. IMPACT CARDS ============================ */
+.ceec-impact-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
+}
+.ceec-impact-card{
+  position:relative;
+  padding:30px 26px 28px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-impact-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.ceec-impact-card__bar{
+  position:absolute; top:0; left:0; right:0; height:4px;
+  background:var(--bar, var(--ceec-blue));
+  transform:scaleX(.22); transform-origin:left;
+  transition:transform .45s var(--ease);
+}
+.ceec-impact-card:hover .ceec-impact-card__bar{ transform:scaleX(1); }
+
+.ceec-impact-card__eyebrow{
+  font-family:var(--font-head);
+  font-size:.72rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--ceec-blue);
+  margin-bottom:10px;
+}
+.ceec-impact-card__title{ font-size:1.05rem; margin-bottom:10px; }
+.ceec-impact-card__text{ font-size:.92rem; color:var(--muted); line-height:1.7; }
+
+/* ========================== 13. ABOUT =============================== */
+.ceec-about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(36px, 5vw, 80px);
+  align-items:start;
+}
+.ceec-about__lead{
+  font-size:1.08rem; line-height:1.8; color:var(--text);
+  margin-bottom:18px;
+  padding-left:20px;
+  border-left:3px solid var(--ceec-orange);
+}
+.ceec-about__text{
+  font-size:.98rem; color:var(--muted); line-height:1.8; margin-bottom:28px;
+}
+
+.ceec-about__timeline{ display:grid; gap:14px; }
+.ceec-about__step{
+  position:relative;
+  padding:22px 24px 22px 74px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-about__step:hover{
+  transform:translateX(6px);
+  box-shadow:var(--shadow);
+  border-color:rgba(11,77,184,.28);
+}
+.ceec-about__step-num{
+  position:absolute; left:22px; top:22px;
+  font-family:var(--font-head); font-size:.82rem; font-weight:800;
+  color:var(--ceec-blue);
+  background:var(--ceec-blue-soft);
+  width:36px; height:36px; border-radius:10px;
+  display:grid; place-items:center;
+}
+.ceec-about__step h3{ font-size:1rem; margin-bottom:6px; }
+.ceec-about__step p{ font-size:.9rem; color:var(--muted); line-height:1.7; }
+
+/* =========================== 14. AIM ================================ */
+.ceec-aim{
+  background:
+    radial-gradient(800px 400px at 15% 0%, rgba(11,77,184,.55) 0%, transparent 65%),
+    linear-gradient(150deg, #072F6B 0%, #063B86 55%, #052A61 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.ceec-aim::after{
+  content:"";
+  position:absolute; right:-120px; bottom:-160px;
+  width:460px; height:460px; border-radius:50%;
+  background:radial-gradient(circle, rgba(249,168,0,.20) 0%, transparent 68%);
+}
+.ceec-aim__inner{ position:relative; z-index:1; max-width:960px; }
+.ceec-aim__statement{
+  font-family:var(--font-head);
+  font-size:clamp(1.25rem, 2.7vw, 2rem);
+  font-weight:700;
+  line-height:1.45;
+  letter-spacing:-.02em;
+  color:#fff;
+  margin-bottom:26px;
+}
+.ceec-aim__note{
+  font-size:1rem; line-height:1.8; color:rgba(255,255,255,.72);
+  max-width:74ch;
+  padding-left:22px;
+  border-left:2px solid var(--ceec-orange);
+}
+
+/* ======================= 15. OBJECTIVES ============================= */
+.ceec-objectives-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px;
+}
+.ceec-objective-card{
+  position:relative;
+  padding:26px 26px 26px 78px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  cursor:pointer;
+  text-align:left;
+  width:100%;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-objective-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:rgba(11,77,184,.30);
+}
+.ceec-objective-card:focus-visible{ outline:none; box-shadow:var(--ring); }
+
+.ceec-objective-card__num{
+  position:absolute; left:22px; top:26px;
+  width:40px; height:40px; border-radius:12px;
+  display:grid; place-items:center;
+  font-family:var(--font-head); font-size:.88rem; font-weight:800;
+  background:var(--ceec-blue-soft); color:var(--ceec-blue);
+  transition:background-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+}
+.ceec-objective-card:hover .ceec-objective-card__num{
+  background:var(--ceec-navy); color:#fff; transform:rotate(-6deg);
+}
+
+.ceec-objective-card__head{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+}
+.ceec-objective-card__title{ font-size:1.02rem; margin-bottom:8px; }
+
+.ceec-objective-card__short{
+  font-size:.9rem; color:var(--muted); line-height:1.7;
+}
+
+.ceec-objective-card__chev{
+  flex:none; width:26px; height:26px; border-radius:50%;
+  border:1.5px solid var(--border);
+  display:grid; place-items:center;
+  color:var(--muted);
+  transition:transform .32s var(--ease), border-color .3s, color .3s, background-color .3s;
+}
+.ceec-objective-card.is-open .ceec-objective-card__chev{
+  transform:rotate(180deg);
+  background:var(--ceec-navy); border-color:var(--ceec-navy); color:#fff;
+}
+
+.ceec-objective-card__full{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .38s var(--ease), margin-top .38s var(--ease), opacity .3s var(--ease);
+  opacity:0;
+  margin-top:0;
+}
+.ceec-objective-card.is-open .ceec-objective-card__full{
+  grid-template-rows:1fr;
+  opacity:1;
+  margin-top:16px;
+}
+.ceec-objective-card__full > div{ overflow:hidden; }
+.ceec-objective-card__full p{
+  font-size:.9rem; line-height:1.75; color:var(--text);
+  padding-top:16px;
+  border-top:1px solid var(--border);
+}
+
+/* ========================= 16. VALUES =============================== */
+.ceec-values-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+}
+.ceec-value-card{
+  position:relative;
+  padding:28px 26px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-value-card::before{
+  content:"";
+  position:absolute; inset:auto auto -60px -60px;
+  width:150px; height:150px; border-radius:50%;
+  background:var(--ceec-blue-soft);
+  opacity:0; transition:opacity .38s var(--ease), transform .38s var(--ease);
+  transform:scale(.6);
+}
+.ceec-value-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.ceec-value-card:hover::before{ opacity:1; transform:scale(1); }
+
+.ceec-value-card__icon{
+  position:relative; z-index:1;
+  width:44px; height:44px; border-radius:12px;
+  display:grid; place-items:center;
+  background:var(--ceec-blue-soft); color:var(--ceec-blue);
+  margin-bottom:18px;
+  transition:background-color .3s var(--ease), color .3s var(--ease);
+}
+.ceec-value-card:hover .ceec-value-card__icon{
+  background:var(--ceec-navy); color:#fff;
+}
+.ceec-value-card__title{
+  position:relative; z-index:1;
+  font-size:1rem; margin-bottom:8px;
+}
+.ceec-value-card__text{
+  position:relative; z-index:1;
+  font-size:.9rem; color:var(--muted); line-height:1.7;
+}
+
+/* ==================== 17. GUIDELINES ACCORDION ====================== */
+.ceec-guidelines{
+  display:grid; gap:12px;
+  max-width:920px;
+}
+.ceec-guideline-item{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.ceec-guideline-item.is-open{
+  border-color:rgba(11,77,184,.35);
+  box-shadow:var(--shadow);
+}
+
+.ceec-guideline-item__btn{
+  width:100%;
+  display:flex; align-items:center; gap:18px;
+  padding:20px 22px;
+  background:transparent; border:0; cursor:pointer; text-align:left;
+  transition:background-color .25s var(--ease);
+}
+.ceec-guideline-item__btn:hover{ background:var(--ceec-blue-soft); }
+.ceec-guideline-item__btn:focus-visible{ outline:none; box-shadow:inset var(--ring); }
+
+.ceec-guideline-item__num{
+  flex:none;
+  width:36px; height:36px; border-radius:10px;
+  display:grid; place-items:center;
+  font-family:var(--font-head); font-size:.82rem; font-weight:800;
+  background:var(--ceec-blue-soft); color:var(--ceec-blue);
+  transition:background-color .3s var(--ease), color .3s var(--ease);
+}
+.ceec-guideline-item.is-open .ceec-guideline-item__num{
+  background:var(--ceec-navy); color:#fff;
+}
+
+.ceec-guideline-item__title{
+  flex:1;
+  font-family:var(--font-head);
+  font-size:.98rem; font-weight:700;
+  color:var(--ceec-dark);
+  letter-spacing:-.01em;
+}
+
+.ceec-guideline-item__chev{
+  flex:none; width:26px; height:26px; border-radius:50%;
+  border:1.5px solid var(--border);
+  display:grid; place-items:center;
+  color:var(--muted);
+  transition:transform .32s var(--ease), border-color .3s, color .3s, background-color .3s;
+}
+.ceec-guideline-item.is-open .ceec-guideline-item__chev{
+  transform:rotate(180deg);
+  background:var(--ceec-navy); border-color:var(--ceec-navy); color:#fff;
+}
+
+.ceec-guideline-item__panel{
+  display:grid; grid-template-rows:0fr;
+  transition:grid-template-rows .4s var(--ease);
+}
+.ceec-guideline-item.is-open .ceec-guideline-item__panel{ grid-template-rows:1fr; }
+.ceec-guideline-item__panel > div{ overflow:hidden; }
+
+.ceec-guideline-item__body{
+  padding:0 22px 24px 76px;
+  font-size:.92rem; line-height:1.78; color:var(--muted);
+}
+.ceec-guideline-item__body p + p{ margin-top:12px; }
+.ceec-guideline-item__body ul{ margin-top:12px; display:grid; gap:8px; }
+.ceec-guideline-item__body li{
+  position:relative; padding-left:20px;
+}
+.ceec-guideline-item__body li::before{
+  content:""; position:absolute; left:0; top:.62em;
+  width:7px; height:7px; border-radius:50%;
+  background:var(--ceec-orange);
+}
+
+.ceec-guideline-quote{
+  display:inline-block;
+  margin-top:16px;
+  padding:12px 20px;
+  border-radius:12px;
+  background:linear-gradient(100deg, rgba(229,9,20,.09), rgba(249,168,0,.12));
+  border-left:3px solid var(--ceec-red);
+  font-family:var(--font-head);
+  font-size:1rem; font-weight:800; letter-spacing:.01em;
+  color:var(--ceec-navy);
+}
+
+/* ======================= 18. LEADERSHIP ============================= */
+.ceec-leadership{
+  display:grid;
+  gap:20px;
+}
+.ceec-leadership__row{
+  display:grid;
+  gap:14px;
+}
+.ceec-leadership__label{
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--font-head);
+  font-size:.76rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ceec-blue);
+}
+.ceec-leadership__label::after{
+  content:""; flex:1; height:1px; background:var(--border);
+}
+
+.ceec-leadership__top{
+  padding:26px 28px;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg, var(--ceec-navy), var(--ceec-blue));
+  color:#fff;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  flex-wrap:wrap;
+}
+.ceec-leadership__top h3{ color:#fff; font-size:1.15rem; margin-bottom:4px; }
+.ceec-leadership__top p{ font-size:.88rem; color:rgba(255,255,255,.72); }
+.ceec-leadership__badge{
+  padding:7px 15px; border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.26);
+  font-family:var(--font-head); font-size:.72rem; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase;
+}
+
+.ceec-leadership__units{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+}
+.ceec-unit-card{
+  padding:22px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-unit-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:rgba(11,77,184,.28);
+}
+.ceec-unit-card__title{
+  font-size:.96rem; margin-bottom:6px;
+}
+.ceec-unit-card__meta{
+  font-size:.82rem; color:var(--muted); line-height:1.65;
+}
+.ceec-unit-card__tag{
+  display:inline-block; margin-top:12px;
+  padding:4px 10px; border-radius:var(--radius-pill);
+  background:var(--surface); border:1px solid var(--border);
+  font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* ===================== 19. INITIATIVES ============================== */
+.ceec-initiatives-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+.ceec-initiative-card{
+  padding:24px 22px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  cursor:default;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease),
+             background-color .3s var(--ease);
+}
+.ceec-initiative-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+  background:linear-gradient(160deg, #fff 0%, #F7FAFF 100%);
+}
+.ceec-initiative-card__dot{
+  width:10px; height:10px; border-radius:50%;
+  background:var(--ceec-orange);
+  margin-bottom:16px;
+  box-shadow:0 0 0 5px rgba(249,168,0,.16);
+  transition:transform .3s var(--ease);
+}
+.ceec-initiative-card:hover .ceec-initiative-card__dot{ transform:scale(1.25); }
+.ceec-initiative-card__title{ font-size:.98rem; margin-bottom:8px; }
+.ceec-initiative-card__text{ font-size:.86rem; color:var(--muted); line-height:1.68; }
+
+/* ========================= 20. EVENTS =============================== */
+.ceec-events-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+.ceec-event-card{
+  display:flex; flex-direction:column;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-event-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.ceec-event-card[hidden]{ display:none; }
+
+.ceec-event-card__top{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+  padding:16px 20px;
+  background:linear-gradient(135deg, var(--ceec-navy), var(--ceec-blue));
+  color:#fff;
+}
+.ceec-event-card__date{
+  font-family:var(--font-head);
+  font-size:.82rem; font-weight:700; letter-spacing:.04em;
+}
+.ceec-event-card__cat{
+  padding:4px 11px; border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.26);
+  font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+}
+
+.ceec-event-card__body{
+  padding:22px 20px 24px;
+  display:flex; flex-direction:column; flex:1;
+}
+.ceec-event-card__title{ font-size:1.02rem; margin-bottom:8px; }
+.ceec-event-card__loc{
+  display:flex; align-items:center; gap:7px;
+  font-size:.82rem; color:var(--muted); margin-bottom:12px;
+}
+.ceec-event-card__desc{
+  font-size:.88rem; color:var(--muted); line-height:1.7;
+  margin-bottom:20px; flex:1;
+}
+.ceec-event-card__foot{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding-top:16px; border-top:1px solid var(--border);
+}
+.ceec-sample-tag{
+  font-size:.66rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--ceec-orange);
+  background:rgba(249,168,0,.12);
+  padding:4px 9px; border-radius:6px;
+}
+
+.ceec-link-btn{
+  background:none; border:0; padding:0; cursor:pointer;
+  font-family:var(--font-head); font-size:.86rem; font-weight:700;
+  color:var(--ceec-blue);
+  display:inline-flex; align-items:center; gap:6px;
+  transition:gap .22s var(--ease), color .22s var(--ease);
+}
+.ceec-link-btn:hover{ gap:10px; color:var(--ceec-navy); }
+.ceec-link-btn:focus-visible{ outline:none; box-shadow:var(--ring); border-radius:6px; }
+
+/* ========================== 21. NEWS ================================ */
+.ceec-news-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+}
+.ceec-news-card{
+  display:flex; flex-direction:column;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-news-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.ceec-news-card[hidden]{ display:none; }
+
+.ceec-news-card__media{
+  position:relative;
+  aspect-ratio:16/10;
+  background:linear-gradient(140deg, var(--ceec-navy), var(--ceec-blue));
+  overflow:hidden;
+}
+.ceec-news-card__media::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(340px 180px at 82% 10%, rgba(249,168,0,.30) 0%, transparent 62%),
+    radial-gradient(240px 200px at 8% 92%, rgba(7,138,75,.28) 0%, transparent 60%);
+}
+.ceec-news-card__media span{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  font-family:var(--font-head); font-size:.72rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  z-index:1;
+  white-space:nowrap;
+}
+.ceec-news-card__badge{
+  position:absolute; top:14px; left:14px; z-index:2;
+  padding:5px 12px; border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.95);
+  color:var(--ceec-navy);
+  font-family:var(--font-head); font-size:.68rem; font-weight:800;
+  letter-spacing:.08em; text-transform:uppercase;
+}
+
+.ceec-news-card__body{
+  padding:22px 22px 24px;
+  display:flex; flex-direction:column; flex:1;
+}
+.ceec-news-card__date{
+  font-size:.76rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px;
+}
+.ceec-news-card__title{
+  font-size:1.02rem; line-height:1.4; margin-bottom:10px;
+}
+.ceec-news-card__excerpt{
+  font-size:.88rem; color:var(--muted); line-height:1.7;
+  margin-bottom:18px; flex:1;
+}
+.ceec-news-card__foot{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding-top:16px; border-top:1px solid var(--border);
+}
+
+/* ======================== 22. PARTNERS ============================== */
+.ceec-partners-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+.ceec-partner-card{
+  padding:26px 20px;
+  background:#fff;
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+  text-align:center;
+  transition:border-color .3s var(--ease), transform .3s var(--ease), background-color .3s var(--ease);
+}
+.ceec-partner-card:hover{
+  border-color:var(--ceec-blue);
+  background:var(--ceec-blue-soft);
+  transform:translateY(-4px);
+}
+.ceec-partner-card__logo{
+  width:52px; height:52px; margin:0 auto 16px;
+  border-radius:14px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  display:grid; place-items:center;
+  color:var(--muted);
+  transition:background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+}
+.ceec-partner-card:hover .ceec-partner-card__logo{
+  background:#fff; color:var(--ceec-blue); border-color:rgba(11,77,184,.3);
+}
+.ceec-partner-card__title{
+  font-family:var(--font-head); font-size:.9rem; font-weight:700;
+  color:var(--ceec-dark); margin-bottom:5px;
+}
+.ceec-partner-card__meta{ font-size:.76rem; color:var(--muted); }
+
+/* ========================== 23. CTA BAND ============================ */
+.ceec-cta{
+  background:
+    radial-gradient(760px 380px at 88% 20%, rgba(249,168,0,.22) 0%, transparent 62%),
+    linear-gradient(135deg, #072F6B 0%, #063B86 50%, #0B4DB8 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.ceec-cta__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:clamp(28px, 5vw, 60px);
+  flex-wrap:wrap;
+}
+.ceec-cta__text{ max-width:640px; }
+.ceec-cta__title{ color:#fff; margin-bottom:14px; }
+.ceec-cta__lede{
+  font-size:1.02rem; line-height:1.78; color:rgba(255,255,255,.78);
+}
+.ceec-cta__actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+/* =========================== 24. FORMS ============================== */
+.ceec-form-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:clamp(30px, 4vw, 60px);
+  align-items:start;
+}
+
+.ceec-form{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:clamp(24px, 3.5vw, 40px);
+  box-shadow:var(--shadow-sm);
+}
+.ceec-form__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.ceec-field{ display:flex; flex-direction:column; gap:7px; }
+.ceec-field--full{ grid-column:1 / -1; }
+
+.ceec-field label{
+  font-family:var(--font-head);
+  font-size:.82rem; font-weight:700;
+  color:var(--ceec-dark);
+  letter-spacing:.01em;
+}
+.ceec-field label .req{ color:var(--ceec-red); }
+
+.ceec-field input,
+.ceec-field select,
+.ceec-field textarea{
+  width:100%;
+  padding:12px 15px;
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  font-size:.92rem;
+  color:var(--text);
+  transition:border-color .22s var(--ease), box-shadow .22s var(--ease), background-color .22s var(--ease);
+}
+.ceec-field textarea{ resize:vertical; min-height:118px; line-height:1.65; }
+.ceec-field input::placeholder,
+.ceec-field textarea::placeholder{ color:#9AA6BA; }
+
+.ceec-field input:hover,
+.ceec-field select:hover,
+.ceec-field textarea:hover{ border-color:#C6D3E5; }
+
+.ceec-field input:focus,
+.ceec-field select:focus,
+.ceec-field textarea:focus{
+  outline:none;
+  border-color:var(--ceec-blue);
+  box-shadow:0 0 0 4px rgba(11,77,184,.12);
+}
+
+.ceec-field.has-error input,
+.ceec-field.has-error select,
+.ceec-field.has-error textarea{
+  border-color:var(--ceec-red);
+  background:#FFF6F6;
+}
+.ceec-field.has-error input:focus,
+.ceec-field.has-error select:focus,
+.ceec-field.has-error textarea:focus{
+  box-shadow:0 0 0 4px rgba(229,9,20,.12);
+}
+
+.ceec-field__error{
+  font-size:.78rem; font-weight:600; color:var(--ceec-red);
+  min-height:0; opacity:0;
+  transition:opacity .2s var(--ease);
+}
+.ceec-field.has-error .ceec-field__error{ opacity:1; }
+
+.ceec-check{
+  display:flex; align-items:flex-start; gap:12px;
+  padding:16px;
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+  cursor:pointer;
+  transition:border-color .22s var(--ease), background-color .22s var(--ease);
+}
+.ceec-check:hover{ border-color:#C6D3E5; }
+.ceec-check input{
+  width:19px; height:19px; margin-top:2px; flex:none;
+  accent-color:var(--ceec-navy); cursor:pointer;
+}
+.ceec-check span{ font-size:.86rem; line-height:1.65; color:var(--muted); }
+
+.ceec-field.has-error .ceec-check{ border-color:var(--ceec-red); background:#FFF6F6; }
+
+.ceec-form__actions{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  margin-top:26px;
+}
+.ceec-form__note{ font-size:.8rem; color:var(--muted); }
+
+/* Form side panel */
+.ceec-form-aside{
+  padding:clamp(24px, 3vw, 34px);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(150deg, var(--ceec-navy), var(--ceec-blue));
+  color:#fff;
+}
+.ceec-form-aside h3{ color:#fff; font-size:1.2rem; margin-bottom:14px; }
+.ceec-form-aside > p{ font-size:.92rem; line-height:1.78; color:rgba(255,255,255,.76); margin-bottom:26px; }
+
+.ceec-aside-list{ display:grid; gap:14px; }
+.ceec-aside-list li{
+  display:flex; gap:13px; align-items:flex-start;
+  font-size:.9rem; line-height:1.65; color:rgba(255,255,255,.86);
+}
+.ceec-aside-list li svg{ flex:none; margin-top:3px; color:var(--ceec-orange); }
+
+.ceec-contact-info{ margin-top:28px; display:grid; gap:12px; }
+.ceec-contact-info__row{
+  display:flex; gap:12px; align-items:center;
+  font-size:.88rem; color:rgba(255,255,255,.82);
+  padding:12px 14px;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+}
+.ceec-contact-info__row svg{ flex:none; color:var(--ceec-orange); }
+
+.ceec-contact-teaser{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:clamp(24px, 4vw, 50px); flex-wrap:wrap;
+  padding:clamp(28px, 4vw, 48px);
+  border-radius:var(--radius-lg);
+  background:var(--surface);
+  border:1px solid var(--border);
+}
+.ceec-contact-teaser .ceec-section__title{ font-size:clamp(1.4rem, 2.6vw, 2rem); }
+
+/* ========================== 25. FOOTER ============================== */
+.ceec-footer{
+  background:var(--ceec-dark);
+  color:rgba(255,255,255,.72);
+  padding:clamp(52px, 6vw, 80px) 0 0;
+  margin-top:0;
+}
+.ceec-footer__grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:clamp(28px, 4vw, 56px);
+  padding-bottom:52px;
+}
+.ceec-footer__brand{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.ceec-footer__brand .ceec-brand__name{ color:#fff; }
+.ceec-footer__brand .ceec-brand__sub{ color:rgba(255,255,255,.5); }
+
+.ceec-footer__desc{
+  font-size:.9rem; line-height:1.78; color:rgba(255,255,255,.62);
+  margin-bottom:22px; max-width:38ch;
+}
+.ceec-footer__msg{
+  font-family:var(--font-head); font-weight:800;
+  font-size:.86rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ceec-orange);
+}
+
+.ceec-footer h4{
+  font-family:var(--font-head);
+  font-size:.8rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:#fff; margin-bottom:18px;
+}
+.ceec-footer__links{ display:grid; gap:10px; }
+.ceec-footer__links a{
+  font-size:.9rem; color:rgba(255,255,255,.66);
+  transition:color .2s var(--ease), padding-left .2s var(--ease);
+  display:inline-block;
+}
+.ceec-footer__links a:hover{ color:var(--ceec-orange); padding-left:5px; }
+
+.ceec-social{ display:flex; gap:10px; flex-wrap:wrap; }
+.ceec-social a{
+  width:40px; height:40px; border-radius:12px;
+  display:grid; place-items:center;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.8);
+  transition:background-color .22s var(--ease), color .22s var(--ease),
+             transform .22s var(--ease), border-color .22s var(--ease);
+}
+.ceec-social a:hover{
+  background:var(--ceec-blue); color:#fff; transform:translateY(-3px);
+  border-color:var(--ceec-blue);
+}
+
+.ceec-footer__bottom{
+  border-top:1px solid rgba(255,255,255,.10);
+  padding:24px 0 30px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap;
+  font-size:.82rem; color:rgba(255,255,255,.5);
+}
+.ceec-footer__disclaimer{
+  font-size:.78rem; line-height:1.7; color:rgba(255,255,255,.44);
+  max-width:70ch;
+  padding-bottom:26px;
+}
+
+/* ================= 26. BACK TO TOP + MOBILE BAR ===================== */
+.ceec-back-to-top{
+  position:fixed; right:20px; bottom:24px; z-index:900;
+  width:48px; height:48px; border-radius:14px;
+  border:1.5px solid var(--border);
+  background:#fff; color:var(--ceec-navy);
+  display:grid; place-items:center;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  opacity:0; visibility:hidden; transform:translateY(14px);
+  transition:opacity .3s var(--ease), visibility .3s var(--ease),
+             transform .3s var(--ease), background-color .22s var(--ease), color .22s var(--ease);
+}
+.ceec-back-to-top.is-visible{ opacity:1; visibility:visible; transform:translateY(0); }
+.ceec-back-to-top:hover{ background:var(--ceec-navy); color:#fff; border-color:var(--ceec-navy); }
+.ceec-back-to-top:focus-visible{ outline:none; box-shadow:var(--ring); }
+
+.ceec-mobile-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:890;
+  display:none;
+  gap:10px;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--border);
+  box-shadow:0 -6px 24px rgba(7,26,51,.07);
+}
+.ceec-mobile-bar .ceec-btn{ flex:1; padding:12px 14px; font-size:.88rem; }
+
+/* =========================== 27. MODAL ============================== */
+.ceec-modal{
+  position:fixed; inset:0; z-index:1200;
+  display:grid; place-items:center;
+  padding:20px;
+  opacity:0; visibility:hidden;
+  transition:opacity .28s var(--ease), visibility .28s var(--ease);
+}
+.ceec-modal.is-open{ opacity:1; visibility:visible; }
+
+.ceec-modal__backdrop{
+  position:absolute; inset:0;
+  background:rgba(7,26,51,.62);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+.ceec-modal__dialog{
+  position:relative;
+  width:min(720px, 100%);
+  max-height:88dvh;
+  overflow-y:auto;
+  background:#fff;
+  border-radius:var(--radius-lg);
+  box-shadow:0 40px 100px rgba(0,0,0,.35);
+  transform:translateY(22px) scale(.97);
+  transition:transform .34s var(--ease);
+  overscroll-behavior:contain;
+}
+.ceec-modal.is-open .ceec-modal__dialog{ transform:translateY(0) scale(1); }
+
+.ceec-modal__head{
+  position:sticky; top:0; z-index:2;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:18px;
+  padding:22px 26px;
+  background:linear-gradient(135deg, var(--ceec-navy), var(--ceec-blue));
+  color:#fff;
+}
+.ceec-modal__cat{
+  display:inline-block; margin-bottom:10px;
+  padding:4px 11px; border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.26);
+  font-size:.68rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+}
+.ceec-modal__title{ color:#fff; font-size:1.25rem; line-height:1.35; }
+.ceec-modal__date{
+  font-size:.78rem; color:rgba(255,255,255,.7); margin-top:8px;
+  letter-spacing:.05em; text-transform:uppercase; font-weight:600;
+}
+.ceec-modal__close{
+  flex:none;
+  width:38px; height:38px; border-radius:11px;
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.12);
+  color:#fff; cursor:pointer;
+  display:grid; place-items:center;
+  transition:background-color .22s var(--ease), transform .22s var(--ease);
+}
+.ceec-modal__close:hover{ background:rgba(255,255,255,.24); transform:rotate(90deg); }
+.ceec-modal__close:focus-visible{ outline:none; box-shadow:0 0 0 3px rgba(255,255,255,.5); }
+
+.ceec-modal__body{ padding:26px; }
+.ceec-modal__body p{ font-size:.95rem; line-height:1.82; color:var(--text); }
+.ceec-modal__body p + p{ margin-top:16px; }
+.ceec-modal__body .ceec-sample-note{
+  margin-bottom:20px;
+  padding:12px 16px;
+  border-radius:10px;
+  background:rgba(249,168,0,.10);
+  border-left:3px solid var(--ceec-orange);
+  font-size:.84rem; color:#7A5200; font-weight:500;
+}
+
+/* =========================== 28. TOASTS ============================= */
+.ceec-toast-region{
+  position:fixed; top:calc(var(--nav-h) + 20px); right:20px; z-index:1300;
+  display:flex; flex-direction:column; gap:10px;
+  width:min(360px, calc(100vw - 40px));
+  pointer-events:none;
+}
+.ceec-toast{
+  display:flex; align-items:flex-start; gap:12px;
+  padding:15px 17px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);
+  pointer-events:auto;
+  transform:translateX(120%);
+  opacity:0;
+  transition:transform .38s var(--ease), opacity .38s var(--ease);
+}
+.ceec-toast.is-visible{ transform:translateX(0); opacity:1; }
+
+.ceec-toast__icon{
+  flex:none; width:22px; height:22px; border-radius:50%;
+  display:grid; place-items:center; margin-top:1px;
+}
+.ceec-toast--success .ceec-toast__icon{ background:rgba(7,138,75,.14); color:var(--ceec-green); }
+.ceec-toast--error   .ceec-toast__icon{ background:rgba(229,9,20,.12); color:var(--ceec-red); }
+.ceec-toast--info    .ceec-toast__icon{ background:rgba(11,77,184,.12); color:var(--ceec-blue); }
+
+.ceec-toast__title{
+  font-family:var(--font-head); font-size:.88rem; font-weight:700;
+  color:var(--ceec-dark); margin-bottom:2px;
+}
+.ceec-toast__msg{ font-size:.83rem; color:var(--muted); line-height:1.6; }
+
+/* ======================== 29. ANIMATIONS ============================ */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(26px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+  will-change:opacity, transform;
+}
+[data-reveal].is-visible{ opacity:1; transform:none; }
+
+@keyframes floatBlob{
+  0%,100%{ transform:translate(0,0) scale(1); }
+  33%    { transform:translate(28px,-24px) scale(1.06); }
+  66%    { transform:translate(-22px,20px) scale(.96); }
+}
+@keyframes floatCard{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%    { transform:translateY(-14px) rotate(-.6deg); }
+}
+@keyframes floatChip{
+  0%,100%{ transform:translateY(0); }
+  50%    { transform:translateY(-10px); }
+}
+@keyframes pulseDot{
+  0%,100%{ box-shadow:0 0 0 4px rgba(249,168,0,.22); }
+  50%    { box-shadow:0 0 0 9px rgba(249,168,0,0); }
+}
+
+/* ==================== 30. RESPONSIVE BREAKPOINTS ==================== */
+@media (max-width: 1180px){
+  .ceec-nav__link{ padding:9px 10px; font-size:.84rem; }
+  .ceec-impact-grid{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-initiatives-grid{ grid-template-columns:repeat(3, 1fr); }
+  .ceec-leadership__units{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-partners-grid{ grid-template-columns:repeat(3, 1fr); }
+  .ceec-footer__grid{ grid-template-columns:1.4fr 1fr 1fr; }
+  .ceec-footer__grid > div:last-child{ grid-column:1 / -1; }
+}
+
+@media (max-width: 1024px){
+  :root{ --nav-h:68px; }
+  .ceec-nav{ display:none; }
+  .ceec-navbar__cta{ display:none; }
+  .ceec-burger{ display:block; }
+
+  .ceec-hero__inner{ grid-template-columns:1fr; gap:48px; }
+  .ceec-hero__visual{ order:-1; }
+  .ceec-hero__card{ max-width:340px; }
+  .ceec-hero__lede{ max-width:none; }
+
+  .ceec-about{ grid-template-columns:1fr; gap:40px; }
+  .ceec-objectives-grid{ grid-template-columns:1fr; }
+  .ceec-values-grid{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-events-grid{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-news-grid{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-form-layout{ grid-template-columns:1fr; }
+  .ceec-form-aside{ order:-1; }
+
+  .ceec-cta__inner{ flex-direction:column; align-items:flex-start; }
+}
+
+@media (max-width: 860px){
+  .ceec-leadership__units{ grid-template-columns:1fr; }
+  .ceec-initiatives-grid{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-partners-grid{ grid-template-columns:repeat(2, 1fr); }
+  .ceec-footer__grid{ grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width: 768px){
+  :root{ --gutter:18px; }
+
+  .ceec-announce__inner{ font-size:.76rem; gap:9px; }
+
+  .ceec-section{ padding:64px 0; }
+
+  .ceec-impact-grid{ grid-template-columns:1fr; }
+  .ceec-values-grid{ grid-template-columns:1fr; }
+  .ceec-events-grid{ grid-template-columns:1fr; }
+  .ceec-news-grid{ grid-template-columns:1fr; }
+  .ceec-initiatives-grid{ grid-template-columns:1fr; }
+
+  .ceec-objective-card{ padding:22px 20px 22px 68px; }
+  .ceec-objective-card__num{ left:18px; top:22px; width:36px; height:36px; }
+
+  .ceec-guideline-item__body{ padding:0 20px 22px 20px; }
+  .ceec-guideline-item__btn{ padding:18px; gap:14px; }
+
+  .ceec-form__grid{ grid-template-columns:1fr; }
+  .ceec-form__actions{ flex-direction:column; align-items:stretch; }
+  .ceec-form__actions .ceec-btn{ width:100%; }
+
+  .ceec-mobile-bar{ display:flex; }
+  .ceec-back-to-top{ bottom:calc(84px + env(safe-area-inset-bottom, 0px)); }
+
+  body{ padding-bottom:76px; }
+
+  .ceec-footer__grid{ grid-template-columns:1fr; gap:34px; padding-bottom:38px; }
+  .ceec-footer__grid > div:last-child{ grid-column:auto; }
+  .ceec-footer__bottom{ flex-direction:column; align-items:flex-start; gap:8px; }
+
+  .ceec-float-chip--1{ left:0; top:0; }
+  .ceec-float-chip--2{ right:0; }
+  .ceec-float-chip--3{ display:none; }
+
+  .ceec-toast-region{
+    top:auto; bottom:calc(88px + env(safe-area-inset-bottom, 0px));
+    left:16px; right:16px; width:auto;
+  }
+  .ceec-toast{ transform:translateY(120%); }
+  .ceec-toast.is-visible{ transform:translateY(0); }
+}
+
+@media (max-width: 480px){
+  h1{ font-size:2rem; }
+  .ceec-hero{ padding:44px 0 66px; }
+  .ceec-hero__actions .ceec-btn{ width:100%; }
+  .ceec-hero__card{ padding:28px 22px 24px; }
+  .ceec-hero__card-logo{ width:76px; height:76px; }
+  .ceec-float-chip{ font-size:.66rem; padding:7px 12px; }
+
+  .ceec-partners-grid{ grid-template-columns:1fr; }
+  .ceec-contact-teaser{ flex-direction:column; align-items:flex-start; }
+  .ceec-contact-teaser .ceec-btn{ width:100%; }
+
+  .ceec-modal__head{ padding:18px 20px; }
+  .ceec-modal__body{ padding:20px; }
+  .ceec-modal__title{ font-size:1.08rem; }
+
+  .ceec-section__lede{ font-size:.95rem; }
+}
+
+/* ================ 31. ACCESSIBILITY / REDUCED MOTION ================ */
+:focus-visible{
+  outline:2px solid var(--ceec-blue);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  [data-reveal]{ opacity:1 !important; transform:none !important; }
+  .ceec-hero__card,
+  .ceec-blob,
+  .ceec-float-chip,
+  .ceec-announce__dot{ animation:none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== SVG SYMBOL LIBRARY (logo + icons) ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="ceecMarkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B4DB8"/>
+      <stop offset="100%" stop-color="#063B86"/>
+    </linearGradient>
+    <linearGradient id="ceecMarkGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFC94D"/>
+      <stop offset="100%" stop-color="#F9A800"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CEEC community mark: circle, three figures, star -->
+  <symbol id="ceec-mark" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="30" fill="url(#ceecMarkGrad)"/>
+    <circle cx="32" cy="32" r="30" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+    <!-- green + red accent arcs -->
+    <path d="M6 40a30 30 0 0 0 52 0" fill="none" stroke="#078A4B" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+    <path d="M58 24a30 30 0 0 0-14-13" fill="none" stroke="#E50914" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+    <!-- three figures -->
+    <circle cx="23" cy="27" r="4.2" fill="#FFFFFF"/>
+    <path d="M16 42c0-4 3.1-6.6 7-6.6s7 2.6 7 6.6" fill="#FFFFFF" opacity=".92"/>
+    <circle cx="41" cy="27" r="4.2" fill="#FFFFFF"/>
+    <path d="M34 42c0-4 3.1-6.6 7-6.6s7 2.6 7 6.6" fill="#FFFFFF" opacity=".92"/>
+    <circle cx="32" cy="21" r="4.8" fill="#FFFFFF"/>
+    <path d="M24.6 40.5c0-4.4 3.3-7.3 7.4-7.3s7.4 2.9 7.4 7.3" fill="#FFFFFF"/>
+    <!-- star -->
+    <path d="M48 10l1.7 3.6 3.9.5-2.9 2.7.7 3.9-3.4-1.9-3.4 1.9.7-3.9-2.9-2.7 3.9-.5z" fill="url(#ceecMarkGold)"/>
+  </symbol>
+
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="M9.6 16.2 4.8 11.4l1.4-1.4 3.4 3.4 8-8 1.4 1.4z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24">
+    <path d="M13.2 5.6 11.8 7l4 4H5v2h10.8l-4 4 1.4 1.4L19.6 12z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <path d="m12 10.6 5.3-5.3 1.4 1.4L13.4 12l5.3 5.3-1.4 1.4L12 13.4l-5.3 5.3-1.4-1.4L10.6 12 5.3 6.7l1.4-1.4z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24">
+    <path d="M12 15.4 6.6 10 8 8.6l4 4 4-4L17.4 10z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1m1.4 2L12 12.3 19.6 7z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path d="M6.6 3h2.9l1.5 3.7-2 1.2a12 12 0 0 0 5.1 5.1l1.2-2 3.7 1.5v2.9a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24">
+    <path d="M12 2.6 14 9l6.4 2-6.4 2-2 6.4-2-6.4L3.6 11 10 9z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<!-- ===================== SCROLL PROGRESS ===================== -->
+<div class="ceec-scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+<!-- ===================== ANNOUNCEMENT STRIP ===================== -->
+<div class="ceec-announce">
+  <div class="ceec-container">
+    <div class="ceec-announce__inner">
+      <span class="ceec-announce__dot" aria-hidden="true"></span>
+      <span class="ceec-announce__text">CEEC is building a structured creative community across Cross River State.</span>
+      <a class="ceec-announce__link" href="#membership">Join the community →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="ceec-navbar" id="navbar">
+  <div class="ceec-container">
+    <div class="ceec-navbar__inner">
+
+      <a class="ceec-brand" href="#top" aria-label="CEEC — Cross River State, home">
+        <svg class="ceec-brand__mark" aria-hidden="true"><use href="#ceec-mark"></use></svg>
+        <span class="ceec-brand__text">
+          <span class="ceec-brand__name">CEEC</span>
+          <span class="ceec-brand__sub">Cross River State</span>
+        </span>
+      </a>
+
+      <nav class="ceec-nav" id="desktopNav" aria-label="Primary">
+        <a class="ceec-nav__link" href="#about">About</a>
+        <a class="ceec-nav__link" href="#objectives">Objectives</a>
+        <a class="ceec-nav__link" href="#guidelines">Guidelines</a>
+        <a class="ceec-nav__link" href="#leadership">Leadership</a>
+        <a class="ceec-nav__link" href="#events">Events</a>
+        <a class="ceec-nav__link" href="#initiatives">Community</a>
+        <a class="ceec-nav__link" href="#news">News</a>
+        <a class="ceec-nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <a class="ceec-btn ceec-btn--primary ceec-navbar__cta" href="#membership">Join CEEC</a>
+
+      <button class="ceec-burger" id="burger" type="button"
+              aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBILE DRAWER + BACKDROP ===================== -->
+<div class="ceec-backdrop" id="backdrop" hidden></div>
+
+<aside class="ceec-drawer" id="drawer" aria-hidden="true" aria-label="Mobile navigation">
+  <div class="ceec-drawer__head">
+    <a class="ceec-brand" href="#top">
+      <svg class="ceec-brand__mark" aria-hidden="true"><use href="#ceec-mark"></use></svg>
+      <span class="ceec-brand__text">
+        <span class="ceec-brand__name">CEEC</span>
+        <span class="ceec-brand__sub">Cross River State</span>
+      </span>
+    </a>
+    <button class="ceec-drawer__close" id="drawerClose" type="button" aria-label="Close navigation menu">
+      <svg width="18" height="18" aria-hidden="true"><use href="#i-close"></use></svg>
+    </button>
+  </div>
+
+  <nav class="ceec-drawer__nav" aria-label="Mobile primary">
+    <a class="ceec-drawer__link" href="#about">About CEEC</a>
+    <a class="ceec-drawer__link" href="#objectives">Objectives</a>
+    <a class="ceec-drawer__link" href="#values">Core Values</a>
+    <a class="ceec-drawer__link" href="#guidelines">Guidelines</a>
+    <a class="ceec-drawer__link" href="#leadership">Leadership</a>
+    <a class="ceec-drawer__link" href="#events">Events</a>
+    <a class="ceec-drawer__link" href="#initiatives">Community</a>
+    <a class="ceec-drawer__link" href="#news">News</a>
+    <a class="ceec-drawer__link" href="#partners">Partners</a>
+    <a class="ceec-drawer__link" href="#membership">Membership</a>
+    <a class="ceec-drawer__link" href="#contact">Contact</a>
+  </nav>
+
+  <div class="ceec-drawer__foot">
+    <a class="ceec-btn ceec-btn--primary ceec-btn--block" href="#membership">Become a Member</a>
+    <p>From influence to participation.</p>
+  </div>
+</aside>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="ceec-hero" aria-labelledby="heroTitle">
+    <div class="ceec-hero__bg" aria-hidden="true">
+      <span class="ceec-blob ceec-blob--1"></span>
+      <span class="ceec-blob ceec-blob--2"></span>
+      <span class="ceec-blob ceec-blob--3"></span>
+      <span class="ceec-blob ceec-blob--4"></span>
+      <span class="ceec-hero__grid"></span>
+    </div>
+
+    <div class="ceec-container ceec-hero__inner">
+      <div class="ceec-hero__content">
+        <p class="ceec-hero__eyebrow" data-reveal>
+          <span class="ceec-pill">CEEC — CRS</span>
+          Creative · Entertainment · Events
+        </p>
+
+        <h1 class="ceec-hero__title" id="heroTitle" data-reveal>
+          From Influence
+          <span class="ceec-hero__accent">To Participation.</span>
+        </h1>
+
+        <p class="ceec-hero__lede" data-reveal>
+          A structured community of creatives, entertainers, event professionals,
+          influencers and industry stakeholders working together to promote civic
+          awareness, peaceful engagement and positive community development across
+          Cross River State.
+        </p>
+
+        <div class="ceec-hero__actions" data-reveal>
+          <a class="ceec-btn ceec-btn--light ceec-btn--lg" href="#membership">Join the Community</a>
+          <a class="ceec-btn ceec-btn--ghost ceec-btn--lg" href="#about">Explore CEEC</a>
+        </div>
+
+        <ul class="ceec-hero__tags" data-reveal>
+          <li>Your Vote Counts</li>
+          <li>Connect. Engage. Participate.</li>
+          <li>Vote, Don&rsquo;t Fight.</li>
+        </ul>
+      </div>
+
+      <div class="ceec-hero__visual" aria-hidden="true">
+        <div class="ceec-hero__card">
+          <svg class="ceec-hero__card-logo"><use href="#ceec-mark"></use></svg>
+          <p class="ceec-hero__card-title">The Creative, Entertainment &amp; Events Community</p>
+          <p class="ceec-hero__card-sub">Cross River State</p>
+          <div class="ceec-hero__card-bars">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <span class="ceec-float-chip ceec-float-chip--1">Civic Awareness</span>
+        <span class="ceec-float-chip ceec-float-chip--2">Peaceful Participation</span>
+        <span class="ceec-float-chip ceec-float-chip--3">Creative Network</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUICK IMPACT ===================== -->
+  <section class="ceec-section ceec-section--tight" aria-labelledby="impactTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head ceec-section__head--center" data-reveal>
+        <p class="ceec-eyebrow">What CEEC Represents</p>
+        <h2 class="ceec-section__title" id="impactTitle">Four Pillars Of Our Community</h2>
+        <p class="ceec-section__lede">
+          CEEC is built around people, purpose and participation. These pillars describe
+          the direction of the community rather than any measured statistic.
+        </p>
+      </header>
+
+      <div class="ceec-impact-grid">
+        <article class="ceec-impact-card" data-reveal>
+          <span class="ceec-impact-card__bar" style="--bar:#0B4DB8"></span>
+          <p class="ceec-impact-card__eyebrow">Community</p>
+          <h3 class="ceec-impact-card__title">Creative &amp; Entertainment Network</h3>
+          <p class="ceec-impact-card__text">
+            One coordinated space for creatives, entertainers, event professionals,
+            promoters, influencers and industry stakeholders.
+          </p>
+        </article>
+
+        <article class="ceec-impact-card" data-reveal>
+          <span class="ceec-impact-card__bar" style="--bar:#F9A800"></span>
+          <p class="ceec-impact-card__eyebrow">Civic</p>
+          <h3 class="ceec-impact-card__title">Responsible Civic Participation</h3>
+          <p class="ceec-impact-card__text">
+            Encouraging informed, issue-based and responsible engagement in civic
+            and democratic processes.
+          </p>
+        </article>
+
+        <article class="ceec-impact-card" data-reveal>
+          <span class="ceec-impact-card__bar" style="--bar:#078A4B"></span>
+          <p class="ceec-impact-card__eyebrow">Peace</p>
+          <h3 class="ceec-impact-card__title">Peaceful Community Engagement</h3>
+          <p class="ceec-impact-card__text">
+            Promoting calm, respect and safety before, during and after every
+            community activity or election period.
+          </p>
+        </article>
+
+        <article class="ceec-impact-card" data-reveal>
+          <span class="ceec-impact-card__bar" style="--bar:#E50914"></span>
+          <p class="ceec-impact-card__eyebrow">Opportunity</p>
+          <h3 class="ceec-impact-card__title">Talent &amp; Industry Development</h3>
+          <p class="ceec-impact-card__text">
+            Creating room for collaboration, visibility and growth across Cross
+            River&rsquo;s creative and events ecosystem.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="ceec-section" id="about" aria-labelledby="aboutTitle">
+    <div class="ceec-container">
+      <div class="ceec-about">
+        <div class="ceec-about__intro" data-reveal>
+          <p class="ceec-eyebrow">About CEEC</p>
+          <h2 class="ceec-section__title" id="aboutTitle">
+            A structured community for Cross River&rsquo;s creative industry.
+          </h2>
+          <p class="ceec-about__lead">
+            The Creative, Entertainment &amp; Events Community — Cross River State
+            (CEEC - CRS) is a structured and inclusive community bringing together
+            creatives, entertainers, event professionals, influencers, promoters and
+            other stakeholders within Cross River State.
+          </p>
+          <p class="ceec-about__text">
+            CEEC seeks to move young people and industry stakeholders beyond influence
+            and visibility into meaningful participation in issues that affect their
+            communities and the future of Cross River State.
+          </p>
+        </div>
+
+        <ol class="ceec-about__timeline">
+          <li class="ceec-about__step" data-reveal>
+            <span class="ceec-about__step-num">01</span>
+            <h3>Why CEEC Was Created</h3>
+            <p>
+              To give Cross River&rsquo;s creative and entertainment industry a single,
+              organised and responsible community structure.
+            </p>
+          </li>
+          <li class="ceec-about__step" data-reveal>
+            <span class="ceec-about__step-num">02</span>
+            <h3>What CEEC Represents</h3>
+            <p>
+              Unity, responsibility, creativity, peace and constructive participation
+              in civic and community life.
+            </p>
+          </li>
+          <li class="ceec-about__step" data-reveal>
+            <span class="ceec-about__step-num">03</span>
+            <h3>Who CEEC Serves</h3>
+            <p>
+              Creatives, entertainers, event professionals, influencers, promoters,
+              media personalities, entrepreneurs and emerging talents.
+            </p>
+          </li>
+          <li class="ceec-about__step" data-reveal>
+            <span class="ceec-about__step-num">04</span>
+            <h3>Where CEEC Is Headed</h3>
+            <p>
+              A sustainable, transparent and well-coordinated network active across
+              relevant areas of Cross River State.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AIM ===================== -->
+  <section class="ceec-section ceec-aim" aria-labelledby="aimTitle">
+    <div class="ceec-container">
+      <div class="ceec-aim__inner" data-reveal>
+        <p class="ceec-eyebrow ceec-eyebrow--light">Our Aim</p>
+        <h2 class="ceec-aim__statement" id="aimTitle">
+          To build a structured, inclusive and responsible community of creatives,
+          entertainers, event professionals, influencers, promoters and other
+          stakeholders within Cross River State &mdash; leveraging the power of
+          creativity, entertainment and events to promote civic awareness, youth
+          participation, social responsibility, peaceful engagement and positive
+          community development.
+        </h2>
+        <p class="ceec-aim__note">
+          The Community seeks to create a platform where young people and industry
+          stakeholders can move beyond influence and visibility into meaningful
+          participation in issues that affect their communities and the future of
+          Cross River State.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OBJECTIVES ===================== -->
+  <section class="ceec-section" id="objectives" aria-labelledby="objectivesTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">Objectives</p>
+        <h2 class="ceec-section__title" id="objectivesTitle">Ten Objectives That Guide CEEC</h2>
+        <p class="ceec-section__lede">
+          Select any card to read the full objective. Select it again to collapse.
+        </p>
+      </header>
+
+      <div class="ceec-objectives-grid" id="objectivesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CORE VALUES ===================== -->
+  <section class="ceec-section ceec-section--surface" id="values" aria-labelledby="valuesTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head ceec-section__head--center" data-reveal>
+        <p class="ceec-eyebrow">Our Core Values</p>
+        <h2 class="ceec-section__title" id="valuesTitle">What We Stand For</h2>
+        <p class="ceec-section__lede">
+          Nine values that shape how members of CEEC relate, work and participate.
+        </p>
+      </header>
+
+      <div class="ceec-values-grid" id="valuesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== GUIDELINES ===================== -->
+  <section class="ceec-section" id="guidelines" aria-labelledby="guidelinesTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">Operational Guidelines</p>
+        <h2 class="ceec-section__title" id="guidelinesTitle">CEEC Community Guidelines</h2>
+        <p class="ceec-section__lede">
+          Fourteen guidelines that keep the community responsible, peaceful and
+          accountable.
+        </p>
+      </header>
+
+      <div class="ceec-guidelines" id="guidelinesList"></div>
+    </div>
+  </section>
+
+  <!-- ===================== LEADERSHIP ===================== -->
+  <section class="ceec-section ceec-section--surface" id="leadership" aria-labelledby="leadershipTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head ceec-section__head--center" data-reveal>
+        <p class="ceec-eyebrow">Leadership &amp; Coordination</p>
+        <h2 class="ceec-section__title" id="leadershipTitle">How CEEC Is Coordinated</h2>
+        <p class="ceec-section__lede">
+          CEEC operates through designated coordinating areas. Individual names and
+          positions will be published as they are officially confirmed.
+        </p>
+      </header>
+
+      <div class="ceec-leadership">
+
+        <div class="ceec-leadership__row" data-reveal>
+          <p class="ceec-leadership__label">Leadership</p>
+          <div class="ceec-leadership__top">
+            <div>
+              <h3>Community Leadership</h3>
+              <p>Coordinator — Name to be announced</p>
+            </div>
+            <span class="ceec-leadership__badge">Name to be announced</span>
+          </div>
+        </div>
+
+        <div class="ceec-leadership__row" data-reveal>
+          <p class="ceec-leadership__label">Core Coordination</p>
+          <div class="ceec-leadership__top">
+            <div>
+              <h3>Core Coordination Team</h3>
+              <p>Positions to be announced as they are confirmed</p>
+            </div>
+            <span class="ceec-leadership__badge">To be announced</span>
+          </div>
+        </div>
+
+        <div class="ceec-leadership__row" data-reveal>
+          <p class="ceec-leadership__label">Functional Units</p>
+          <div class="ceec-leadership__units" id="leadershipUnits"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMMUNITY INITIATIVES ===================== -->
+  <section class="ceec-section" id="initiatives" aria-labelledby="initiativesTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">Community &amp; Initiatives</p>
+        <h2 class="ceec-section__title" id="initiativesTitle">The Kind Of Initiatives CEEC Supports</h2>
+        <p class="ceec-section__lede">
+          These are the focus areas the community is built to support. Specific
+          programmes will be announced as they are confirmed.
+        </p>
+      </header>
+
+      <div class="ceec-initiatives-grid" id="initiativesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== EVENTS ===================== -->
+  <section class="ceec-section ceec-section--surface" id="events" aria-labelledby="eventsTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">Events</p>
+        <h2 class="ceec-section__title" id="eventsTitle">Upcoming &amp; Past Activities</h2>
+        <p class="ceec-section__lede">
+          The events below are <strong>sample placeholders</strong> showing how CEEC
+          activities will appear. Real events will replace them.
+        </p>
+      </header>
+
+      <div class="ceec-filters" id="eventFilters" role="group" aria-label="Filter events by category">
+        <button class="ceec-filter is-active" data-filter="all" type="button">All</button>
+        <button class="ceec-filter" data-filter="events" type="button">Events</button>
+        <button class="ceec-filter" data-filter="creative" type="button">Creative</button>
+        <button class="ceec-filter" data-filter="entertainment" type="button">Entertainment</button>
+        <button class="ceec-filter" data-filter="community" type="button">Community</button>
+        <button class="ceec-filter" data-filter="civic" type="button">Civic</button>
+      </div>
+
+      <div class="ceec-events-grid" id="eventsGrid"></div>
+      <p class="ceec-empty" id="eventsEmpty" hidden>No events match this filter yet.</p>
+    </div>
+  </section>
+
+  <!-- ===================== NEWS ===================== -->
+  <section class="ceec-section" id="news" aria-labelledby="newsTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">News &amp; Updates</p>
+        <h2 class="ceec-section__title" id="newsTitle">From The Community</h2>
+        <p class="ceec-section__lede">
+          Articles below are <strong>placeholder content</strong> demonstrating the
+          layout. Real updates will be published here.
+        </p>
+      </header>
+
+      <div class="ceec-filters" id="newsFilters" role="group" aria-label="Filter news by category">
+        <button class="ceec-filter is-active" data-filter="all" type="button">All</button>
+        <button class="ceec-filter" data-filter="announcement" type="button">Announcements</button>
+        <button class="ceec-filter" data-filter="civic" type="button">Civic</button>
+        <button class="ceec-filter" data-filter="creative" type="button">Creative</button>
+        <button class="ceec-filter" data-filter="community" type="button">Community</button>
+      </div>
+
+      <div class="ceec-news-grid" id="newsGrid"></div>
+      <p class="ceec-empty" id="newsEmpty" hidden>No articles match this filter yet.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PARTNERS ===================== -->
+  <section class="ceec-section ceec-section--surface" id="partners" aria-labelledby="partnersTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head ceec-section__head--center" data-reveal>
+        <p class="ceec-eyebrow">Partners &amp; Stakeholders</p>
+        <h2 class="ceec-section__title" id="partnersTitle">Who CEEC Can Work With</h2>
+        <p class="ceec-section__lede">
+          Partner slots are placeholders. No partnership is implied until it is
+          officially announced by CEEC.
+        </p>
+      </header>
+
+      <div class="ceec-partners-grid" id="partnersGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== MEMBERSHIP ===================== -->
+  <section class="ceec-section" id="membership" aria-labelledby="membershipTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">Membership</p>
+        <h2 class="ceec-section__title" id="membershipTitle">Be Part Of The Community</h2>
+        <p class="ceec-section__lede">
+          Connect with creatives, entertainers, event professionals and other
+          stakeholders working toward a stronger, more responsible and engaged
+          creative community in Cross River State.
+        </p>
+      </header>
+
+      <div class="ceec-form-layout">
+
+        <aside class="ceec-form-aside" data-reveal>
+          <h3>Why Join CEEC</h3>
+          <p>
+            Membership connects you to a coordinated network of creatives,
+            entertainers and event professionals across Cross River State.
+          </p>
+
+          <ul class="ceec-aside-list">
+            <li>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Be part of a structured creative and entertainment network.</span>
+            </li>
+            <li>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Collaborate on projects, events and community initiatives.</span>
+            </li>
+            <li>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Support civic awareness and peaceful participation.</span>
+            </li>
+            <li>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Contribute to talent and industry development.</span>
+            </li>
+          </ul>
+
+          <div class="ceec-contact-info">
+            <div class="ceec-contact-info__row">
+              <svg width="17" height="17" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <span>Email — to be announced</span>
+            </div>
+            <div class="ceec-contact-info__row">
+              <svg width="17" height="17" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <span>Phone — to be announced</span>
+            </div>
+          </div>
+        </aside>
+
+        <form class="ceec-form" id="membershipForm" novalidate data-reveal>
+          <div class="ceec-form__grid">
+
+            <div class="ceec-field">
+              <label for="mName">Full Name <span class="req">*</span></label>
+              <input type="text" id="mName" name="fullName" placeholder="Enter your full name"
+                     autocomplete="name" required>
+              <span class="ceec-field__error" data-error-for="mName"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="mEmail">Email Address <span class="req">*</span></label>
+              <input type="email" id="mEmail" name="email" placeholder="you@example.com"
+                     autocomplete="email" required>
+              <span class="ceec-field__error" data-error-for="mEmail"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="mPhone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="mPhone" name="phone" placeholder="080 0000 0000"
+                     autocomplete="tel" required>
+              <span class="ceec-field__error" data-error-for="mPhone"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="mLocation">Location / LGA <span class="req">*</span></label>
+              <input type="text" id="mLocation" name="location"
+                     placeholder="e.g. Calabar Municipal" required>
+              <span class="ceec-field__error" data-error-for="mLocation"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="mCategory">Professional Category <span class="req">*</span></label>
+              <select id="mCategory" name="category" required>
+                <option value="">Select a category</option>
+                <option>Creative</option>
+                <option>Entertainer</option>
+                <option>Event Professional</option>
+                <option>Influencer</option>
+                <option>Promoter</option>
+                <option>DJ</option>
+                <option>MC</option>
+                <option>Performer</option>
+                <option>Media</option>
+                <option>Entrepreneur</option>
+                <option>Other</option>
+              </select>
+              <span class="ceec-field__error" data-error-for="mCategory"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="mInterest">Area of Interest <span class="req">*</span></label>
+              <select id="mInterest" name="interest" required>
+                <option value="">Select an area of interest</option>
+                <option>Creative &amp; Talent</option>
+                <option>Entertainment</option>
+                <option>Events</option>
+                <option>Communications</option>
+                <option>Digital &amp; Social Media</option>
+                <option>Civic Engagement</option>
+                <option>Partnerships</option>
+                <option>Membership</option>
+                <option>Welfare</option>
+                <option>Other</option>
+              </select>
+              <span class="ceec-field__error" data-error-for="mInterest"></span>
+            </div>
+
+            <div class="ceec-field ceec-field--full">
+              <label for="mHandle">Social Media Handle</label>
+              <input type="text" id="mHandle" name="handle" placeholder="@yourhandle">
+              <span class="ceec-field__error" data-error-for="mHandle"></span>
+            </div>
+
+            <div class="ceec-field ceec-field--full">
+              <label for="mBio">Short Bio</label>
+              <textarea id="mBio" name="bio"
+                placeholder="Tell us briefly about yourself and what you do."></textarea>
+              <span class="ceec-field__error" data-error-for="mBio"></span>
+            </div>
+
+            <div class="ceec-field ceec-field--full" id="agreementField">
+              <label class="ceec-check" for="mAgree">
+                <input type="checkbox" id="mAgree" name="agreement" required>
+                <span>
+                  I agree to respect the objectives and guidelines of CEEC, to promote
+                  peaceful and responsible engagement, and to contribute positively to
+                  the community.
+                </span>
+              </label>
+              <span class="ceec-field__error" data-error-for="mAgree"></span>
+            </div>
+
+          </div>
+
+          <div class="ceec-form__actions">
+            <button class="ceec-btn ceec-btn--primary ceec-btn--lg" type="submit">
+              Submit Membership Request
+            </button>
+            <p class="ceec-form__note">
+              This form is a front-end demonstration. Submissions are not yet stored.
+            </p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="ceec-section ceec-section--surface" id="contact" aria-labelledby="contactTitle">
+    <div class="ceec-container">
+      <header class="ceec-section__head" data-reveal>
+        <p class="ceec-eyebrow">Contact</p>
+        <h2 class="ceec-section__title" id="contactTitle">Reach The CEEC Coordination Team</h2>
+        <p class="ceec-section__lede">
+          Questions, partnership enquiries or community suggestions are welcome.
+          Contact details below are placeholders until officially published.
+        </p>
+      </header>
+
+      <div class="ceec-form-layout">
+
+        <aside class="ceec-form-aside" data-reveal>
+          <h3>CEEC — Cross River State</h3>
+          <p>
+            The Creative, Entertainment &amp; Events Community, Cross River State.
+          </p>
+
+          <div class="ceec-contact-info">
+            <div class="ceec-contact-info__row">
+              <svg width="17" height="17" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <span>Email — to be announced</span>
+            </div>
+            <div class="ceec-contact-info__row">
+              <svg width="17" height="17" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <span>Phone — to be announced</span>
+            </div>
+            <div class="ceec-contact-info__row">
+              <svg width="17" height="17" aria-hidden="true"><use href="#i-pin"></use></svg>
+              <span>Office — to be announced</span>
+            </div>
+            <div class="ceec-contact-info__row">
+              <svg width="17" height="17" aria-hidden="true"><use href="#i-spark"></use></svg>
+              <span>Social media — to be announced</span>
+            </div>
+          </div>
+        </aside>
+
+        <form class="ceec-form" id="contactForm" novalidate data-reveal>
+          <div class="ceec-form__grid">
+
+            <div class="ceec-field">
+              <label for="cName">Name <span class="req">*</span></label>
+              <input type="text" id="cName" name="name" placeholder="Your name"
+                     autocomplete="name" required>
+              <span class="ceec-field__error" data-error-for="cName"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="cEmail">Email <span class="req">*</span></label>
+              <input type="email" id="cEmail" name="email" placeholder="you@example.com"
+                     autocomplete="email" required>
+              <span class="ceec-field__error" data-error-for="cEmail"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="cPhone">Phone</label>
+              <input type="tel" id="cPhone" name="phone" placeholder="080 0000 0000"
+                     autocomplete="tel">
+              <span class="ceec-field__error" data-error-for="cPhone"></span>
+            </div>
+
+            <div class="ceec-field">
+              <label for="cSubject">Subject <span class="req">*</span></label>
+              <input type="text" id="cSubject" name="subject" placeholder="What is this about?"
+                     required>
+              <span class="ceec-field__error" data-error-for="cSubject"></span>
+            </div>
+
+            <div class="ceec-field ceec-field--full">
+              <label for="cMessage">Message <span class="req">*</span></label>
+              <textarea id="cMessage" name="message" placeholder="Write your message here."
+                        required></textarea>
+              <span class="ceec-field__error" data-error-for="cMessage"></span>
+            </div>
+
+          </div>
+
+          <div class="ceec-form__actions">
+            <button class="ceec-btn ceec-btn--primary ceec-btn--lg" type="submit">
+              Send Message
+            </button>
+            <p class="ceec-form__note">
+              This form is a front-end demonstration. Messages are not yet delivered.
+            </p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <section class="ceec-section ceec-cta" aria-labelledby="ctaTitle">
+    <div class="ceec-container">
+      <div class="ceec-cta__inner" data-reveal>
+        <div class="ceec-cta__text">
+          <p class="ceec-eyebrow ceec-eyebrow--light">From Influence To Participation</p>
+          <h2 class="ceec-cta__title" id="ctaTitle">Connect. Engage. Participate.</h2>
+          <p class="ceec-cta__lede">
+            CEEC promotes responsible, peaceful and non-partisan civic participation.
+            Your vote counts, and so does your voice in the community.
+          </p>
+        </div>
+        <div class="ceec-cta__actions">
+          <a class="ceec-btn ceec-btn--light ceec-btn--lg" href="#membership">Become a Member</a>
+          <a class="ceec-btn ceec-btn--ghost-light ceec-btn--lg" href="#contact">Talk to CEEC</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="ceec-footer">
+  <div class="ceec-container">
+
+    <div class="ceec-footer__grid">
+
+      <div>
+        <div class="ceec-footer__brand">
+          <svg class="ceec-brand__mark" aria-hidden="true"><use href="#ceec-mark"></use></svg>
+          <span class="ceec-brand__text">
+            <span class="ceec-brand__name">CEEC</span>
+            <span class="ceec-brand__sub">Cross River State</span>
+          </span>
+        </div>
+        <p class="ceec-footer__desc">
+          The Creative, Entertainment &amp; Events Community — Cross River State.
+        </p>
+        <p class="ceec-footer__msg">From Influence To Participation.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <nav class="ceec-footer__links" aria-label="Footer quick links">
+          <a href="#about">About</a>
+          <a href="#objectives">Objectives</a>
+          <a href="#guidelines">Guidelines</a>
+          <a href="#leadership">Leadership</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4>Community</h4>
+        <nav class="ceec-footer__links" aria-label="Footer community links">
+          <a href="#events">Events</a>
+          <a href="#initiatives">Community</a>
+          <a href="#news">News</a>
+          <a href="#membership">Membership</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <div class="ceec-social">
+          <a href="#contact" aria-label="Facebook — link to be announced">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.1H7.7v3h2.6V21z"/>
+            </svg>
+          </a>
+          <a href="#contact" aria-label="Instagram — link to be announced">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4m0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3m6.9-11.2a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5"/>
+            </svg>
+          </a>
+          <a href="#contact" aria-label="X (Twitter) — link to be announced">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M17.5 3h3.1l-6.8 7.8L21.8 21h-6.3l-4.9-6.4L5.1 21H2l7.3-8.3L2.4 3h6.4l4.4 5.9zm-1.1 16.1h1.7L7.7 4.8H5.9z"/>
+            </svg>
+          </a>
+          <a href="#contact" aria-label="WhatsApp — link to be announced">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 1.8a8.2 8.2 0 0 1 0 16.4 8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 0 1 12 3.8m-3.2 4c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.7 4.2 3.7 2.1.8 2.5.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="ceec-footer__disclaimer">
+      CEEC promotes responsible, peaceful and non-partisan civic participation. The
+      community does not endorse political parties, candidates or partisan campaigns,
+      and does not support electoral violence, intimidation or the spread of
+      misinformation.
+    </p>
+
+    <div class="ceec-footer__bottom">
+      <span>&copy; <span id="year">2026</span> CEEC - Cross River State. All Rights Reserved.</span>
+      <span>From Influence To Participation.</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===================== BACK TO TOP ===================== -->
+<button class="ceec-back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 5l7 7-1.4 1.4L13 8.8V19h-2V8.8l-4.6 4.6L5 12z" fill="currentColor"/>
+  </svg>
+</button>
+
+<!-- ===================== MOBILE BOTTOM BAR ===================== -->
+<div class="ceec-mobile-bar">
+  <a class="ceec-btn ceec-btn--primary" href="#membership">Join CEEC</a>
+  <a class="ceec-btn ceec-btn--outline" href="#events">Events</a>
+</div>
+
+<!-- ===================== TOASTS ===================== -->
+<div class="ceec-toast-region" id="toastRegion" role="status" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ===================== MODAL ===================== -->
+<div class="ceec-modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="ceec-modal__backdrop" data-modal-close></div>
+  <div class="ceec-modal__dialog" role="document">
+    <div class="ceec-modal__head">
+      <div>
+        <span class="ceec-modal__cat" id="modalCat">Category</span>
+        <h3 class="ceec-modal__title" id="modalTitle">Title</h3>
+        <p class="ceec-modal__date" id="modalDate">Date</p>
+      </div>
+      <button class="ceec-modal__close" id="modalClose" type="button" aria-label="Close dialog">
+        <svg width="18" height="18" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+    <div class="ceec-modal__body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CEEC — CROSS RIVER STATE
+   main.js — Vanilla JavaScript (ES6+)
+   ---------------------------------------------------------------------
+   Modules
+   1.  Utilities
+   2.  Data (objectives, values, guidelines, leadership, initiatives,
+       events, news, partners)
+   3.  Renderers
+   4.  Navigation (sticky, drawer, active link)
+   5.  Scroll effects (progress, reveal, back-to-top)
+   6.  Objectives (expandable cards)
+   7.  Guidelines (accordion)
+   8.  Events (filter)
+   9.  News (filter + modal)
+   10. Modal controller
+   11. Toasts
+   12. Forms (membership + contact validation)
+   13. Init
+   ===================================================================== */
+
+(function () {
+  'use strict';
+
+  /* ======================= 1. UTILITIES ============================ */
+
+  const $  = (selector, scope = document) => scope.querySelector(selector);
+  const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+
+  /** Create an element from an HTML string. */
+  function el(html) {
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html.trim();
+    return tpl.content.firstElementChild;
+  }
+
+  /** Escape user/data text before injecting into HTML. */
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  /** Format an ISO date like 2026-03-14 into "14 March 2026". */
+  function formatDate(iso) {
+    const d = new Date(iso + 'T00:00:00');
+    if (Number.isNaN(d.getTime())) return iso;
+    return d.toLocaleDateString('en-GB', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+  }
+
+  /** Simple debounce. */
+  function debounce(fn, wait = 120) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  const prefersReducedMotion = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ========================== 2. DATA ============================== */
+
+  const OBJECTIVES = [
+    {
+      title: 'Promote Civic Awareness',
+      short: 'Educate members and young people on civic responsibilities and democratic values.',
+      full: 'To educate members and the wider youth population on civic responsibilities, democratic values, electoral processes and responsible participation in public affairs.'
+    },
+    {
+      title: 'Encourage Youth Participation',
+      short: 'Encourage active involvement in legitimate civic and democratic processes.',
+      full: 'To encourage young people to actively participate in legitimate civic and democratic processes, including voter registration, collection and possession of Permanent Voter Cards (PVCs), voting and peaceful community engagement.'
+    },
+    {
+      title: 'Mobilise the Creative and Entertainment Industry',
+      short: 'Bring industry stakeholders together under one coordinated community structure.',
+      full: 'To bring together creatives, entertainers, event organisers, entrepreneurs, DJs, hypemen, performers, promoters, influencers, MCs, media personalities and other industry stakeholders under a coordinated community youth structure.'
+    },
+    {
+      title: 'Use Entertainment as a Platform for Engagement',
+      short: 'Turn concerts, events and digital platforms into channels for positive civic messages.',
+      full: 'To utilise concerts, lounges, events, festivals, social gatherings and digital platforms as avenues for spreading positive civic messages and encouraging responsible youth participation.'
+    },
+    {
+      title: 'Promote Peaceful Elections and Responsible Conduct',
+      short: 'Discourage violence, intimidation, hate speech and misinformation.',
+      full: 'To discourage electoral violence, intimidation, hate speech, misinformation, destruction of property and other forms of irresponsible behaviour before, during and after elections.'
+    },
+    {
+      title: 'Build Responsible Influence',
+      short: 'Encourage influencers to use their platforms constructively and responsibly.',
+      full: 'To encourage influencers and public-facing personalities to use their platforms responsibly by promoting constructive conversations, verified information and messages that contribute positively to society.'
+    },
+    {
+      title: 'Create Opportunities for Collaboration',
+      short: 'Build a network for joint projects, events and community programmes.',
+      full: 'To establish a network through which members can collaborate on creative projects, events, campaigns, community initiatives and programmes that benefit young people and the wider society.'
+    },
+    {
+      title: 'Support Talent and Industry Development',
+      short: 'Promote opportunities for emerging talents and professionals.',
+      full: 'To promote opportunities for emerging talents and professionals within Cross River&rsquo;s creative, entertainment and events ecosystem.'
+    },
+    {
+      title: 'Encourage Community Development',
+      short: 'Use collective influence to promote positive solutions to social issues.',
+      full: 'To identify social issues affecting young people and communities and use the collective influence of the creative and entertainment industry to promote positive solutions.'
+    },
+    {
+      title: 'Establish a Sustainable Community Structure',
+      short: 'Develop an organised network with clear leadership and communication.',
+      full: 'To develop an organised network with clear leadership, membership responsibilities, communication channels and coordinated activities across relevant areas of Cross River State.'
+    }
+  ];
+
+  const VALUES = [
+    { title: 'Unity',              text: 'We act as one community, not as isolated individuals.', icon: 'i-spark' },
+    { title: 'Responsibility',     text: 'We take ownership of our words, actions and influence.', icon: 'i-check' },
+    { title: 'Creativity',         text: 'We value original ideas and the people who bring them to life.', icon: 'i-spark' },
+    { title: 'Peace',              text: 'We choose calm, respectful and non-violent engagement.', icon: 'i-check' },
+    { title: 'Integrity',          text: 'We are honest, consistent and trustworthy in what we do.', icon: 'i-check' },
+    { title: 'Inclusion',          text: 'We remain open to all who share our objectives.', icon: 'i-spark' },
+    { title: 'Professionalism',    text: 'We represent the community with maturity and respect.', icon: 'i-check' },
+    { title: 'Civic Participation',text: 'We encourage informed and responsible participation.', icon: 'i-arrow' },
+    { title: 'Community Development', text: 'We use our influence to build up our communities.', icon: 'i-pin' }
+  ];
+
+  const GUIDELINES = [
+    {
+      title: 'Respect and Inclusion',
+      body: [
+        'The Community shall remain open to creatives, entertainers, event professionals and other relevant stakeholders who share its objectives, irrespective of background, status or level of experience.',
+        'All members are expected to treat one another with respect and professionalism.'
+      ]
+    },
+    {
+      title: 'Political Awareness Without Unnecessary Confrontation',
+      body: [
+        'The Community may encourage civic and electoral participation but shall promote issue-based engagement rather than personal attacks, insults or unnecessary political confrontation.',
+        'Members are encouraged to express their views responsibly.'
+      ]
+    },
+    {
+      title: 'No Violence',
+      body: [
+        'The Community shall not support, encourage or participate in political violence, thuggery, intimidation, destruction of property or any activity capable of threatening public peace.'
+      ],
+      quote: 'Vote, Don&rsquo;t Fight.'
+    },
+    {
+      title: 'Responsible Information Sharing',
+      body: [
+        'Members should verify information before sharing it publicly.',
+        'The Community shall discourage the spread of fake news, manipulated content, rumours and deliberately misleading information, particularly during election periods.'
+      ]
+    },
+    {
+      title: 'Responsible Use of Influence',
+      body: [
+        'Members with significant social-media or public influence are encouraged to use their platforms to promote positive messages, civic education, peaceful participation and community development.',
+        'Influence should be used to educate and mobilise — not to incite.'
+      ]
+    },
+    {
+      title: 'Professional Conduct',
+      body: [
+        'Members representing the Community at meetings, events or public engagements are expected to conduct themselves professionally and protect the reputation of the Community.'
+      ]
+    },
+    {
+      title: 'Events and Public Gatherings',
+      body: [
+        'Where the Community organises or participates in events, adequate planning, security, crowd management and responsible event practices should be prioritised.',
+        'Events should provide safe and positive environments for engagement.'
+      ]
+    },
+    {
+      title: 'No Use of the Community for Personal Interests',
+      body: [
+        'The Community shall not be used primarily as a platform for personal enrichment, intimidation, extortion or the promotion of individual interests at the expense of the collective objectives.'
+      ]
+    },
+    {
+      title: 'Transparency and Accountability',
+      body: [
+        'Community leadership and coordinators should maintain transparency in decisions, partnerships, programmes and the use of any resources entrusted to the Community.'
+      ]
+    },
+    {
+      title: 'Partnerships',
+      body: [
+        'The Community may collaborate with government institutions, political stakeholders, private organisations, civil society organisations, media organisations, entertainers, event companies and other relevant bodies where such partnerships are consistent with the objectives of the Community.'
+      ]
+    },
+    {
+      title: 'Membership Responsibility',
+      body: ['Every member is expected to:'],
+      list: [
+        'Respect the objectives and guidelines of the Community.',
+        'Participate constructively in community activities.',
+        'Promote peaceful and responsible engagement.',
+        'Avoid conduct that could damage the reputation of the Community.',
+        'Respect fellow members and other stakeholders.',
+        'Contribute positively to the development of the creative and entertainment ecosystem.'
+      ]
+    },
+    {
+      title: 'Leadership and Coordination',
+      body: ['The Community should operate through designated coordinators responsible for:'],
+      list: [
+        'Creative and Talent Coordination',
+        'Entertainment and Performers',
+        'Events and Activation',
+        'Public Relations and Communications',
+        'Digital and Social Media',
+        'Membership and Mobilisation',
+        'Civic Engagement',
+        'Partnerships and Stakeholder Relations',
+        'Welfare and Administration'
+      ]
+    },
+    {
+      title: 'Conflict Resolution',
+      body: [
+        'Disagreements among members should be handled through dialogue and internal resolution mechanisms rather than public confrontation or social-media disputes.'
+      ]
+    },
+    {
+      title: 'Community First',
+      body: [
+        'All members should remember that the strength of the Community lies in collective influence.',
+        'Individual interests should not undermine the larger objective of building a stronger, more informed, peaceful and engaged creative community in Cross River State.'
+      ]
+    }
+  ];
+
+  const LEADERSHIP_UNITS = [
+    { title: 'Creative and Talent Coordination', meta: 'Coordinating creatives and emerging talent across the state.' },
+    { title: 'Entertainment and Performers',     meta: 'Coordinating entertainers, performers, DJs and MCs.' },
+    { title: 'Events and Activation',            meta: 'Planning and coordinating community events and activations.' },
+    { title: 'Public Relations and Communications', meta: 'Managing messaging, media and public communication.' },
+    { title: 'Digital and Social Media',         meta: 'Managing online presence and digital engagement.' },
+    { title: 'Membership and Mobilisation',      meta: 'Recruiting, onboarding and mobilising members.' },
+    { title: 'Civic Engagement',                 meta: 'Driving civic awareness and responsible participation.' },
+    { title: 'Partnerships and Stakeholder Relations', meta: 'Building and maintaining partner relationships.' },
+    { title: 'Welfare and Administration',       meta: 'Member welfare, records and day-to-day administration.' }
+  ];
+
+  const INITIATIVES = [
+    { title: 'Civic Awareness',        text: 'Educating members and the public on civic responsibilities and democratic values.' },
+    { title: 'Creative Development',   text: 'Supporting creatives with collaboration, visibility and growth opportunities.' },
+    { title: 'Talent Discovery',       text: 'Creating platforms where emerging talents can be seen and supported.' },
+    { title: 'Community Engagement',   text: 'Bringing people together around issues that affect their communities.' },
+    { title: 'Peace & Responsible Participation', text: 'Promoting calm, respectful and non-violent civic engagement.' },
+    { title: 'Industry Networking',    text: 'Connecting professionals across the creative and events ecosystem.' },
+    { title: 'Youth Development',      text: 'Encouraging young people to participate meaningfully in public life.' },
+    { title: 'Event Activations',      text: 'Using concerts, festivals and gatherings as platforms for positive messages.' }
+  ];
+
+  // SAMPLE / PLACEHOLDER EVENTS — replace with real CEEC events.
+  const EVENTS = [
+    {
+      date: '2026-04-18',
+      title: 'CEEC Community Meetup',
+      location: 'Calabar, Cross River State',
+      category: 'community',
+      desc: 'A gathering for creatives, entertainers and event professionals to connect and share ideas.'
+    },
+    {
+      date: '2026-05-09',
+      title: 'Creative Industry Roundtable',
+      location: 'Calabar, Cross River State',
+      category: 'creative',
+      desc: 'An open discussion on collaboration, talent development and industry growth in Cross River.'
+    },
+    {
+      date: '2026-05-30',
+      title: 'Peaceful Participation Awareness Drive',
+      location: 'Cross River State',
+      category: 'civic',
+      desc: 'A civic awareness drive promoting responsible, peaceful and non-partisan participation.'
+    },
+    {
+      date: '2026-06-14',
+      title: 'Entertainment Showcase Night',
+      location: 'Calabar, Cross River State',
+      category: 'entertainment',
+      desc: 'A showcase platform for performers, DJs, MCs and emerging entertainers in the state.'
+    },
+    {
+      date: '2026-07-05',
+      title: 'Community Clean-Up & Outreach',
+      location: 'Cross River State',
+      category: 'community',
+      desc: 'A community service initiative organised by members and volunteers.'
+    },
+    {
+      date: '2026-07-26',
+      title: 'Digital Influence & Responsibility Workshop',
+      location: 'Calabar, Cross River State',
+      category: 'civic',
+      desc: 'A workshop on responsible information sharing and constructive use of influence online.'
+    },
+    {
+      date: '2026-08-16',
+      title: 'Events Professionals Masterclass',
+      location: 'Calabar, Cross River State',
+      category: 'events',
+      desc: 'A practical session for event organisers, planners and vendors on safe, professional events.'
+    },
+    {
+      date: '2026-09-06',
+      title: 'Creative Collaboration Lab',
+      location: 'Cross River State',
+      category: 'creative',
+      desc: 'A working session where members develop joint creative projects and community initiatives.'
+    }
+  ];
+
+  // SAMPLE / PLACEHOLDER NEWS — replace with real CEEC updates.
+  const NEWS = [
+    {
+      date: '2026-03-02',
+      category: 'announcement',
+      catLabel: 'Announcement',
+      title: 'CEEC Opens Membership Registration',
+      excerpt: 'The community opens its doors to creatives, entertainers and event professionals across Cross River State.',
+      body: [
+        'The Creative, Entertainment & Events Community — Cross River State has opened membership registration for creatives, entertainers, event professionals, influencers, promoters and other industry stakeholders.',
+        'Membership is open to anyone who shares the objectives of the community and is committed to responsible, peaceful and constructive engagement.',
+        'Interested individuals can complete the membership form on this page. Further details will be published as they are confirmed.'
+      ]
+    },
+    {
+      date: '2026-03-10',
+      category: 'civic',
+      catLabel: 'Civic',
+      title: 'Understanding Responsible Civic Participation',
+      excerpt: 'A short explainer on what responsible participation means within the CEEC community.',
+      body: [
+        'Responsible civic participation means engaging with public issues in an informed, respectful and non-violent manner.',
+        'It includes verifying information before sharing it, avoiding personal attacks and focusing on issues rather than personalities.',
+        'CEEC encourages members to express their views responsibly and to promote peaceful engagement in their communities.'
+      ]
+    },
+    {
+      date: '2026-03-18',
+      category: 'creative',
+      catLabel: 'Creative',
+      title: 'Why Collaboration Matters For Cross River Creatives',
+      excerpt: 'How a coordinated network can create more opportunities for creatives in the state.',
+      body: [
+        'Cross River State is home to a growing community of creatives, entertainers and event professionals.',
+        'A coordinated network makes it easier to collaborate on projects, share opportunities and support emerging talent.',
+        'CEEC is building that network so that members can grow together rather than in isolation.'
+      ]
+    },
+    {
+      date: '2026-03-24',
+      category: 'community',
+      catLabel: 'Community',
+      title: 'Building A Peaceful Community Together',
+      excerpt: 'Peace is a shared responsibility, and the creative community has a role to play.',
+      body: [
+        'Peaceful engagement is a core value of the CEEC community.',
+        'Members are encouraged to promote calm, respectful and non-violent participation in all community activities.',
+        'The message is simple: vote, don&rsquo;t fight.'
+      ]
+    },
+    {
+      date: '2026-04-01',
+      category: 'announcement',
+      catLabel: 'Announcement',
+      title: 'Coordinating Areas Announced',
+      excerpt: 'CEEC outlines the functional areas that will coordinate community activities.',
+      body: [
+        'CEEC will operate through designated coordinating areas covering creative and talent, entertainment, events, communications, digital, membership, civic engagement, partnerships and welfare.',
+        'Individual names and positions will be published as they are officially confirmed.',
+        'The structure is designed to keep the community organised, transparent and accountable.'
+      ]
+    },
+    {
+      date: '2026-04-08',
+      category: 'civic',
+      catLabel: 'Civic',
+      title: 'Your Vote Counts: A Reminder On Participation',
+      excerpt: 'Participation begins with being informed and showing up responsibly.',
+      body: [
+        'Civic participation starts with being informed and making the effort to take part responsibly.',
+        'CEEC encourages members to complete legitimate civic processes such as voter registration and to engage peacefully.',
+        'Participation is a responsibility, and it is stronger when it is peaceful and informed.'
+      ]
+    }
+  ];
+
+  const PARTNERS = [
+    { name: 'Government Institutions',   meta: 'Public sector collaboration' },
+    { name: 'Creative Organisations',    meta: 'Creative industry bodies' },
+    { name: 'Entertainment Brands',      meta: 'Entertainment and lifestyle brands' },
+    { name: 'Media Organisations',       meta: 'Broadcast, print and digital media' },
+    { name: 'Civil Society',             meta: 'Civil society organisations' },
+    { name: 'Private Organisations',     meta: 'Private sector partners' },
+    { name: 'Event Companies',           meta: 'Event production and services' },
+    { name: 'Community Organisations',   meta: 'Grassroots community groups' }
+  ];
+
+  /* ======================== 3. RENDERERS =========================== */
+
+  /** Objectives: expandable cards. */
+  function renderObjectives() {
+    const grid = $('#objectivesGrid');
+    if (!grid) return;
+
+    grid.innerHTML = OBJECTIVES.map((o, i) => `
+      <article class="ceec-objective-card" data-objective="${i}"
+               role="button" tabindex="0" aria-expanded="false">
+        <span class="ceec-objective-card__num">${String(i + 1).padStart(2, '0')}</span>
+        <div class="ceec-objective-card__head">
+          <div>
+            <h3 class="ceec-objective-card__title">${esc(o.title)}</h3>
+            <p class="ceec-objective-card__short">${esc(o.short)}</p>
+          </div>
+          <span class="ceec-objective-card__chev" aria-hidden="true">
+            <svg width="14" height="14"><use href="#i-chevron"></use></svg>
+          </span>
+        </div>
+        <div class="ceec-objective-card__full">
+          <div><p>${o.full}</p></div>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  /** Core values grid. */
+  function renderValues() {
+    const grid = $('#valuesGrid');
+    if (!grid) return;
+
+    grid.innerHTML = VALUES.map(v => `
+      <article class="ceec-value-card" data-reveal>
+        <span class="ceec-value-card__icon" aria-hidden="true">
+          <svg width="20" height="20"><use href="#${v.icon}"></use></svg>
+        </span>
+        <h3 class="ceec-value-card__title">${esc(v.title)}</h3>
+        <p class="ceec-value-card__text">${esc(v.text)}</p>
+      </article>
+    `).join('');
+  }
+
+  /** Guidelines accordion. */
+  function renderGuidelines() {
+    const list = $('#guidelinesList');
+    if (!list) return;
+
+    list.innerHTML = GUIDELINES.map((g, i) => {
+      const bodyHtml = (g.body || []).map(p => `<p>${p}</p>`).join('');
+      const listHtml = g.list
+        ? `<ul>${g.list.map(li => `<li>${esc(li)}</li>`).join('')}</ul>`
+        : '';
+      const quoteHtml = g.quote
+        ? `<span class="ceec-guideline-quote">${g.quote}</span>`
+        : '';
+
+      return `
+        <div class="ceec-guideline-item">
+          <h3>
+            <button class="ceec-guideline-item__btn" type="button"
+                    aria-expanded="false" aria-controls="guide-panel-${i}">
+              <span class="ceec-guideline-item__num">${String(i + 1).padStart(2, '0')}</span>
+              <span class="ceec-guideline-item__title">${esc(g.title)}</span>
+              <span class="ceec-guideline-item__chev" aria-hidden="true">
+                <svg width="14" height="14"><use href="#i-chevron"></use></svg>
+              </span>
+            </button>
+          </h3>
+          <div class="ceec-guideline-item__panel" id="guide-panel-${i}" role="region">
+            <div>
+              <div class="ceec-guideline-item__body">
+                ${bodyHtml}
+                ${listHtml}
+                ${quoteHtml}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  /** Leadership functional units. */
+  function renderLeadershipUnits() {
+    const wrap = $('#leadershipUnits');
+    if (!wrap) return;
+
+    wrap.innerHTML = LEADERSHIP_UNITS.map(u => `
+      <article class="ceec-unit-card">
+        <h4 class="ceec-unit-card__title">${esc(u.title)}</h4>
+        <p class="ceec-unit-card__meta">${esc(u.meta)}</p>
+        <span class="ceec-unit-card__tag">Coordinator — To be announced</span>
+      </article>
+    `).join('');
+  }
+
+  /** Community initiatives grid. */
+  function renderInitiatives() {
+    const grid = $('#initiativesGrid');
+    if (!grid) return;
+
+    grid.innerHTML = INITIATIVES.map(it => `
+      <article class="ceec-initiative-card" data-reveal>
+        <span class="ceec-initiative-card__dot" aria-hidden="true"></span>
+        <h3 class="ceec-initiative-card__title">${esc(it.title)}</h3>
+        <p class="ceec-initiative-card__text">${esc(it.text)}</p>
+      </article>
+    `).join('');
+  }
+
+  /** Events grid. */
+  function renderEvents() {
+    const grid = $('#eventsGrid');
+    if (!grid) return;
+
+    grid.innerHTML = EVENTS.map((ev, i) => `
+      <article class="ceec-event-card" data-category="${esc(ev.category)}" data-reveal>
+        <div class="ceec-event-card__top">
+          <span class="ceec-event-card__date">${formatDate(ev.date)}</span>
+          <span class="ceec-event-card__cat">${esc(ev.category)}</span>
+        </div>
+        <div class="ceec-event-card__body">
+          <h3 class="ceec-event-card__title">${esc(ev.title)}</h3>
+          <p class="ceec-event-card__loc">
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-pin"></use></svg>
+            ${esc(ev.location)}
+          </p>
+          <p class="ceec-event-card__desc">${esc(ev.desc)}</p>
+          <div class="ceec-event-card__foot">
+            <span class="ceec-sample-tag">Sample</span>
+            <button class="ceec-link-btn" type="button"
+                    data-event-index="${i}" aria-label="View event details">
+              View Event
+              <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  /** News grid. */
+  function renderNews() {
+    const grid = $('#newsGrid');
+    if (!grid) return;
+
+    grid.innerHTML = NEWS.map((n, i) => `
+      <article class="ceec-news-card" data-category="${esc(n.category)}" data-reveal>
+        <div class="ceec-news-card__media" aria-hidden="true">
+          <span>CEEC · ${esc(n.catLabel)}</span>
+          <span class="ceec-news-card__badge">${esc(n.catLabel)}</span>
+        </div>
+        <div class="ceec-news-card__body">
+          <p class="ceec-news-card__date">${formatDate(n.date)}</p>
+          <h3 class="ceec-news-card__title">${esc(n.title)}</h3>
+          <p class="ceec-news-card__excerpt">${esc(n.excerpt)}</p>
+          <div class="ceec-news-card__foot">
+            <span class="ceec-sample-tag">Placeholder</span>
+            <button class="ceec-link-btn" type="button"
+                    data-news-index="${i}" aria-label="Read full article">
+              Read More
+              <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"></use></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  /** Partners grid. */
+  function renderPartners() {
+    const grid = $('#partnersGrid');
+    if (!grid) return;
+
+    grid.innerHTML = PARTNERS.map(p => `
+      <article class="ceec-partner-card" data-reveal>
+        <span class="ceec-partner-card__logo" aria-hidden="true">
+          <svg width="22" height="22"><use href="#i-spark"></use></svg>
+        </span>
+        <h3 class="ceec-partner-card__title">${esc(p.name)}</h3>
+        <p class="ceec-partner-card__meta">${esc(p.meta)}</p>
+      </article>
+    `).join('');
+  }
+
+  /* ===================== 4. NAVIGATION ============================= */
+
+  function initNavigation() {
+    const navbar   = $('#navbar');
+    const burger   = $('#burger');
+    const drawer   = $('#drawer');
+    const backdrop = $('#backdrop');
+    const closeBtn = $('#drawerClose');
+
+    if (!navbar) return;
+
+    /* --- Sticky navbar state on scroll --- */
+    const setScrolled = () => {
+      navbar.classList.toggle('is-scrolled', window.scrollY > 12);
+    };
+    setScrolled();
+    window.addEventListener('scroll', setScrolled, { passive: true });
+
+    /* --- Mobile drawer --- */
+    let isOpen = false;
+    let lastFocused = null;
+
+    function openDrawer() {
+      isOpen = true;
+      lastFocused = document.activeElement;
+
+      backdrop.hidden = false;
+      // force reflow so the transition runs
+      void backdrop.offsetWidth;
+
+      backdrop.classList.add('is-open');
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      burger.classList.add('is-open');
+      burger.setAttribute('aria-expanded', 'true');
+      burger.setAttribute('aria-label', 'Close navigation menu');
+
+      document.body.style.overflow = 'hidden';
+
+      // Move focus into the drawer
+      const firstLink = $('.ceec-drawer__link', drawer);
+      if (firstLink) firstLink.focus();
+    }
+
+    function closeDrawer() {
+      if (!isOpen) return;
+      isOpen = false;
+
+      drawer.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation menu');
+
+      document.body.style.overflow = '';
+
+      window.setTimeout(() => {
+        if (!isOpen) backdrop.hidden = true;
+      }, 320);
+
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+    }
+
+    if (burger) {
+      burger.addEventListener('click', () => {
+        isOpen ? closeDrawer() : openDrawer();
+      });
+    }
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+    // Close when a drawer link is chosen
+    $$('.ceec-drawer__link, .ceec-drawer__foot .ceec-btn', drawer).forEach(link => {
+      link.addEventListener('click', () => closeDrawer());
+    });
+
+    // ESC closes drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) closeDrawer();
+    });
+
+    // Reset if resized to desktop
+    window.addEventListener('resize', debounce(() => {
+      if (window.innerWidth > 1024 && isOpen) closeDrawer();
+    }, 150));
+
+    /* --- Active navigation link based on visible section --- */
+    const sections = $$('main section[id]');
+    const navLinks = $$('.ceec-nav__link, .ceec-drawer__link');
+
+    if (sections.length && 'IntersectionObserver' in window) {
+      const linkFor = (id) =>
+        navLinks.filter(a => a.getAttribute('href') === '#' + id);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id;
+
+          navLinks.forEach(a => a.classList.remove('is-active'));
+          linkFor(id).forEach(a => a.classList.add('is-active'));
+        });
+      }, {
+        rootMargin: '-45% 0px -50% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(s => observer.observe(s));
+    }
+  }
+
+  /* ==================== 5. SCROLL EFFECTS ========================== */
+
+  function initScrollEffects() {
+    /* --- Scroll progress bar --- */
+    const bar = $('#scrollProgress');
+    if (bar) {
+      const update = () => {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - doc.clientHeight;
+        const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+        bar.style.width = pct.toFixed(2) + '%';
+      };
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', debounce(update, 150));
+    }
+
+    /* --- Back to top --- */
+    const btn = $('#backToTop');
+    if (btn) {
+      const toggle = () => {
+        btn.classList.toggle('is-visible', window.scrollY > 600);
+      };
+      toggle();
+      window.addEventListener('scroll', toggle, { passive: true });
+
+      btn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+        });
+      });
+    }
+  }
+
+  /** Reveal-on-scroll using IntersectionObserver. */
+  function initReveal() {
+    const items = $$('[data-reveal]');
+    if (!items.length) return;
+
+    if (prefersReducedMotion() || !('IntersectionObserver' in window)) {
+      items.forEach(i => i.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry, index) => {
+        if (!entry.isIntersecting) return;
+        // Small stagger within a batch
+        const delay = Math.min(index * 70, 280);
+        window.setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, delay);
+        obs.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.08
+    });
+
+    items.forEach(item => observer.observe(item));
+  }
+
+  /* ================== 6. OBJECTIVES (EXPANDABLE) =================== */
+
+  function initObjectives() {
+    const cards = $$('.ceec-objective-card');
+    if (!cards.length) return;
+
+    function toggle(card) {
+      const isOpen = card.classList.contains('is-open');
+
+      // Close siblings (accordion-like, but multiple can stay open if desired)
+      cards.forEach(c => {
+        if (c !== card) {
+          c.classList.remove('is-open');
+          c.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      card.classList.toggle('is-open', !isOpen);
+      card.setAttribute('aria-expanded', String(!isOpen));
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => toggle(card));
+
+      // Keyboard support (Enter / Space)
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          toggle(card);
+        }
+      });
+    });
+  }
+
+  /* =================== 7. GUIDELINES ACCORDION ===================== */
+
+  function initGuidelines() {
+    const buttons = $$('.ceec-guideline-item__btn');
+    if (!buttons.length) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.ceec-guideline-item');
+        const isOpen = item.classList.contains('is-open');
+
+        // Close all
+        $$('.ceec-guideline-item').forEach(it => {
+          it.classList.remove('is-open');
+          const b = $('.ceec-guideline-item__btn', it);
+          if (b) b.setAttribute('aria-expanded', 'false');
+        });
+
+        // Open the clicked one
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  /* ====================== 8. EVENT FILTER ========================== */
+
+  function initEventFilters() {
+    const group = $('#eventFilters');
+    const grid  = $('#eventsGrid');
+    const empty = $('#eventsEmpty');
+    if (!group || !grid) return;
+
+    const buttons = $$('.ceec-filter', group);
+    const cards   = $$('.ceec-event-card', grid);
+
+    function apply(filter) {
+      let visible = 0;
+
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.hidden = !match;
+        if (match) visible++;
+      });
+
+      if (empty) empty.hidden = visible !== 0;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        apply(btn.dataset.filter);
+      });
+    });
+
+    // View Event → open modal with details
+    grid.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-event-index]');
+      if (!trigger) return;
+
+      const ev = EVENTS[Number(trigger.dataset.eventIndex)];
+      if (!ev) return;
+
+      openModal({
+        category: ev.category,
+        title: ev.title,
+        date: formatDate(ev.date),
+        body: `
+          <p class="ceec-sample-note">
+            This is a sample placeholder event. Real CEEC event details will replace it.
+          </p>
+          <p><strong>Location:</strong> ${esc(ev.location)}</p>
+          <p>${esc(ev.desc)}</p>
+          <p>
+            Further details about this activity will be published by the CEEC
+            coordination team as they are confirmed.
+          </p>
+        `
+      });
+    });
+  }
+
+  /* ================== 9. NEWS FILTER + MODAL ======================= */
+
+  function initNewsFilters() {
+    const group = $('#newsFilters');
+    const grid  = $('#newsGrid');
+    const empty = $('#newsEmpty');
+    if (!group || !grid) return;
+
+    const buttons = $$('.ceec-filter', group);
+    const cards   = $$('.ceec-news-card', grid);
+
+    function apply(filter) {
+      let visible = 0;
+
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.hidden = !match;
+        if (match) visible++;
+      });
+
+      if (empty) empty.hidden = visible !== 0;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        apply(btn.dataset.filter);
+      });
+    });
+
+    // Read More → open modal article
+    grid.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-news-index]');
+      if (!trigger) return;
+
+      const item = NEWS[Number(trigger.dataset.newsIndex)];
+      if (!item) return;
+
+      const bodyHtml = item.body.map(p => `<p>${p}</p>`).join('');
+
+      openModal({
+        category: item.catLabel,
+        title: item.title,
+        date: formatDate(item.date),
+        body: `
+          <p class="ceec-sample-note">
+            This is placeholder content demonstrating the article layout. Real CEEC
+            updates will replace it.
+          </p>
+          ${bodyHtml}
+        `
+      });
+    });
+  }
+
+  /* ==================== 10. MODAL CONTROLLER ======================= */
+
+  let modalState = { open: false, lastFocused: null };
+
+  function openModal({ category, title, date, body }) {
+    const modal = $('#modal');
+    if (!modal) return;
+
+    modalState.lastFocused = document.activeElement;
+
+    $('#modalCat').textContent   = category || 'Update';
+    $('#modalTitle').textContent = title || '';
+    $('#modalDate').textContent  = date || '';
+    $('#modalBody').innerHTML    = body || '';
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modalState.open = true;
+
+    // Focus close button
+    const closeBtn = $('#modalClose');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal() {
+    const modal = $('#modal');
+    if (!modal || !modalState.open) return;
+
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    modalState.open = false;
+
+    if (modalState.lastFocused && typeof modalState.lastFocused.focus === 'function') {
+      modalState.lastFocused.focus();
+    }
+  }
+
+  function initModal() {
+    const modal = $('#modal');
+    if (!modal) return;
+
+    // Close button
+    const closeBtn = $('#modalClose');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    // Click on backdrop
+    $$('[data-modal-close]', modal).forEach(b => {
+      b.addEventListener('click', closeModal);
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalState.open) closeModal();
+    });
+
+    // Basic focus trap
+    modal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab' || !modalState.open) return;
+
+      const focusables = $$(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        modal
+      ).filter(node => !node.hasAttribute('disabled') && node.offsetParent !== null);
+
+      if (!focusables.length) return;
+
+      const first = focusables[0];
+      const last  = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  /* ========================= 11. TOASTS ============================ */
+
+  function showToast(title, message, type = 'success') {
+    const region = $('#toastRegion');
+    if (!region) return;
+
+    const icons = {
+      success: '<svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-check"></use></svg>',
+      error:   '<svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-close"></use></svg>',
+      info:    '<svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-spark"></use></svg>'
+    };
+
+    const toast = el(`
+      <div class="ceec-toast ceec-toast--${type}">
+        <span class="ceec-toast__icon" aria-hidden="true">${icons[type] || icons.info}</span>
+        <div>
+          <p class="ceec-toast__title">${esc(title)}</p>
+          <p class="ceec-toast__msg">${esc(message)}</p>
+        </div>
+      </div>
+    `);
+
+    region.appendChild(toast);
+
+    // Animate in
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => toast.classList.add('is-visible'));
+    });
+
+    // Auto remove
+    window.setTimeout(() => {
+      toast.classList.remove('is-visible');
+      window.setTimeout(() => toast.remove(), 400);
+    }, 4800);
+  }
+
+  /* ======================= 12. FORM HANDLING ======================= */
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const PHONE_RE = /^[0-9+\-\s()]{7,20}$/;
+
+  /** Set an error on a field. */
+  function setError(input, message) {
+    const field = input.closest('.ceec-field');
+    if (!field) return;
+
+    field.classList.add('has-error');
+    const msg = $('[data-error-for="' + input.id + '"]', field);
+    if (msg) msg.textContent = message;
+  }
+
+  /** Clear an error on a field. */
+  function clearError(input) {
+    const field = input.closest('.ceec-field');
+    if (!field) return;
+
+    field.classList.remove('has-error');
+    const msg = $('[data-error-for="' + input.id + '"]', field);
+    if (msg) msg.textContent = '';
+  }
+
+  /** Validate a single field. Returns true when valid. */
+  function validateField(input) {
+    const value = (input.type === 'checkbox')
+      ? input.checked
+      : input.value.trim();
+
+    if (input.hasAttribute('required')) {
+      if (input.type === 'checkbox' && !value) {
+        setError(input, 'Please confirm your agreement to continue.');
+        return false;
+      }
+      if (input.type !== 'checkbox' && value === '') {
+        setError(input, 'This field is required.');
+        return false;
+      }
+    }
+
+    if (input.type === 'email' && value !== '' && !EMAIL_RE.test(value)) {
+      setError(input, 'Please enter a valid email address.');
+      return false;
+    }
+
+    if (input.type === 'tel' && value !== '' && !PHONE_RE.test(value)) {
+      setError(input, 'Please enter a valid phone number.');
+      return false;
+    }
+
+    if (input.tagName === 'TEXTAREA' && input.hasAttribute('required') && value.length > 0 && value.length < 10) {
+      setError(input, 'Please provide a little more detail (at least 10 characters).');
+      return false;
+    }
+
+    clearError(input);
+    return true;
+  }
+
+  function initForms() {
+    /* ---------- Membership form ---------- */
+    const mForm = $('#membershipForm');
+    if (mForm) {
+      const fields = $$('input, select, textarea', mForm);
+
+      // Live clearing as the user types
+      fields.forEach(f => {
+        const evt = (f.tagName === 'SELECT' || f.type === 'checkbox') ? 'change' : 'input';
+        f.addEventListener(evt, () => {
+          if (f.closest('.ceec-field')?.classList.contains('has-error')) {
+            validateField(f);
+          }
+        });
+        f.addEventListener('blur', () => {
+          if (f.value.trim() !== '' || f.type === 'checkbox') validateField(f);
+        });
+      });
+
+      mForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let valid = true;
+        fields.forEach(f => {
+          if (!validateField(f)) valid = false;
+        });
+
+        if (!valid) {
+          showToast(
+            'Please check the form',
+            'Some required fields need your attention before submitting.',
+            'error'
+          );
+          const firstError = $('.ceec-field.has-error input, .ceec-field.has-error select, .ceec-field.has-error textarea', mForm);
+          if (firstError) firstError.focus();
+          return;
+        }
+
+        // Simulate a successful submission (no backend yet)
+        const submitBtn = $('button[type="submit"]', mForm);
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+
+        window.setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+
+          mForm.reset();
+          $$('.ceec-field', mForm).forEach(f => f.classList.remove('has-error'));
+
+          showToast(
+            'Membership request received',
+            'Thank you. Your details have been captured on this page. Backend submission will be connected later.',
+            'success'
+          );
+        }, 900);
+      });
+    }
+
+    /* ---------- Contact form ---------- */
+    const cForm = $('#contactForm');
+    if (cForm) {
+      const fields = $$('input, select, textarea', cForm);
+
+      fields.forEach(f => {
+        const evt = (f.tagName === 'SELECT' || f.type === 'checkbox') ? 'change' : 'input';
+        f.addEventListener(evt, () => {
+          if (f.closest('.ceec-field')?.classList.contains('has-error')) {
+            validateField(f);
+          }
+        });
+        f.addEventListener('blur', () => {
+          if (f.value.trim() !== '') validateField(f);
+        });
+      });
+
+      cForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let valid = true;
+        fields.forEach(f => {
+          if (!validateField(f)) valid = false;
+        });
+
+        if (!valid) {
+          showToast(
+            'Please check the form',
+            'Some required fields need your attention before sending.',
+            'error'
+          );
+          const firstError = $('.ceec-field.has-error input, .ceec-field.has-error select, .ceec-field.has-error textarea', cForm);
+          if (firstError) firstError.focus();
+          return;
+        }
+
+        const submitBtn = $('button[type="submit"]', cForm);
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        window.setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+
+          cForm.reset();
+          $$('.ceec-field', cForm).forEach(f => f.classList.remove('has-error'));
+
+          showToast(
+            'Message sent',
+            'Thank you for reaching out. A CEEC coordinator will respond once contact channels are published.',
+            'success'
+          );
+        }, 900);
+      });
+    }
+  }
+
+  /* ========================== 13. INIT ============================= */
+
+  function initYear() {
+    const y = $('#year');
+    if (y) y.textContent = String(new Date().getFullYear());
+  }
+
+  function init() {
+    // Render dynamic content first
+    renderObjectives();
+    renderValues();
+    renderGuidelines();
+    renderLeadershipUnits();
+    renderInitiatives();
+    renderEvents();
+    renderNews();
+    renderPartners();
+
+    // Then wire up behaviour
+    initNavigation();
+    initScrollEffects();
+    initReveal();
+    initObjectives();
+    initGuidelines();
+    initEventFilters();
+    initNewsFilters();
+    initModal();
+    initForms();
+    initYear();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+</body>
+</html>
